@@ -26,9 +26,10 @@
 ![RStudio](https://img.shields.io/badge/RStudio-478C82?style=for-the-badge&logo=rstudio&logoColor=white)
 
 
-### Highlighted Projects 🏗️
+#### Highlighted Projects 🏗️
 
-[![The Neural Architecture of Truth and Deception](https://img.shields.io/badge/The%20Neural%20Architecture%20of%20Truth%20and%20Deception-8A2BE2?style=for-the-badge&labelColor=333&logo=readme&logoColor=white)](https://github.com/Exios66/truth-deception-architecture)
-
+[![Truth & Deception](https://img.shields.io/badge/Truth%20%26%20Deception-6D28D9?style=for-the-badge&labelColor=1F2937&logo=readme&logoColor=white)](https://github.com/Exios66/truth-deception-architecture)
+[![The Mandalay Bay](https://img.shields.io/badge/The%20Mandalay%20Bay-CA8A04?style=for-the-badge&labelColor=1F2937&logo=readme&logoColor=white)](https://github.com/Exios66/degen-llms)
+[![Smol Doc Analyzer](https://img.shields.io/badge/Smol%20Doc%20Analyzer-0EA5E9?style=for-the-badge&labelColor=1F2937&logo=readme&logoColor=white)](https://github.com/Exios66/smol-doc-analyzer)
 <!-- my-badges start -->
 <!-- my-badges end -->
