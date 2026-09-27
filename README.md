@@ -41,11 +41,10 @@
 
 ### Highlighted Projects
 
-[![The Mandalay Bay](https://img.shields.io/badge/The%20Mandalay%20Bay-8A2BE2?style=for-the-badge&labelColor=1F2937&logo=readme&logoColor=white)](https://github.com/Exios66/degen-llms)
 [![Digital Mailroom](https://img.shields.io/badge/Digital%20Mailroom-0EA5E9?style=for-the-badge&labelColor=1F2937&logo=readme&logoColor=white)](https://github.com/LLM-Mailroom-Services/Digital-Mailroom)
 [![RVL--CDIP Classifier](https://img.shields.io/badge/RVL--CDIP%20Classifier-CA8A04?style=for-the-badge&labelColor=1F2937&logo=readme&logoColor=white)](https://github.com/Exios66/RVL-CDIP-Classifier)
 [![PSYCH 755](https://img.shields.io/badge/PSYCH%20755-C5050C?style=for-the-badge&labelColor=1F2937&logo=readme&logoColor=white)](https://github.com/Exios66/psych755-jjb)
-[![MORNINGSTAR](https://img.shields.io/badge/MORNINGSTAR-6D28D9?style=for-the-badge&labelColor=1F2937&logo=readme&logoColor=white)](https://github.com/Exios66/LLM_Personas)
+[![The Mandalay Bay](https://img.shields.io/badge/The%20Mandalay%20Bay-8A2BE2?style=for-the-badge&labelColor=1F2937&logo=readme&logoColor=white)](https://github.com/Exios66/degen-llms)
 [![Agent Mailroom](https://img.shields.io/badge/Agent%20Mailroom-059669?style=for-the-badge&labelColor=1F2937&logo=readme&logoColor=white)](https://github.com/Exios66/agent-mailroom)
 
 </p>
