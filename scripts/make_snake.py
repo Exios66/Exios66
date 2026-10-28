@@ -9,12 +9,15 @@ assets/snake.svg (light) and assets/snake-dark.svg (dark). Standard library only
                                                     # https://github.com/users/<user>/contributions
     python3 scripts/make_snake.py --empty         # blank grid (placeholder)
 
-Then commit the two SVGs. Run it whenever you like (or from cron/launchd).
+It also writes assets/data/activity.json, which scripts/build_assets.py turns into the
+stats card under the snake. To refresh everything in one go: ./scripts/refresh.sh
+Then commit the changed files. Run it whenever you like (or from cron/launchd).
 """
-import argparse, datetime as dt, html, re, sys, urllib.request
+import argparse, datetime as dt, html, json, re, sys, urllib.request
 from pathlib import Path
 
-ACCENT = "#4FC1CD"
+ACCENT = "#4FC1CD"      # snake body
+HEAD = "#FE01B1"        # snake head: the one pink accent
 PALETTES = {
     "light": ["#EBEDF0", "#9BE9A8", "#40C463", "#30A14E", "#216E39"],
     "dark": ["#161B22", "#0E4429", "#006D32", "#26A641", "#39D353"],
@@ -45,6 +48,30 @@ def parse(page):
     if not days:
         sys.exit("No contribution cells found (is the username right / page format changed?).")
     return days
+
+
+def parse_counts(page, days):
+    """Per-day contribution counts from the calendar's tool-tips, or None if the page has none."""
+    ids = {}
+    for tag in re.findall(r"<td\b[^>]*>", page):
+        i = re.search(r'\bid="([^"]+)"', tag)
+        d = re.search(r'data-date="(\d{4}-\d{2}-\d{2})"', tag)
+        if i and d:
+            ids[i.group(1)] = dt.date.fromisoformat(d.group(1))
+    counts = {}
+    for m in re.finditer(r'<tool-tip\b[^>]*\bfor="([^"]+)"[^>]*>\s*(No|\d[\d,]*)\s+contributions?\b', page):
+        d = ids.get(m.group(1))
+        if d:
+            counts[d] = 0 if m.group(2) == "No" else int(m.group(2).replace(",", ""))
+    return counts if len(counts) >= 0.9 * len(days) else None
+
+
+def write_activity(out, days, counts):
+    rows = [{"d": d.isoformat(), "l": days[d], **({"c": counts.get(d, 0)} if counts else {})} for d in sorted(days)]
+    (out / "data").mkdir(exist_ok=True)
+    (out / "data" / "activity.json").write_text(json.dumps(
+        {"generated": dt.date.today().isoformat(), "source": "github.com contribution calendar", "days": rows},
+        separators=(",", ":")))
 
 
 def empty_days():
@@ -95,7 +122,7 @@ def build(cols, cells, theme):
         lag = (T - k * SEC_PER_CELL) % T
         op = 1 if k == 0 else max(0.35, 1 - k * 0.15)
         snake.append(
-            f'<rect x="{-CELL / 2}" y="{-CELL / 2}" width="{CELL}" height="{CELL}" rx="3" fill="{ACCENT}" opacity="{op:.2f}">'
+            f'<rect x="{-CELL / 2}" y="{-CELL / 2}" width="{CELL}" height="{CELL}" rx="3" fill="{HEAD if k == 0 else ACCENT}" opacity="{op:.2f}">'
             f'<animateMotion dur="{T:.2f}s" repeatCount="indefinite" begin="-{lag:.2f}s" path="{path}"/></rect>')
     w = PAD * 2 + cols * PITCH - GAP
     h = PAD * 2 + 7 * PITCH - GAP
@@ -111,9 +138,12 @@ def main():
     ap.add_argument("--empty", action="store_true", help="blank grid (no data)")
     ap.add_argument("--out", default=str(Path(__file__).resolve().parent.parent / "assets"))
     a = ap.parse_args()
-    days = empty_days() if a.empty else parse(Path(a.html).read_text() if a.html else fetch(a.user))
+    page = None if a.empty else (Path(a.html).read_text() if a.html else fetch(a.user))
+    days = empty_days() if a.empty else parse(page)
+    counts = None if a.empty else parse_counts(page, days)
     cols, cells = grid(days)
     out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
+    write_activity(out, days, counts)
     (out / "snake.svg").write_text(build(cols, cells, "light"))
     (out / "snake-dark.svg").write_text(build(cols, cells, "dark"))
     print(f"wrote {out}/snake.svg and snake-dark.svg ({cols} weeks, "

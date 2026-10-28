@@ -140,6 +140,10 @@
 <img alt="Contribution graph snake eating my commits" src="assets/snake-dark.svg#gh-dark-mode-only" />
 <img alt="Contribution graph snake eating my commits" src="assets/snake.svg#gh-light-mode-only" />
 
+<p align="center">
+  <img src="assets/stats.svg" width="100%" alt="Activity stats under the snake: active days, current streak, longest streak and active weeks over the last 12 months, with a weekly activity chart." />
+</p>
+
 </div>
 
 <!-- my-badges start -->

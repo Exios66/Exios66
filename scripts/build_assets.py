@@ -16,7 +16,9 @@ icon is drawn.
 Fonts (in scripts/fonts/, licences alongside): Roboto, Roboto Serif, Roboto Mono.
 """
 import io
+import json
 import sys
+from datetime import date, timedelta
 from pathlib import Path
 
 import uharfbuzz as hb
@@ -31,6 +33,7 @@ ASSETS = ROOT / "assets"
 # Dark surfaces and teal accent borrowed from the portfolio site's dark mode.
 BG, EDGE = "#131C20", "#25333A"            # --paper, --rule
 ACCENT, ACCENT_SOFT = "#4FC1CD", "#16303A"  # --accent, --accent-soft
+PINK = "#FE01B1"                            # second accent, used sparingly: cursor, arrows, highlights
 INK, MUTED = "#E6EDEF", "#93A3A9"           # --ink, --muted
 
 # ----------------------------------------------------------------- typography
@@ -246,12 +249,13 @@ def build_header():
 
   {frame(W, H, M, M)}
   <rect x="{M}" y="{M}" width="{W}" height="4" fill="{ACCENT}" clip-path="url(#card)"/>
+  <rect x="{M}" y="{M}" width="56" height="4" fill="{PINK}" clip-path="url(#card)"/>
 
   <g clip-path="url(#c1)"><path transform="translate({X1:.2f} {Y1})" fill="{INK}" d="{d1}"/></g>
   <path transform="translate({XR:.2f} {YR})" fill="{ACCENT}" d="{d_role}"/>
   <g clip-path="url(#c2)"><path transform="translate({X2:.2f} {Y2})" fill="{MUTED}" d="{d2}"/></g>
 
-  <g class="cur"><rect class="bar" x="0" y="0" width="1" height="1" fill="{ACCENT}"/></g>
+  <g class="cur"><rect class="bar" x="0" y="0" width="1" height="1" fill="{PINK}"/></g>
 </svg>
 '''
 
@@ -310,7 +314,7 @@ def build_featured(c, compact=False):
     x0, x1 = PAD + tws[0] / 2, W - PAD - tws[-1] / 2   # first/last labels sit flush with the card margins
     step = (x1 - x0) / (len(st) - 1)
     ts, ds, dl = (28, 14, 21) if compact else (36, 16, 25)
-    out = [kicker(c["kicker"], PAD, 38 if compact else 40), arrow(W - PAD - 10, 28 if compact else 30)]
+    out = [kicker(c["kicker"], PAD, 38 if compact else 40), arrow(W - PAD - 10, 28 if compact else 30, PINK)]
     ty = 78 if compact else 86
     out.append(text_path(roboto_serif(600), c["title"], ts, PAD, ty, INK))
     lines = wrap(roboto(400), c["desc"], ds, W - 2 * PAD - (0 if compact else 60))
@@ -327,7 +331,7 @@ def build_featured(c, compact=False):
         out.append(f'<circle cx="{cx:.1f}" cy="{ly}" r="5" fill="{BG}" stroke="{MUTED}" stroke-width="1.5"/>')
         out.append(text_path(f_lab, name, fs, cx - tws[i] / 2, ly + 25, MUTED, tracking=trk))
     out.append(f'<g class="env"><g transform="translate({x0 - 7:.1f} {ly - 23})">'
-               f'<rect width="14" height="10" rx="1.5" fill="{ACCENT}"/>'
+               f'<rect width="14" height="10" rx="1.5" fill="{PINK}"/>'
                f'<path d="M1.2 1.6 L7 6 L12.8 1.6" fill="none" stroke="{BG}" stroke-width="1.2" stroke-linejoin="round"/>'
                f'</g></g>')
     H = ly + 25 + 24
@@ -342,7 +346,7 @@ def build_featured(c, compact=False):
 
 def build_card(c):
     W, H, PAD = 392, 206, 24
-    out = [kicker(c["kicker"], PAD, 38), arrow(W - PAD - 10, 28),
+    out = [kicker(c["kicker"], PAD, 38), arrow(W - PAD - 10, 28, PINK),
            text_path(roboto(700), c["title"], 19, PAD, 72, INK)]
     lines = wrap(roboto(400), c["desc"], 14, W - 2 * PAD)
     assert len(lines) <= 3, f'{c["title"]}: description wraps to {len(lines)} lines'
@@ -496,6 +500,76 @@ def build_tool_badge(category, tool, brand):
             f'<g transform="translate({M} {M})">\n' + "\n".join(out) + '\n</g>\n</svg>\n')
 
 
+# ------------------------------------------------------------------ activity stats
+def load_activity():
+    f = ASSETS / "data" / "activity.json"
+    return json.loads(f.read_text()) if f.exists() else None
+
+
+def activity_stats(data):
+    """Numbers shown on the stats card, from assets/data/activity.json (written by make_snake.py)."""
+    days = data["days"]
+    levels = [d["l"] for d in days]
+    counts = [d.get("c") for d in days]
+    has_counts = all(c is not None for c in counts)
+    longest = run = 0
+    for lv in levels:
+        run = run + 1 if lv > 0 else 0
+        longest = max(longest, run)
+    i = len(levels) - 1
+    if levels[i] == 0:      # today may still be empty; the streak then runs up to yesterday
+        i -= 1
+    current = 0
+    while i >= 0 and levels[i] > 0:
+        current += 1
+        i -= 1
+    first = date.fromisoformat(days[0]["d"])
+    sunday = first - timedelta(days=(first.weekday() + 1) % 7)
+    weeks = {}
+    for d, lv, c in zip(days, levels, counts):
+        w = (date.fromisoformat(d["d"]) - sunday).days // 7
+        weeks[w] = weeks.get(w, 0) + (c if has_counts else lv)
+    series = [weeks.get(w, 0) for w in range(max(weeks) + 1)]
+    return dict(active=sum(1 for lv in levels if lv), total=sum(counts) if has_counts else None,
+                current=current, longest=longest, series=series,
+                active_weeks=sum(1 for v in series if v), n_days=len(days), updated=data["generated"])
+
+
+def build_stats(st):
+    W, H, PAD = 792, 204, 36
+    TILE = (W - 2 * PAD) / 4
+    out = [kicker("Activity \u00b7 last 12 months", PAD, 38)]
+    upd = f"UPDATED {st['updated']}"
+    uw = width(mono(), upd, 10, 1.0)
+    out.append(text_path(mono(), upd, 10, W - PAD - uw, 38, MUTED, tracking=1.0))
+    first = ("CONTRIBUTIONS", f"{st['total']:,}", "") if st["total"] is not None else ("ACTIVE DAYS", str(st["active"]), f"of {st['n_days']}")
+    tiles = [first,
+             ("CURRENT STREAK", str(st["current"]), "days"),
+             ("LONGEST STREAK", str(st["longest"]), "days"),
+             ("ACTIVE WEEKS", str(st["active_weeks"]), f"of {len(st['series'])}")]
+    for i, (label, value, unit) in enumerate(tiles):
+        x = PAD + i * TILE + (0 if i == 0 else 20)
+        colour = PINK if i == 1 else ACCENT          # the current streak is the live number
+        out.append(text_path(roboto_serif(600), value, 40, x, 104, colour))
+        vw = width(roboto_serif(600), value, 40)
+        if unit:
+            out.append(text_path(roboto(400), unit, 14, x + vw + 8, 104, MUTED))
+        out.append(text_path(mono(), label, 10, x, 126, MUTED, tracking=1.2))
+        if i:
+            out.append(f'<line x1="{PAD + i * TILE:.1f}" y1="64" x2="{PAD + i * TILE:.1f}" y2="130" stroke="{EDGE}"/>')
+    # weekly activity bars; the latest week is pink
+    series = st["series"]
+    peak = max(series) or 1
+    pitch = (W - 2 * PAD) / len(series)
+    for k, v in enumerate(series):
+        h = 3 if v == 0 else 4 + 30 * v / peak
+        colour = PINK if k == len(series) - 1 else (EDGE if v == 0 else ACCENT)
+        out.append(f'<rect x="{PAD + k * pitch:.1f}" y="{176 - h:.1f}" width="{pitch - 4:.1f}" height="{h:.1f}" rx="1.5" fill="{colour}"/>')
+    alt = (f"Activity over the last 12 months: {tiles[0][1]} {tiles[0][0].lower()}, current streak {st['current']} days, "
+           f"longest streak {st['longest']} days, active in {st['active_weeks']} of {len(series)} weeks. Updated {st['updated']}.")
+    return wrap_svg(W, H, alt, "Activity stats", "", "\n".join(out))
+
+
 def main():
     """Write the header, cards, and badges under assets, overwriting matches.
 
@@ -522,6 +596,9 @@ def main():
     print("UW badge:", "official logo" if logo else "mortarboard placeholder", f"(width {badge_w})")
     for cat, tool, brand in TOOL_BADGES:
         (ASSETS / "badges" / f"{slug(tool)}.svg").write_text(build_tool_badge(cat, tool, brand))
+    activity = load_activity()
+    if activity:
+        (ASSETS / "stats.svg").write_text(build_stats(activity_stats(activity)))
     print("wrote header, ", 2 + len(PROJECTS), "cards and", 1 + len(TOOL_BADGES), "badges")
 
 
