@@ -3,10 +3,8 @@
 </p>
 
 <p align="center">
-  M.S. candidate in Psychology: Data Science in Human Behavior at UW–Madison. <br />
+  M.S. candidate in Psychology: Data Science in Human Behavior at UW–Madison.
 </p>
-
-<div align="center">
 
 <p align="center">
   I build AI systems from start to finish: multi-agent document pipelines,<br />
@@ -24,10 +22,6 @@
   <a href="https://linkedin.com/in/jackjburleson">LinkedIn</a> &nbsp;·&nbsp;
   <a href="mailto:jackjburleson@proton.me">Email</a>
 </p>
-
-<div align="center">
-
-</div>
 
 <div align="center">
 
