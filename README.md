@@ -52,9 +52,9 @@
 ### Contribution Snake
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Exios66/Exios66/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Exios66/Exios66/output/github-snake.svg" />
-  <img alt="Contribution graph snake eating my commits" src="https://raw.githubusercontent.com/Exios66/Exios66/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/snake.svg" />
+  <img alt="Contribution graph snake eating my commits" src="assets/snake-dark.svg" />
 </picture>
 
 </div>
