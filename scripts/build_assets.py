@@ -277,16 +277,16 @@ PROJECTS = [
                "from calibrated confidence, when to pass one to an LLM."),
          tags=["PyTorch", "Calibration", "ONNX"],
          alt="Mailroom-ML: a calibrated ModernBERT document classifier. PyTorch, Calibration, ONNX."),
-    dict(file="rvl-cdip-classifier.svg", kicker="Vision LLMs & prompts", title="RVL-CDIP-Classifier",
-         desc=("Zero-shot document classification with vision LLMs: 29 tracked prompt versions, "
-               "checked on larger slices, with the cost of every page measured."),
-         tags=["OpenRouter", "Evaluation", "Error analysis"],
-         alt="RVL-CDIP-Classifier: zero-shot document classification with vision LLMs. OpenRouter, Evaluation, Error analysis."),
+    dict(file="mapreduce-reloaded.svg", kicker="Distributed systems", title="MapReduce-Reloaded",
+         desc=("From-scratch MapReduce in Go: all 23 features of Google\u2019s paper, surviving worker "
+               "crashes and coordinator restarts, with benchmarks."),
+         tags=["Go", "Python", "gRPC"],
+         alt="MapReduce-Reloaded: a from-scratch rebuild of Google's MapReduce in Go with all 23 paper features, crash recovery and benchmarks. Go, Python, gRPC."),
     dict(file="psychometric-digital-twin.svg", kicker="Behavioral ML research", title="Psychometric Digital Twin",
-         desc=("Can an LLM persona predict communication apprehension? Tested against seven "
-               "classical models, the personas did not beat simple baselines."),
+         desc=("LLM personas vs seven cross-validated classical ML models, from Ridge to XGBoost, "
+               "on 241 respondents. The personas did not beat the simple models."),
          tags=["scikit-learn", "XGBoost", "SHAP"],
-         alt="Psychometric Digital Twin: LLM personas versus seven classical models on behavioral prediction. scikit-learn, XGBoost, SHAP."),
+         alt="Psychometric Digital Twin: LLM personas compared with seven cross-validated classical ML models, from Ridge to XGBoost, on 241 respondents. The personas did not beat the simple models. scikit-learn, XGBoost, SHAP."),
     dict(file="wave-laboratory.svg", kicker="Simulation & graphics", title="Wave Laboratory",
          desc=("A real-time 3D ocean to experiment with: spectral wave models, rogue waves, "
                "and ships that move in six directions, rendered with WebGL 2."),

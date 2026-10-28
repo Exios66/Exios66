@@ -37,8 +37,8 @@
     </picture>
   </a>
   <a href="https://github.com/LLM-Mailroom-Services/mailroom-ml"><img src="assets/cards/mailroom-ml.svg" width="400" alt="Mailroom-ML: a calibrated ModernBERT document classifier that knows when to pass a document to an LLM. PyTorch, Calibration, ONNX." /></a>
-  <a href="https://github.com/Exios66/RVL-CDIP-Classifier"><img src="assets/cards/rvl-cdip-classifier.svg" width="400" alt="RVL-CDIP-Classifier: zero-shot document classification with vision LLMs, 29 tracked prompt versions and per-page cost. OpenRouter, Evaluation, Error analysis." /></a>
-  <a href="https://github.com/Exios66/psych755-jjb"><img src="assets/cards/psychometric-digital-twin.svg" width="400" alt="Psychometric Digital Twin: can an LLM persona predict communication apprehension? Tested against seven classical models, the personas did not beat simple baselines. scikit-learn, XGBoost, SHAP." /></a>
+  <a href="https://github.com/Exios66/MapReduce-Reloaded"><img src="assets/cards/mapreduce-reloaded.svg" width="400" alt="MapReduce-Reloaded: a from-scratch rebuild of Google’s MapReduce in Go with all 23 paper features, crash recovery and benchmarks. Go, Python, gRPC." /></a>
+  <a href="https://github.com/Exios66/psych755-jjb"><img src="assets/cards/psychometric-digital-twin.svg" width="400" alt="Psychometric Digital Twin: LLM personas compared with seven cross-validated classical ML models, from Ridge to XGBoost, on 241 respondents. The personas did not beat the simple models. scikit-learn, XGBoost, SHAP." /></a>
   <a href="https://github.com/Exios66/wave-laboratory"><img src="assets/cards/wave-laboratory.svg" width="400" alt="Wave Laboratory: a real-time 3D ocean to experiment with, with spectral wave models and rogue waves, rendered with WebGL 2. TypeScript, Three.js, Physics." /></a>
 </p>
 
@@ -47,7 +47,7 @@
     Also:
     <a href="https://github.com/Exios66/mailroom-reloaded">Mailroom Reloaded</a> ·
     <a href="https://github.com/Exios66/Mailroom-Corpus-EDA">Mailroom-Corpus-EDA</a> ·
-    <a href="https://github.com/Exios66/MapReduce-Reloaded">MapReduce-Reloaded</a> ·
+    <a href="https://github.com/Exios66/RVL-CDIP-Classifier">RVL-CDIP-Classifier</a> ·
     <a href="https://github.com/Exios66/aeroglobe">AeroGlobe</a> ·
     <a href="https://github.com/Exios66/truth-deception-architecture">Truth &amp; Deception study</a> ·
     <a href="https://github.com/Exios66/degen-llms">The Mandalay Bay</a> ·
