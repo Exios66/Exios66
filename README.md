@@ -3,6 +3,12 @@
 </p>
 
 <p align="center">
+  M.S. candidate in Psychology: Data Science in Human Behavior at UW–Madison. <br />
+</p>
+
+<div align="center">
+
+<p align="center">
   I build AI systems from start to finish: multi-agent document pipelines,<br />
   fine-tuned and calibrated transformers, LLM evaluation harnesses,<br />
   and behavioral prediction models.
@@ -21,15 +27,7 @@
 
 <div align="center">
 
-## Now
-
 </div>
-
-<p align="center">
-  M.S. candidate in Psychology: Data Science in Human Behavior at UW–Madison (expected December 2026).<br />
-  My capstone, Digital-Mailroom, is built with industry partner American Family Insurance.<br />
-  It looks for ways to cut the cost of AI inference and improve how documents are read, sorted, and managed.
-</p>
 
 <div align="center">
 
