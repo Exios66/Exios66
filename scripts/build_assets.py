@@ -349,6 +349,59 @@ def build_card(c):
     return wrap_svg(W, H, c["alt"], c["title"], "", "\n".join(out))
 
 
+# --------------------------------------------------------------------- badges
+# Typographic badges only: no institutional crests or product logos are reproduced.
+UW_RED, WHITE = "#C5050C", "#FFFFFF"   # cardinal red used for the UW–Madison badge
+
+
+def build_uw_badge():
+    W, H = 520, 68
+    title = "UNIVERSITY OF WISCONSIN\u2013MADISON"
+    sub = "M.S. DATA SCIENCE IN HUMAN BEHAVIOR \u00b7 MADISON, WI"
+    out = [f'<clipPath id="plate"><rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="14"/></clipPath>',
+           frame(W, H).replace('rx="12"', 'rx="14"'),
+           f'<rect x="0" y="0" width="68" height="{H}" fill="{UW_RED}" clip-path="url(#plate)"/>']
+    # mortarboard icon, drawn from plain shapes
+    out.append(f'<g fill="{WHITE}" stroke="{WHITE}" stroke-linejoin="round">'
+               f'<path d="M34 19 L54 28 L34 37 L14 28 Z" stroke-width="1"/>'
+               f'<path d="M24 33.5 V40 Q34 46 44 40 V33.5 L34 38.5 Z" stroke-width="1" opacity=".92"/>'
+               f'<path d="M54 28 V40" fill="none" stroke-width="1.6" stroke-linecap="round"/>'
+               f'<circle cx="54" cy="42" r="2" stroke="none"/></g>')
+    out.append(text_path(roboto_serif(600), title, 15.5, 88, 32, INK, tracking=15.5 * 0.06))
+    out.append(text_path(mono(), sub, 10.5, 88, 51, MUTED, tracking=10.5 * 0.08))
+    alt = "University of Wisconsin\u2013Madison. M.S. Data Science in Human Behavior. Madison, WI."
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W + 2 * M}" height="{H + 2 * M}" '
+            f'viewBox="0 0 {W + 2 * M} {H + 2 * M}" role="img" aria-label="{alt}">\n<title>{alt}</title>\n'
+            f'<g transform="translate({M} {M})">\n' + "\n".join(out) + '\n</g>\n</svg>\n')
+
+
+# (category, tool): the category is the small label on the left of each badge.
+TOOL_BADGES = [
+    ("LANGUAGE", "Python"), ("LANGUAGE", "R"), ("DEEP LEARNING", "PyTorch"), ("CLASSICAL ML", "scikit-learn"),
+    ("AGENTS", "LangGraph"), ("MODELS", "Hugging Face"), ("SERVING", "vLLM"), ("CONTAINERS", "Docker"),
+]
+
+
+def slug(text):
+    return "".join(ch.lower() if ch.isalnum() else "-" for ch in text).strip("-")
+
+
+def build_tool_badge(category, tool):
+    H, PAD = 32, 12
+    cat_w = width(mono(), category, 9, 9 * 0.12) + 2 * PAD
+    val_w = width(roboto(500), tool, 13) + 2 * PAD
+    W = cat_w + val_w
+    alt = f"{tool} ({category.lower()})"
+    out = [f'<clipPath id="pill"><rect x="0.5" y="0.5" width="{W - 1:.1f}" height="{H - 1}" rx="16"/></clipPath>',
+           f'<rect x="0.5" y="0.5" width="{W - 1:.1f}" height="{H - 1}" rx="16" fill="{BG}" stroke="{EDGE}"/>',
+           f'<rect x="0" y="0" width="{cat_w:.1f}" height="{H}" fill="{ACCENT_SOFT}" clip-path="url(#pill)"/>',
+           text_path(mono(), category, 9, PAD, 19.5, ACCENT, tracking=9 * 0.12),
+           text_path(roboto(500), tool, 13, cat_w + PAD, 20.5, INK)]
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W + 2 * M:.0f}" height="{H + 2 * M}" '
+            f'viewBox="0 0 {W + 2 * M:.1f} {H + 2 * M}" role="img" aria-label="{alt}">\n<title>{alt}</title>\n'
+            f'<g transform="translate({M} {M})">\n' + "\n".join(out) + '\n</g>\n</svg>\n')
+
+
 def main():
     ASSETS.mkdir(exist_ok=True)
     (ASSETS / "cards").mkdir(exist_ok=True)
@@ -357,7 +410,11 @@ def main():
     (ASSETS / "cards" / FEATURED["compact"]).write_text(build_featured(FEATURED, compact=True))
     for p in PROJECTS:
         (ASSETS / "cards" / p["file"]).write_text(build_card(p))
-    print("wrote assets/header.svg and", 2 + len(PROJECTS), "cards")
+    (ASSETS / "badges").mkdir(exist_ok=True)
+    (ASSETS / "badges" / "uw-madison.svg").write_text(build_uw_badge())
+    for cat, tool in TOOL_BADGES:
+        (ASSETS / "badges" / f"{slug(tool)}.svg").write_text(build_tool_badge(cat, tool))
+    print("wrote header, ", 2 + len(PROJECTS), "cards and", 1 + len(TOOL_BADGES), "badges")
 
 
 if __name__ == "__main__":

@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <sub>Madison, WI</sub>
+  <img src="assets/badges/uw-madison.svg" width="528" alt="University of Wisconsin–Madison. M.S. Data Science in Human Behavior. Madison, WI." />
 </p>
 
 <p align="center">
@@ -68,6 +68,17 @@
 ## Toolbox
 
 </div>
+
+<p align="center">
+  <img src="assets/badges/python.svg" alt="Python (language)" />
+  <img src="assets/badges/r.svg" alt="R (language)" />
+  <img src="assets/badges/pytorch.svg" alt="PyTorch (deep learning)" />
+  <img src="assets/badges/scikit-learn.svg" alt="scikit-learn (classical ML)" />
+  <img src="assets/badges/langgraph.svg" alt="LangGraph (agents)" />
+  <img src="assets/badges/hugging-face.svg" alt="Hugging Face (models)" />
+  <img src="assets/badges/vllm.svg" alt="vLLM (serving)" />
+  <img src="assets/badges/docker.svg" alt="Docker (containers)" />
+</p>
 
 <table align="center">
   <tr><td><b>Languages &amp; data</b></td><td><code>Python</code> · <code>R</code> · <code>SQL</code> · <code>TypeScript</code> · <code>MATLAB</code></td></tr>
@@ -128,11 +139,9 @@
 
 ## Activity
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="assets/snake.svg" />
-  <img alt="Contribution graph snake eating my commits" src="assets/snake-dark.svg" />
-</picture>
+<!-- The #gh-*-mode-only suffixes follow GitHub's own theme setting (including "Sync with system"). -->
+<img alt="Contribution graph snake eating my commits" src="assets/snake-dark.svg#gh-dark-mode-only" />
+<img alt="Contribution graph snake eating my commits" src="assets/snake.svg#gh-light-mode-only" />
 
 </div>
 
