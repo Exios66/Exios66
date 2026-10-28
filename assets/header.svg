@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="170" viewBox="0 0 800 170" role="img" aria-labelledby="t d">
+  <title id="t">Jack J. Burleson</title>
+  <desc id="d">It’s a pleasure to meet you here...</desc>
+  <defs>
+    <linearGradient id="name" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0EA5E9"/>
+      <stop offset="0.55" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#8A2BE2"/>
+    </linearGradient>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0EA5E9" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#8A2BE2"/>
+      <stop offset="1" stop-color="#0EA5E9" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-10%" y="-40%" width="120%" height="180%">
+      <feGaussianBlur stdDeviation="3.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- type-on reveal windows; widths animate in steps, one step per character -->
+    <clipPath id="c1"><rect class="w1" x="0" y="14" width="1" height="70"/></clipPath>
+    <clipPath id="c2"><rect class="w2" x="0" y="92" width="1" height="40"/></clipPath>
+  </defs>
+
+  <style>
+    :root { --sub: #CBD5E1; --cursor: #38BDF8; }
+    @media (prefers-color-scheme: light) { :root { --sub: #475569; --cursor: #0EA5E9; } }
+
+    .name { font: 700 46px 'Quicksand','Nunito','Segoe UI',system-ui,-apple-system,sans-serif; fill: url(#name); }
+    .sub  { font: 500 22px 'Quicksand','Nunito','Segoe UI',system-ui,-apple-system,sans-serif; fill: var(--sub); }
+    .cur  { fill: var(--cursor); }
+
+    /* one 13s loop: type name, type tagline, hold, backspace tagline, backspace name */
+    .w1, .w2 { transform-box: view-box; transform-origin: 0 0; }
+    .w1 { animation: w1 13s infinite; }
+    .w2 { animation: w2 13s infinite; }
+    @keyframes w1 {
+      0%     { transform: translateX(185px) scaleX(0);   animation-timing-function: steps(1, end); }
+      4%     { transform: translateX(185px) scaleX(0);   animation-timing-function: steps(16, end); }
+      17%    { transform: translateX(185px) scaleX(430); }
+      83%    { transform: translateX(185px) scaleX(430); animation-timing-function: steps(16, end); }
+      91%    { transform: translateX(185px) scaleX(0); }
+      100%   { transform: translateX(185px) scaleX(0); }
+    }
+    @keyframes w2 {
+      0%     { transform: translateX(165px) scaleX(0);   animation-timing-function: steps(1, end); }
+      19%    { transform: translateX(165px) scaleX(0);   animation-timing-function: steps(35, end); }
+      46%    { transform: translateX(165px) scaleX(470); }
+      74%    { transform: translateX(165px) scaleX(470); animation-timing-function: steps(35, end); }
+      83%    { transform: translateX(165px) scaleX(0); }
+      100%   { transform: translateX(165px) scaleX(0); }
+    }
+
+    /* cursors ride the leading edge of each reveal window */
+    .k1 { animation: k1 13s infinite; }
+    .k2 { animation: k2 13s infinite; }
+    @keyframes k1 {
+      0%     { transform: translateX(0);     opacity: 0; animation-timing-function: steps(1, end); }
+      4%     { transform: translateX(0);     opacity: 1; animation-timing-function: steps(16, end); }
+      17%    { transform: translateX(430px); opacity: 1; }
+      18%    { transform: translateX(430px); opacity: 0; }
+      83%    { transform: translateX(430px); opacity: 0; }
+      83.1%  { transform: translateX(430px); opacity: 1; animation-timing-function: steps(16, end); }
+      91%    { transform: translateX(0);     opacity: 1; }
+      93%    { transform: translateX(0);     opacity: 0; }
+      100%   { transform: translateX(0);     opacity: 0; }
+    }
+    @keyframes k2 {
+      0%     { transform: translateX(0);     opacity: 0; animation-timing-function: steps(1, end); }
+      19%    { transform: translateX(0);     opacity: 1; animation-timing-function: steps(35, end); }
+      46%    { transform: translateX(470px); opacity: 1; }
+      74%    { transform: translateX(470px); opacity: 1; animation-timing-function: steps(35, end); }
+      83%    { transform: translateX(0);     opacity: 1; }
+      83.1%  { transform: translateX(0);     opacity: 0; }
+      100%   { transform: translateX(0);     opacity: 0; }
+    }
+    .blink { animation: blink 0.9s steps(1, end) infinite; }
+    @keyframes blink { 0%, 55% { opacity: 1; } 56%, 100% { opacity: 0; } }
+
+    /* accent rule draws in with the name, fades out with the erase */
+    .rule { stroke-dasharray: 560; animation: rule 13s infinite; }
+    @keyframes rule {
+      0%    { stroke-dashoffset: 560; opacity: 1; animation-timing-function: ease-out; }
+      14%   { stroke-dashoffset: 0;   opacity: 1; }
+      85%   { stroke-dashoffset: 0;   opacity: 1; }
+      95%   { stroke-dashoffset: 0;   opacity: 0; }
+      95.1% { stroke-dashoffset: 560; opacity: 0; }
+      100%  { stroke-dashoffset: 560; opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .w1, .w2, .k1, .k2, .rule, .blink { animation: none; }
+      .w1 { transform: translateX(185px) scaleX(430); } .w2 { transform: translateX(165px) scaleX(470); }
+      .k1, .k2 { opacity: 0; }
+      .rule { stroke-dashoffset: 0; }
+    }
+  </style>
+
+  <path class="rule" d="M120 152 H680" stroke="url(#rule)" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+  <g clip-path="url(#c1)" filter="url(#glow)">
+    <text class="name" x="185" y="62" textLength="416" lengthAdjust="spacing">Jack J. Burleson</text>
+  </g>
+  <g clip-path="url(#c2)">
+    <text class="sub" x="165" y="118" textLength="456" lengthAdjust="spacing">It’s a pleasure to meet you here...</text>
+  </g>
+
+  <g class="k1"><rect class="cur blink" x="187" y="22" width="3" height="46" rx="1.5"/></g>
+  <g class="k2"><rect class="cur blink" x="167" y="97" width="2.5" height="28" rx="1.25"/></g>
+</svg>

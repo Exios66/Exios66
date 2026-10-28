@@ -1,6 +1,6 @@
-## Greetings...
-
-#### My name is Jack J. Burleson, it is a pleasure to meet you here...
+<p align="center">
+  <img src="assets/header.svg" alt="Jack J. Burleson — It's a pleasure to meet you here..." width="800" />
+</p>
 
 ---
 
@@ -46,6 +46,18 @@
 [![Agent Mailroom](https://img.shields.io/badge/Agent%20Mailroom-059669?style=for-the-badge&labelColor=1F2937&logo=readme&logoColor=white)](https://github.com/Exios66/agent-mailroom)
 
 </p>
+
+<div align="center">
+
+### Contribution Snake
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Exios66/Exios66/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Exios66/Exios66/output/github-snake.svg" />
+  <img alt="Contribution graph snake eating my commits" src="https://raw.githubusercontent.com/Exios66/Exios66/output/github-snake-dark.svg" />
+</picture>
+
+</div>
 
 <!-- my-badges start -->
 <!-- my-badges end -->
