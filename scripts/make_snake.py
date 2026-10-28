@@ -14,7 +14,7 @@ Then commit the two SVGs. Run it whenever you like (or from cron/launchd).
 import argparse, datetime as dt, html, re, sys, urllib.request
 from pathlib import Path
 
-ACCENT = "#29A9F0"
+ACCENT = "#4FC1CD"
 PALETTES = {
     "light": ["#EBEDF0", "#9BE9A8", "#40C463", "#30A14E", "#216E39"],
     "dark": ["#161B22", "#0E4429", "#006D32", "#26A641", "#39D353"],

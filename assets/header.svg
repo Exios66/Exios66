@@ -1,119 +1,120 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="497" height="160" viewBox="0 0 497 160" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="192" viewBox="0 0 800 192" role="img" aria-labelledby="t d">
   <title id="t">Jack J. Burleson</title>
-  <desc id="d">It’s a pleasure to meet you here...</desc>
+  <desc id="d">Machine Learning, Data Science, AI Engineering &amp; Safety. It’s a pleasure to meet you here...</desc>
   <defs>
-    <clipPath id="c1"><rect class="r1" x="52" y="20" width="1" height="72"/></clipPath>
-    <clipPath id="c2"><rect class="r2" x="52" y="96" width="1" height="38"/></clipPath>
+    <clipPath id="card"><rect x="4.5" y="4.5" width="791" height="183" rx="12"/></clipPath>
+    <clipPath id="c1"><rect class="r1" x="177.76" y="32" width="1" height="64"/></clipPath>
+    <clipPath id="c2"><rect class="r2" x="221.47" y="128" width="1" height="40"/></clipPath>
   </defs>
   <style>
-    .r1, .r2 { transform-box: view-box; transform-origin: 52px 0; }
-    .r1 { animation: r1 12.0s infinite; }
-    .r2 { animation: r2 12.0s infinite; }
+    .r1, .r2 { transform-box: view-box; }
+    .r1 { transform-origin: 177.76px 0; animation: r1 12.0s infinite; }
+    .r2 { transform-origin: 221.47px 0; animation: r2 12.0s infinite; }
     .cur { animation: cur 12.0s infinite; }
     .bar { animation: blink 1s steps(1, end) infinite; }
     @keyframes r1 {
       0.000% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
-      5.833% { transform: scaleX(27.60); animation-timing-function: steps(1, end); }
-      6.722% { transform: scaleX(59.00); animation-timing-function: steps(1, end); }
-      7.611% { transform: scaleX(85.00); animation-timing-function: steps(1, end); }
-      8.500% { transform: scaleX(113.45); animation-timing-function: steps(1, end); }
-      9.389% { transform: scaleX(127.45); animation-timing-function: steps(1, end); }
-      10.278% { transform: scaleX(155.05); animation-timing-function: steps(1, end); }
-      11.167% { transform: scaleX(167.50); animation-timing-function: steps(1, end); }
-      12.056% { transform: scaleX(181.50); animation-timing-function: steps(1, end); }
-      12.944% { transform: scaleX(214.25); animation-timing-function: steps(1, end); }
-      13.833% { transform: scaleX(243.60); animation-timing-function: steps(1, end); }
-      14.722% { transform: scaleX(265.30); animation-timing-function: steps(1, end); }
-      15.611% { transform: scaleX(278.30); animation-timing-function: steps(1, end); }
-      16.500% { transform: scaleX(307.80); animation-timing-function: steps(1, end); }
-      17.389% { transform: scaleX(331.90); animation-timing-function: steps(1, end); }
-      18.278% { transform: scaleX(363.10); animation-timing-function: steps(1, end); }
-      19.167% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      23.333% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      23.922% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      24.510% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      25.098% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      25.686% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      26.275% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      26.863% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      27.451% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      28.039% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      28.627% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      29.216% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      29.804% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      30.392% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      30.980% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      31.569% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      32.157% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      32.745% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      33.333% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      33.922% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      34.510% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      35.098% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      35.686% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      36.275% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      36.863% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      37.451% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      38.039% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      38.627% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      39.216% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      39.804% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      40.392% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      40.980% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      41.569% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      42.157% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      42.745% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      43.333% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      75.000% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      75.270% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      75.539% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      75.809% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      76.078% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      76.348% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      76.618% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      76.887% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      77.157% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      77.426% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      77.696% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      77.966% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      78.235% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      78.505% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      78.775% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      79.044% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      79.314% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      79.583% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      79.853% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      80.123% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      80.392% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      80.662% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      80.931% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      81.201% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      81.471% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      81.740% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      82.010% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      82.279% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      82.549% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      82.819% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      83.088% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      83.358% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      83.627% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      83.897% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      84.167% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
-      85.417% { transform: scaleX(363.10); animation-timing-function: steps(1, end); }
-      85.806% { transform: scaleX(331.90); animation-timing-function: steps(1, end); }
-      86.194% { transform: scaleX(307.80); animation-timing-function: steps(1, end); }
-      86.583% { transform: scaleX(278.30); animation-timing-function: steps(1, end); }
-      86.972% { transform: scaleX(265.30); animation-timing-function: steps(1, end); }
-      87.361% { transform: scaleX(243.60); animation-timing-function: steps(1, end); }
-      87.750% { transform: scaleX(214.25); animation-timing-function: steps(1, end); }
-      88.139% { transform: scaleX(181.50); animation-timing-function: steps(1, end); }
-      88.528% { transform: scaleX(167.50); animation-timing-function: steps(1, end); }
-      88.917% { transform: scaleX(155.05); animation-timing-function: steps(1, end); }
-      89.306% { transform: scaleX(127.45); animation-timing-function: steps(1, end); }
-      89.694% { transform: scaleX(113.45); animation-timing-function: steps(1, end); }
-      90.083% { transform: scaleX(85.00); animation-timing-function: steps(1, end); }
-      90.472% { transform: scaleX(59.00); animation-timing-function: steps(1, end); }
-      90.861% { transform: scaleX(27.60); animation-timing-function: steps(1, end); }
+      5.833% { transform: scaleX(27.24); animation-timing-function: steps(1, end); }
+      6.722% { transform: scaleX(58.12); animation-timing-function: steps(1, end); }
+      7.611% { transform: scaleX(90.40); animation-timing-function: steps(1, end); }
+      8.500% { transform: scaleX(124.72); animation-timing-function: steps(1, end); }
+      9.389% { transform: scaleX(137.52); animation-timing-function: steps(1, end); }
+      10.278% { transform: scaleX(163.08); animation-timing-function: steps(1, end); }
+      11.167% { transform: scaleX(178.72); animation-timing-function: steps(1, end); }
+      12.056% { transform: scaleX(191.52); animation-timing-function: steps(1, end); }
+      12.944% { transform: scaleX(222.64); animation-timing-function: steps(1, end); }
+      13.833% { transform: scaleX(256.88); animation-timing-function: steps(1, end); }
+      14.722% { transform: scaleX(289.76); animation-timing-function: steps(1, end); }
+      15.611% { transform: scaleX(318.52); animation-timing-function: steps(1, end); }
+      16.500% { transform: scaleX(348.48); animation-timing-function: steps(1, end); }
+      17.389% { transform: scaleX(376.96); animation-timing-function: steps(1, end); }
+      18.278% { transform: scaleX(412.12); animation-timing-function: steps(1, end); }
+      19.167% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      23.333% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      23.922% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      24.510% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      25.098% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      25.686% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      26.275% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      26.863% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      27.451% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      28.039% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      28.627% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      29.216% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      29.804% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      30.392% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      30.980% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      31.569% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      32.157% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      32.745% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      33.333% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      33.922% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      34.510% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      35.098% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      35.686% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      36.275% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      36.863% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      37.451% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      38.039% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      38.627% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      39.216% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      39.804% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      40.392% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      40.980% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      41.569% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      42.157% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      42.745% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      43.333% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      75.000% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      75.270% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      75.539% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      75.809% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      76.078% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      76.348% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      76.618% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      76.887% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      77.157% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      77.426% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      77.696% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      77.966% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      78.235% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      78.505% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      78.775% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      79.044% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      79.314% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      79.583% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      79.853% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      80.123% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      80.392% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      80.662% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      80.931% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      81.201% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      81.471% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      81.740% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      82.010% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      82.279% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      82.549% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      82.819% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      83.088% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      83.358% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      83.627% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      83.897% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      84.167% { transform: scaleX(446.88); animation-timing-function: steps(1, end); }
+      85.417% { transform: scaleX(412.12); animation-timing-function: steps(1, end); }
+      85.806% { transform: scaleX(376.96); animation-timing-function: steps(1, end); }
+      86.194% { transform: scaleX(348.48); animation-timing-function: steps(1, end); }
+      86.583% { transform: scaleX(318.52); animation-timing-function: steps(1, end); }
+      86.972% { transform: scaleX(289.76); animation-timing-function: steps(1, end); }
+      87.361% { transform: scaleX(256.88); animation-timing-function: steps(1, end); }
+      87.750% { transform: scaleX(222.64); animation-timing-function: steps(1, end); }
+      88.139% { transform: scaleX(191.52); animation-timing-function: steps(1, end); }
+      88.528% { transform: scaleX(178.72); animation-timing-function: steps(1, end); }
+      88.917% { transform: scaleX(163.08); animation-timing-function: steps(1, end); }
+      89.306% { transform: scaleX(137.52); animation-timing-function: steps(1, end); }
+      89.694% { transform: scaleX(124.72); animation-timing-function: steps(1, end); }
+      90.083% { transform: scaleX(90.40); animation-timing-function: steps(1, end); }
+      90.472% { transform: scaleX(58.12); animation-timing-function: steps(1, end); }
+      90.861% { transform: scaleX(27.24); animation-timing-function: steps(1, end); }
       91.250% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
       100.000% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
     }
@@ -135,75 +136,75 @@
       17.389% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
       18.278% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
       19.167% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
-      23.333% { transform: scaleX(10.80); animation-timing-function: steps(1, end); }
-      23.922% { transform: scaleX(21.60); animation-timing-function: steps(1, end); }
-      24.510% { transform: scaleX(32.40); animation-timing-function: steps(1, end); }
-      25.098% { transform: scaleX(43.20); animation-timing-function: steps(1, end); }
-      25.686% { transform: scaleX(54.00); animation-timing-function: steps(1, end); }
-      26.275% { transform: scaleX(64.80); animation-timing-function: steps(1, end); }
-      26.863% { transform: scaleX(75.60); animation-timing-function: steps(1, end); }
-      27.451% { transform: scaleX(86.40); animation-timing-function: steps(1, end); }
-      28.039% { transform: scaleX(97.20); animation-timing-function: steps(1, end); }
-      28.627% { transform: scaleX(108.00); animation-timing-function: steps(1, end); }
-      29.216% { transform: scaleX(118.80); animation-timing-function: steps(1, end); }
-      29.804% { transform: scaleX(129.60); animation-timing-function: steps(1, end); }
-      30.392% { transform: scaleX(140.40); animation-timing-function: steps(1, end); }
-      30.980% { transform: scaleX(151.20); animation-timing-function: steps(1, end); }
-      31.569% { transform: scaleX(162.00); animation-timing-function: steps(1, end); }
-      32.157% { transform: scaleX(172.80); animation-timing-function: steps(1, end); }
-      32.745% { transform: scaleX(183.60); animation-timing-function: steps(1, end); }
-      33.333% { transform: scaleX(194.40); animation-timing-function: steps(1, end); }
-      33.922% { transform: scaleX(205.20); animation-timing-function: steps(1, end); }
-      34.510% { transform: scaleX(216.00); animation-timing-function: steps(1, end); }
-      35.098% { transform: scaleX(226.80); animation-timing-function: steps(1, end); }
-      35.686% { transform: scaleX(237.60); animation-timing-function: steps(1, end); }
-      36.275% { transform: scaleX(248.40); animation-timing-function: steps(1, end); }
-      36.863% { transform: scaleX(259.20); animation-timing-function: steps(1, end); }
-      37.451% { transform: scaleX(270.00); animation-timing-function: steps(1, end); }
-      38.039% { transform: scaleX(280.80); animation-timing-function: steps(1, end); }
-      38.627% { transform: scaleX(291.60); animation-timing-function: steps(1, end); }
-      39.216% { transform: scaleX(302.40); animation-timing-function: steps(1, end); }
-      39.804% { transform: scaleX(313.20); animation-timing-function: steps(1, end); }
-      40.392% { transform: scaleX(324.00); animation-timing-function: steps(1, end); }
-      40.980% { transform: scaleX(334.80); animation-timing-function: steps(1, end); }
-      41.569% { transform: scaleX(345.60); animation-timing-function: steps(1, end); }
-      42.157% { transform: scaleX(356.40); animation-timing-function: steps(1, end); }
-      42.745% { transform: scaleX(367.20); animation-timing-function: steps(1, end); }
-      43.333% { transform: scaleX(378.00); animation-timing-function: steps(1, end); }
-      75.000% { transform: scaleX(367.20); animation-timing-function: steps(1, end); }
-      75.270% { transform: scaleX(356.40); animation-timing-function: steps(1, end); }
-      75.539% { transform: scaleX(345.60); animation-timing-function: steps(1, end); }
-      75.809% { transform: scaleX(334.80); animation-timing-function: steps(1, end); }
-      76.078% { transform: scaleX(324.00); animation-timing-function: steps(1, end); }
-      76.348% { transform: scaleX(313.20); animation-timing-function: steps(1, end); }
-      76.618% { transform: scaleX(302.40); animation-timing-function: steps(1, end); }
-      76.887% { transform: scaleX(291.60); animation-timing-function: steps(1, end); }
-      77.157% { transform: scaleX(280.80); animation-timing-function: steps(1, end); }
-      77.426% { transform: scaleX(270.00); animation-timing-function: steps(1, end); }
-      77.696% { transform: scaleX(259.20); animation-timing-function: steps(1, end); }
-      77.966% { transform: scaleX(248.40); animation-timing-function: steps(1, end); }
-      78.235% { transform: scaleX(237.60); animation-timing-function: steps(1, end); }
-      78.505% { transform: scaleX(226.80); animation-timing-function: steps(1, end); }
-      78.775% { transform: scaleX(216.00); animation-timing-function: steps(1, end); }
-      79.044% { transform: scaleX(205.20); animation-timing-function: steps(1, end); }
-      79.314% { transform: scaleX(194.40); animation-timing-function: steps(1, end); }
-      79.583% { transform: scaleX(183.60); animation-timing-function: steps(1, end); }
-      79.853% { transform: scaleX(172.80); animation-timing-function: steps(1, end); }
-      80.123% { transform: scaleX(162.00); animation-timing-function: steps(1, end); }
-      80.392% { transform: scaleX(151.20); animation-timing-function: steps(1, end); }
-      80.662% { transform: scaleX(140.40); animation-timing-function: steps(1, end); }
-      80.931% { transform: scaleX(129.60); animation-timing-function: steps(1, end); }
-      81.201% { transform: scaleX(118.80); animation-timing-function: steps(1, end); }
-      81.471% { transform: scaleX(108.00); animation-timing-function: steps(1, end); }
-      81.740% { transform: scaleX(97.20); animation-timing-function: steps(1, end); }
-      82.010% { transform: scaleX(86.40); animation-timing-function: steps(1, end); }
-      82.279% { transform: scaleX(75.60); animation-timing-function: steps(1, end); }
-      82.549% { transform: scaleX(64.80); animation-timing-function: steps(1, end); }
-      82.819% { transform: scaleX(54.00); animation-timing-function: steps(1, end); }
-      83.088% { transform: scaleX(43.20); animation-timing-function: steps(1, end); }
-      83.358% { transform: scaleX(32.40); animation-timing-function: steps(1, end); }
-      83.627% { transform: scaleX(21.60); animation-timing-function: steps(1, end); }
-      83.897% { transform: scaleX(10.80); animation-timing-function: steps(1, end); }
+      23.333% { transform: scaleX(10.20); animation-timing-function: steps(1, end); }
+      23.922% { transform: scaleX(20.40); animation-timing-function: steps(1, end); }
+      24.510% { transform: scaleX(30.60); animation-timing-function: steps(1, end); }
+      25.098% { transform: scaleX(40.81); animation-timing-function: steps(1, end); }
+      25.686% { transform: scaleX(51.01); animation-timing-function: steps(1, end); }
+      26.275% { transform: scaleX(61.21); animation-timing-function: steps(1, end); }
+      26.863% { transform: scaleX(71.41); animation-timing-function: steps(1, end); }
+      27.451% { transform: scaleX(81.61); animation-timing-function: steps(1, end); }
+      28.039% { transform: scaleX(91.81); animation-timing-function: steps(1, end); }
+      28.627% { transform: scaleX(102.02); animation-timing-function: steps(1, end); }
+      29.216% { transform: scaleX(112.22); animation-timing-function: steps(1, end); }
+      29.804% { transform: scaleX(122.42); animation-timing-function: steps(1, end); }
+      30.392% { transform: scaleX(132.62); animation-timing-function: steps(1, end); }
+      30.980% { transform: scaleX(142.82); animation-timing-function: steps(1, end); }
+      31.569% { transform: scaleX(153.02); animation-timing-function: steps(1, end); }
+      32.157% { transform: scaleX(163.23); animation-timing-function: steps(1, end); }
+      32.745% { transform: scaleX(173.43); animation-timing-function: steps(1, end); }
+      33.333% { transform: scaleX(183.63); animation-timing-function: steps(1, end); }
+      33.922% { transform: scaleX(193.83); animation-timing-function: steps(1, end); }
+      34.510% { transform: scaleX(204.03); animation-timing-function: steps(1, end); }
+      35.098% { transform: scaleX(214.23); animation-timing-function: steps(1, end); }
+      35.686% { transform: scaleX(224.44); animation-timing-function: steps(1, end); }
+      36.275% { transform: scaleX(234.64); animation-timing-function: steps(1, end); }
+      36.863% { transform: scaleX(244.84); animation-timing-function: steps(1, end); }
+      37.451% { transform: scaleX(255.04); animation-timing-function: steps(1, end); }
+      38.039% { transform: scaleX(265.24); animation-timing-function: steps(1, end); }
+      38.627% { transform: scaleX(275.44); animation-timing-function: steps(1, end); }
+      39.216% { transform: scaleX(285.65); animation-timing-function: steps(1, end); }
+      39.804% { transform: scaleX(295.85); animation-timing-function: steps(1, end); }
+      40.392% { transform: scaleX(306.05); animation-timing-function: steps(1, end); }
+      40.980% { transform: scaleX(316.25); animation-timing-function: steps(1, end); }
+      41.569% { transform: scaleX(326.45); animation-timing-function: steps(1, end); }
+      42.157% { transform: scaleX(336.65); animation-timing-function: steps(1, end); }
+      42.745% { transform: scaleX(346.86); animation-timing-function: steps(1, end); }
+      43.333% { transform: scaleX(357.06); animation-timing-function: steps(1, end); }
+      75.000% { transform: scaleX(346.86); animation-timing-function: steps(1, end); }
+      75.270% { transform: scaleX(336.65); animation-timing-function: steps(1, end); }
+      75.539% { transform: scaleX(326.45); animation-timing-function: steps(1, end); }
+      75.809% { transform: scaleX(316.25); animation-timing-function: steps(1, end); }
+      76.078% { transform: scaleX(306.05); animation-timing-function: steps(1, end); }
+      76.348% { transform: scaleX(295.85); animation-timing-function: steps(1, end); }
+      76.618% { transform: scaleX(285.65); animation-timing-function: steps(1, end); }
+      76.887% { transform: scaleX(275.44); animation-timing-function: steps(1, end); }
+      77.157% { transform: scaleX(265.24); animation-timing-function: steps(1, end); }
+      77.426% { transform: scaleX(255.04); animation-timing-function: steps(1, end); }
+      77.696% { transform: scaleX(244.84); animation-timing-function: steps(1, end); }
+      77.966% { transform: scaleX(234.64); animation-timing-function: steps(1, end); }
+      78.235% { transform: scaleX(224.44); animation-timing-function: steps(1, end); }
+      78.505% { transform: scaleX(214.23); animation-timing-function: steps(1, end); }
+      78.775% { transform: scaleX(204.03); animation-timing-function: steps(1, end); }
+      79.044% { transform: scaleX(193.83); animation-timing-function: steps(1, end); }
+      79.314% { transform: scaleX(183.63); animation-timing-function: steps(1, end); }
+      79.583% { transform: scaleX(173.43); animation-timing-function: steps(1, end); }
+      79.853% { transform: scaleX(163.23); animation-timing-function: steps(1, end); }
+      80.123% { transform: scaleX(153.02); animation-timing-function: steps(1, end); }
+      80.392% { transform: scaleX(142.82); animation-timing-function: steps(1, end); }
+      80.662% { transform: scaleX(132.62); animation-timing-function: steps(1, end); }
+      80.931% { transform: scaleX(122.42); animation-timing-function: steps(1, end); }
+      81.201% { transform: scaleX(112.22); animation-timing-function: steps(1, end); }
+      81.471% { transform: scaleX(102.02); animation-timing-function: steps(1, end); }
+      81.740% { transform: scaleX(91.81); animation-timing-function: steps(1, end); }
+      82.010% { transform: scaleX(81.61); animation-timing-function: steps(1, end); }
+      82.279% { transform: scaleX(71.41); animation-timing-function: steps(1, end); }
+      82.549% { transform: scaleX(61.21); animation-timing-function: steps(1, end); }
+      82.819% { transform: scaleX(51.01); animation-timing-function: steps(1, end); }
+      83.088% { transform: scaleX(40.81); animation-timing-function: steps(1, end); }
+      83.358% { transform: scaleX(30.60); animation-timing-function: steps(1, end); }
+      83.627% { transform: scaleX(20.40); animation-timing-function: steps(1, end); }
+      83.897% { transform: scaleX(10.20); animation-timing-function: steps(1, end); }
       84.167% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
       85.417% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
       85.806% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
@@ -224,123 +225,125 @@
       100.000% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
     }
     @keyframes cur {
-      0.000% { transform: translate(56.00px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      5.833% { transform: translate(83.60px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      6.722% { transform: translate(115.00px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      7.611% { transform: translate(141.00px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      8.500% { transform: translate(169.45px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      9.389% { transform: translate(183.45px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      10.278% { transform: translate(211.05px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      11.167% { transform: translate(223.50px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      12.056% { transform: translate(237.50px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      12.944% { transform: translate(270.25px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      13.833% { transform: translate(299.60px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      14.722% { transform: translate(321.30px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      15.611% { transform: translate(334.30px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      16.500% { transform: translate(363.80px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      17.389% { transform: translate(387.90px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      18.278% { transform: translate(419.10px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      19.167% { transform: translate(448.90px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      23.333% { transform: translate(64.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      23.922% { transform: translate(75.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      24.510% { transform: translate(86.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      25.098% { transform: translate(97.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      25.686% { transform: translate(108.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      26.275% { transform: translate(118.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      26.863% { transform: translate(129.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      27.451% { transform: translate(140.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      28.039% { transform: translate(151.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      28.627% { transform: translate(162.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      29.216% { transform: translate(172.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      29.804% { transform: translate(183.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      30.392% { transform: translate(194.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      30.980% { transform: translate(205.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      31.569% { transform: translate(216.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      32.157% { transform: translate(226.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      32.745% { transform: translate(237.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      33.333% { transform: translate(248.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      33.922% { transform: translate(259.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      34.510% { transform: translate(270.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      35.098% { transform: translate(280.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      35.686% { transform: translate(291.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      36.275% { transform: translate(302.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      36.863% { transform: translate(313.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      37.451% { transform: translate(324.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      38.039% { transform: translate(334.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      38.627% { transform: translate(345.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      39.216% { transform: translate(356.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      39.804% { transform: translate(367.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      40.392% { transform: translate(378.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      40.980% { transform: translate(388.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      41.569% { transform: translate(399.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      42.157% { transform: translate(410.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      42.745% { transform: translate(421.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      43.333% { transform: translate(432.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      75.000% { transform: translate(421.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      75.270% { transform: translate(410.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      75.539% { transform: translate(399.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      75.809% { transform: translate(388.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      76.078% { transform: translate(378.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      76.348% { transform: translate(367.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      76.618% { transform: translate(356.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      76.887% { transform: translate(345.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      77.157% { transform: translate(334.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      77.426% { transform: translate(324.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      77.696% { transform: translate(313.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      77.966% { transform: translate(302.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      78.235% { transform: translate(291.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      78.505% { transform: translate(280.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      78.775% { transform: translate(270.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      79.044% { transform: translate(259.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      79.314% { transform: translate(248.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      79.583% { transform: translate(237.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      79.853% { transform: translate(226.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      80.123% { transform: translate(216.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      80.392% { transform: translate(205.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      80.662% { transform: translate(194.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      80.931% { transform: translate(183.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      81.201% { transform: translate(172.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      81.471% { transform: translate(162.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      81.740% { transform: translate(151.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      82.010% { transform: translate(140.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      82.279% { transform: translate(129.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      82.549% { transform: translate(118.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      82.819% { transform: translate(108.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      83.088% { transform: translate(97.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      83.358% { transform: translate(86.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      83.627% { transform: translate(75.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      83.897% { transform: translate(64.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      84.167% { transform: translate(54.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
-      85.417% { transform: translate(419.10px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      85.806% { transform: translate(387.90px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      86.194% { transform: translate(363.80px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      86.583% { transform: translate(334.30px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      86.972% { transform: translate(321.30px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      87.361% { transform: translate(299.60px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      87.750% { transform: translate(270.25px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      88.139% { transform: translate(237.50px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      88.528% { transform: translate(223.50px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      88.917% { transform: translate(211.05px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      89.306% { transform: translate(183.45px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      89.694% { transform: translate(169.45px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      90.083% { transform: translate(141.00px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      90.472% { transform: translate(115.00px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      90.861% { transform: translate(83.60px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      91.250% { transform: translate(56.00px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
-      100.000% { transform: translate(56.00px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      0.000% { transform: translate(180.76px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      5.833% { transform: translate(208.00px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      6.722% { transform: translate(238.88px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      7.611% { transform: translate(271.16px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      8.500% { transform: translate(305.48px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      9.389% { transform: translate(318.28px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      10.278% { transform: translate(343.84px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      11.167% { transform: translate(359.48px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      12.056% { transform: translate(372.28px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      12.944% { transform: translate(403.40px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      13.833% { transform: translate(437.64px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      14.722% { transform: translate(470.52px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      15.611% { transform: translate(499.28px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      16.500% { transform: translate(529.24px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      17.389% { transform: translate(557.72px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      18.278% { transform: translate(592.88px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      19.167% { transform: translate(627.64px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      23.333% { transform: translate(234.67px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      23.922% { transform: translate(244.87px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      24.510% { transform: translate(255.08px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      25.098% { transform: translate(265.28px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      25.686% { transform: translate(275.48px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      26.275% { transform: translate(285.68px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      26.863% { transform: translate(295.88px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      27.451% { transform: translate(306.08px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      28.039% { transform: translate(316.29px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      28.627% { transform: translate(326.49px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      29.216% { transform: translate(336.69px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      29.804% { transform: translate(346.89px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      30.392% { transform: translate(357.09px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      30.980% { transform: translate(367.29px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      31.569% { transform: translate(377.50px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      32.157% { transform: translate(387.70px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      32.745% { transform: translate(397.90px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      33.333% { transform: translate(408.10px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      33.922% { transform: translate(418.30px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      34.510% { transform: translate(428.50px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      35.098% { transform: translate(438.71px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      35.686% { transform: translate(448.91px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      36.275% { transform: translate(459.11px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      36.863% { transform: translate(469.31px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      37.451% { transform: translate(479.51px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      38.039% { transform: translate(489.71px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      38.627% { transform: translate(499.92px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      39.216% { transform: translate(510.12px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      39.804% { transform: translate(520.32px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      40.392% { transform: translate(530.52px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      40.980% { transform: translate(540.72px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      41.569% { transform: translate(550.92px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      42.157% { transform: translate(561.13px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      42.745% { transform: translate(571.33px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      43.333% { transform: translate(581.53px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      75.000% { transform: translate(571.33px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      75.270% { transform: translate(561.13px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      75.539% { transform: translate(550.92px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      75.809% { transform: translate(540.72px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      76.078% { transform: translate(530.52px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      76.348% { transform: translate(520.32px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      76.618% { transform: translate(510.12px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      76.887% { transform: translate(499.92px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      77.157% { transform: translate(489.71px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      77.426% { transform: translate(479.51px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      77.696% { transform: translate(469.31px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      77.966% { transform: translate(459.11px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      78.235% { transform: translate(448.91px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      78.505% { transform: translate(438.71px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      78.775% { transform: translate(428.50px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      79.044% { transform: translate(418.30px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      79.314% { transform: translate(408.10px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      79.583% { transform: translate(397.90px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      79.853% { transform: translate(387.70px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      80.123% { transform: translate(377.50px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      80.392% { transform: translate(367.29px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      80.662% { transform: translate(357.09px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      80.931% { transform: translate(346.89px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      81.201% { transform: translate(336.69px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      81.471% { transform: translate(326.49px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      81.740% { transform: translate(316.29px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      82.010% { transform: translate(306.08px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      82.279% { transform: translate(295.88px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      82.549% { transform: translate(285.68px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      82.819% { transform: translate(275.48px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      83.088% { transform: translate(265.28px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      83.358% { transform: translate(255.08px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      83.627% { transform: translate(244.87px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      83.897% { transform: translate(234.67px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      84.167% { transform: translate(224.47px, 139.00px) scale(2, 21); animation-timing-function: steps(1, end); }
+      85.417% { transform: translate(592.88px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      85.806% { transform: translate(557.72px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      86.194% { transform: translate(529.24px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      86.583% { transform: translate(499.28px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      86.972% { transform: translate(470.52px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      87.361% { transform: translate(437.64px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      87.750% { transform: translate(403.40px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      88.139% { transform: translate(372.28px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      88.528% { transform: translate(359.48px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      88.917% { transform: translate(343.84px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      89.306% { transform: translate(318.28px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      89.694% { transform: translate(305.48px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      90.083% { transform: translate(271.16px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      90.472% { transform: translate(238.88px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      90.861% { transform: translate(208.00px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      91.250% { transform: translate(180.76px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
+      100.000% { transform: translate(180.76px, 49.00px) scale(2.5, 36); animation-timing-function: steps(1, end); }
     }
     @keyframes blink { 0%, 55% { opacity: 1; } 56%, 100% { opacity: 0; } }
     @media (prefers-reduced-motion: reduce) {
       .r1, .r2, .cur, .bar { animation: none; }
-      .r1 { transform: scaleX(392.90); } .r2 { transform: scaleX(378.00); }
+      .r1 { transform: scaleX(446.88); } .r2 { transform: scaleX(357.06); }
       .cur { display: none; }
     }
   </style>
 
-  <rect x="0.5" y="0.5" width="496" height="159" rx="12" fill="#0D1117" stroke="#30363D"/>
+  <rect x="4.5" y="4.5" width="791" height="183" rx="12" fill="#131C20" stroke="#25333A"/>
+  <rect x="4" y="4" width="792" height="4" fill="#4FC1CD" clip-path="url(#card)"/>
 
-  <g clip-path="url(#c1)"><path transform="translate(52 76)" fill="#29A9F0" d="M11.9 0.5Q9.1 0.5 6.6 -0.7Q4.2 -1.8 2.6 -4Q2 -4.9 2 -5.7Q2 -7 3 -7.8Q4 -8.7 4.9 -8.7Q5.7 -8.7 6.4 -8.2Q7.1 -7.8 7.7 -7.2Q8.7 -6.2 9.7 -5.9Q10.7 -5.5 11.9 -5.5Q13.4 -5.5 14.7 -6.2Q16 -7 16.8 -8.2Q17.6 -9.5 17.6 -11V-32Q17.6 -33.2 18.6 -34.1Q19.5 -35 20.8 -35Q22.2 -35 23 -34.1Q23.9 -33.2 23.9 -32V-11Q23.9 -7.9 22.2 -5.3Q20.7 -2.7 18 -1.1Q15.2 0.5 11.9 0.5ZM52.8 -27.2Q54.1 -27.2 54.9 -26.4Q55.8 -25.6 55.8 -24.2V-3.1Q55.8 -1.8 54.9 -0.9Q54.1 0 52.8 0Q51.5 0 50.6 -0.9Q49.8 -1.8 49.8 -3Q49.2 -2.3 48.2 -1.7Q47.1 -0.8 45.4 -0.1Q43.8 0.5 41.9 0.5Q38.5 0.5 35.7 -1.3Q32.9 -3.1 31.2 -6.2Q29.6 -9.3 29.6 -13.4Q29.6 -17.4 31.2 -20.6Q32.9 -23.7 35.6 -25.5Q38.4 -27.2 41.7 -27.2Q43.9 -27.2 45.7 -26.6Q47.5 -26 48.8 -25Q49.3 -24.6 49.8 -24.2V-24.2Q49.8 -25.5 50.6 -26.4Q51.5 -27.2 52.8 -27.2ZM42.7 -5Q44.9 -5 46.5 -6.1Q48.2 -7.2 49.1 -9.1Q50 -11 50 -13.4Q50 -15.8 49.1 -17.6Q48.2 -19.6 46.5 -20.6Q44.9 -21.8 42.7 -21.8Q40.5 -21.8 38.9 -20.6Q37.2 -19.6 36.3 -17.6Q35.4 -15.8 35.4 -13.4Q35.4 -11 36.3 -9.1Q37.2 -7.2 38.9 -6.1Q40.5 -5 42.7 -5ZM74.2 -27.2Q77 -27.2 79.1 -26.6Q81.2 -26.1 82.4 -25Q83.6 -23.9 83.6 -22.4Q83.6 -21.4 83 -20.5Q82.4 -19.7 81.2 -19.7Q80.5 -19.7 79.9 -19.9Q79.4 -20.1 79 -20.5Q78.6 -20.8 78 -21.1Q77.5 -21.4 76.5 -21.6Q75.5 -21.8 75 -21.8Q72.5 -21.8 70.7 -20.6Q68.9 -19.6 68 -17.7Q67 -15.8 67 -13.4Q67 -11 68 -9.1Q69 -7.2 70.7 -6.1Q72.4 -5 74.7 -5Q75.9 -5 76.8 -5.2Q77.7 -5.3 78.3 -5.6Q79 -6 79.5 -6.5Q80.1 -6.9 81.2 -6.9Q82.5 -6.9 83.2 -6.1Q83.9 -5.2 83.9 -4Q83.9 -2.8 82.5 -1.8Q81.1 -0.8 78.8 -0.1Q76.5 0.5 73.9 0.5Q70 0.5 67.1 -1.3Q64.2 -3.2 62.6 -6.3Q61 -9.5 61 -13.4Q61 -17.4 62.7 -20.6Q64.3 -23.7 67.3 -25.5Q70.3 -27.2 74.2 -27.2ZM91.8 0Q90.5 0 89.6 -0.9Q88.8 -1.8 88.8 -3.1V-34Q88.8 -35.2 89.6 -36.1Q90.5 -37 91.8 -37Q93 -37 93.9 -36.1Q94.8 -35.2 94.8 -34V-15.5L105.5 -25.8Q106.4 -26.8 107.7 -26.8Q108.8 -26.8 109.7 -25.8Q110.5 -24.9 110.5 -24Q110.5 -22.8 109.3 -21.7L101.8 -14.8L110.5 -5.2Q111.5 -4.2 111.5 -3Q111.5 -1.7 110.4 -0.9Q109.4 -0.1 108.4 -0.1Q107.1 -0.1 106.2 -1.1L97.2 -10.6L94.8 -8.3V-3.1Q94.8 -1.8 93.9 -0.9Q93 0 91.8 0ZM139.3 0.5Q136.5 0.5 134.1 -0.7Q131.6 -1.8 130.1 -4Q129.4 -4.9 129.4 -5.7Q129.4 -7 130.4 -7.8Q131.4 -8.7 132.3 -8.7Q133.1 -8.7 133.8 -8.2Q134.6 -7.8 135.2 -7.2Q136.2 -6.2 137.1 -5.9Q138.1 -5.5 139.3 -5.5Q140.8 -5.5 142.1 -6.2Q143.4 -7 144.2 -8.2Q145.1 -9.5 145.1 -11V-32Q145.1 -33.2 146 -34.1Q146.9 -35 148.2 -35Q149.6 -35 150.4 -34.1Q151.3 -33.2 151.3 -32V-11Q151.3 -7.9 149.7 -5.3Q148.1 -2.7 145.4 -1.1Q142.7 0.5 139.3 0.5ZM161 -0.1Q159.5 -0.1 158.7 -0.8Q158 -1.6 158 -3.1V-3.9Q158 -5.4 158.7 -6.1Q159.5 -6.9 161 -6.9H161.6Q163.1 -6.9 163.8 -6.1Q164.6 -5.4 164.6 -3.9V-3.1Q164.6 -1.6 163.8 -0.8Q163.1 -0.1 161.6 -0.1ZM200.9 -35Q205.7 -35 208.1 -32.8Q210.4 -30.5 210.4 -26.1Q210.4 -23.8 209.2 -22Q208.2 -20.4 206.2 -19.4Q207.1 -19.1 207.9 -18.6Q209.8 -17.5 211 -15.6Q212.2 -13.7 212.2 -10.7Q212.2 -7.4 211.2 -5.2Q210.1 -3.2 208.3 -2Q206.6 -0.9 204.6 -0.4Q202.6 0 200.8 0H188.3Q187 0 186.1 -0.9Q185.2 -1.8 185.2 -3.1V-32Q185.2 -33.2 186.1 -34.1Q187 -35 188.3 -35ZM200.4 -15.4H191.8V-5.8H200.8Q203.1 -5.8 204.4 -7Q205.8 -8.2 205.8 -10.7Q205.8 -12.9 204.8 -13.9Q203.9 -14.9 202.7 -15.2Q201.4 -15.4 200.4 -15.4ZM200 -29.1H191.8V-21.3H200.2Q201.6 -21.3 202.8 -22.2Q203.9 -23.2 203.9 -25Q203.9 -27.2 202.8 -28.1Q201.8 -29.1 200 -29.1ZM237.3 -26.8Q238.7 -26.8 239.5 -25.9Q240.3 -25 240.3 -23.7V-11Q240.3 -5.7 237.4 -2.6Q234.4 0.5 228.9 0.5Q223.3 0.5 220.4 -2.6Q217.5 -5.7 217.5 -11V-23.7Q217.5 -25 218.3 -25.9Q219.2 -26.8 220.5 -26.8Q221.8 -26.8 222.7 -25.9Q223.5 -25 223.5 -23.7V-11Q223.5 -8 224.8 -6.5Q226.2 -5 228.9 -5Q231.7 -5 233 -6.5Q234.3 -8 234.3 -11V-23.7Q234.3 -25 235.2 -25.9Q236.1 -26.8 237.3 -26.8ZM249.8 0Q248.5 0 247.7 -0.9Q246.8 -1.8 246.8 -3.1V-23.7Q246.8 -25 247.7 -25.9Q248.5 -26.8 249.8 -26.8Q251.2 -26.8 252 -25.9Q252.8 -25 252.8 -23.7V-23.1Q253.3 -23.8 253.9 -24.5Q254.8 -25.4 255.9 -26Q257 -26.7 258.2 -27Q259.5 -27.2 260.8 -27.2Q262.2 -27.2 263.3 -26.4Q264.3 -25.6 264.3 -24.4Q264.3 -22.8 263.5 -22Q262.6 -21.3 261.6 -21.3Q260.6 -21.3 259.9 -21.6Q259.1 -22 258.1 -22Q257.2 -22 256.3 -21.6Q255.3 -21.2 254.6 -20.2Q253.8 -19.4 253.3 -18Q252.8 -16.7 252.8 -14.9V-3.1Q252.8 -1.8 252 -0.9Q251.2 0 249.8 0ZM275.1 -3.1Q275.1 -1.8 274.2 -0.9Q273.3 0 272 0Q270.8 0 269.9 -0.9Q269.1 -1.8 269.1 -3.1V-34Q269.1 -35.2 269.9 -36.1Q270.8 -37 272.1 -37Q273.4 -37 274.2 -36.1Q275.1 -35.2 275.1 -34ZM294.2 0.5Q289.9 0.5 286.8 -1.3Q283.7 -3.1 282 -6.1Q280.3 -9.2 280.3 -13Q280.3 -17.5 282.1 -20.7Q283.9 -23.9 286.9 -25.6Q289.9 -27.2 293.2 -27.2Q295.7 -27.2 298 -26.2Q300.2 -25.2 302 -23.3Q303.8 -21.5 304.8 -19.1Q305.8 -16.7 305.8 -14Q305.8 -12.8 304.9 -12.1Q303.9 -11.3 302.8 -11.3H286.2Q286.5 -9.9 287.2 -8.8Q288.3 -7 290.1 -6Q291.9 -5 293.9 -5Q295.7 -5 296.8 -5.3Q297.9 -5.6 298.6 -6Q299.2 -6.5 299.8 -6.8Q300.7 -7.2 301.5 -7.2Q302.6 -7.2 303.3 -6.5Q304.1 -5.7 304.1 -4.7Q304.1 -3.4 302.7 -2.2Q301.4 -1.2 299 -0.3Q296.7 0.5 294.2 0.5ZM286.3 -16.3H299.4V-16.7Q299.3 -18.1 298.4 -19.2Q297.4 -20.4 296.1 -21.1Q294.7 -21.8 293.2 -21.8Q291.7 -21.8 290.4 -21.4Q289.1 -21 288.1 -20Q287.2 -19.1 286.6 -17.4Q286.4 -16.9 286.3 -16.3ZM309.5 -4.2Q309 -4.9 309.1 -6Q309.1 -7.1 310.4 -7.9Q311.2 -8.3 312.1 -8.3Q312.9 -8.2 313.8 -7.4Q315.2 -5.9 316.9 -5.1Q318.4 -4.3 320.9 -4.3Q321.6 -4.4 322.5 -4.5Q323.4 -4.7 324.1 -5.3Q324.8 -6 324.8 -7.2Q324.8 -8.3 324 -9Q323.2 -9.7 322 -10.1Q320.8 -10.6 319.3 -11Q317.8 -11.4 316.1 -11.9Q314.5 -12.5 313.1 -13.4Q311.8 -14.2 311 -15.7Q310.1 -17.2 310.1 -19.4Q310.1 -21.9 311.5 -23.6Q312.9 -25.4 315.1 -26.3Q317.4 -27.2 319.8 -27.2Q321.4 -27.2 323.1 -26.9Q324.8 -26.5 326.3 -25.7Q327.9 -24.9 328.9 -23.5Q329.4 -22.8 329.6 -21.7Q329.7 -20.7 328.6 -19.8Q327.9 -19.2 326.9 -19.3Q325.9 -19.4 325.2 -20Q324.4 -21.1 322.9 -21.7Q321.5 -22.4 319.7 -22.4Q318.9 -22.4 318 -22.2Q317.2 -22 316.5 -21.4Q315.9 -20.9 315.9 -19.6Q315.9 -18.4 316.6 -17.8Q317.4 -17.1 318.6 -16.7Q319.9 -16.2 321.4 -15.9Q322.9 -15.5 324.4 -14.9Q325.9 -14.4 327.2 -13.5Q328.6 -12.6 329.4 -11.1Q330.2 -9.7 330.2 -7.5Q330.2 -5 328.7 -3.2Q327.2 -1.4 324.9 -0.4Q322.7 0.5 320.3 0.5Q317.4 0.5 314.4 -0.5Q311.4 -1.6 309.5 -4.2ZM361.1 -13.4Q361.1 -9.2 359.3 -6.1Q357.5 -3 354.4 -1.2Q351.3 0.5 347.5 0.5Q343.7 0.5 340.6 -1.2Q337.6 -3 335.7 -6.1Q333.9 -9.2 333.9 -13.4Q333.9 -17.4 335.7 -20.6Q337.6 -23.7 340.6 -25.5Q343.7 -27.2 347.5 -27.2Q351.3 -27.2 354.4 -25.5Q357.5 -23.7 359.3 -20.6Q361.1 -17.4 361.1 -13.4ZM355.1 -13.4Q355.1 -15.9 354.1 -17.8Q353.1 -19.7 351.3 -20.7Q349.6 -21.8 347.5 -21.8Q345.4 -21.8 343.7 -20.7Q342 -19.7 340.9 -17.8Q339.9 -15.9 339.9 -13.4Q339.9 -10.9 340.9 -9Q342 -7.1 343.7 -6.1Q345.4 -5 347.5 -5Q349.6 -5 351.3 -6.1Q353.1 -7.1 354.1 -9Q355.1 -10.9 355.1 -13.4ZM380.7 -27.2Q384.4 -27.2 386.3 -25.7Q388.2 -24.2 388.9 -21.6Q389.7 -19 389.7 -15.9V-3.1Q389.7 -1.8 388.8 -0.9Q388 0 386.7 0Q385.4 0 384.5 -0.9Q383.7 -1.8 383.7 -3.1V-15.9Q383.7 -17.5 383.2 -18.8Q382.8 -20.2 381.7 -21Q380.6 -21.8 378.6 -21.8Q376.6 -21.8 375.2 -21Q373.8 -20.2 373.1 -18.8Q372.4 -17.5 372.4 -15.9V-3.1Q372.4 -1.8 371.5 -0.9Q370.7 0 369.4 0Q368.1 0 367.2 -0.9Q366.4 -1.8 366.4 -3.1V-23.7Q366.4 -25 367.2 -25.9Q368.1 -26.8 369.4 -26.8Q370.7 -26.8 371.5 -25.9Q372.4 -25 372.4 -23.7V-22.9Q372.6 -23.2 372.9 -23.6Q373.8 -24.5 374.9 -25.4Q376.1 -26.2 377.5 -26.7Q379 -27.2 380.7 -27.2Z"/></g>
-  <g clip-path="url(#c2)"><path transform="translate(52 120)" fill="#A9B4C2" d="M1.9 0V-1.5H4.6V-11.7H1.9V-13.1H8.9V-11.7H6.2V-1.5H8.9V0ZM17.2 0Q16 0 15.2 -0.7Q14.5 -1.4 14.5 -2.6V-8.4H11.6V-9.9H14.5V-12.7H16.1V-9.9H20.2V-8.4H16.1V-2.6Q16.1 -2.1 16.4 -1.8Q16.7 -1.5 17.2 -1.5H20.1V0ZM25.6 -7.6 26.6 -9.9Q26.7 -10.2 26.8 -10.6Q26.9 -11 26.9 -11.2Q26.9 -11.8 26.7 -12.3Q26.4 -12.8 26 -13.1H27.8Q28.2 -12.8 28.4 -12.3Q28.6 -11.8 28.6 -11.2Q28.6 -10.9 28.5 -10.4Q28.4 -9.9 28.2 -9.4L27.4 -7.6ZM37.4 0.1Q35.7 0.1 34.8 -0.6Q33.9 -1.3 33.9 -2.7H35.5Q35.5 -2 36 -1.6Q36.5 -1.3 37.4 -1.3H38.2Q39.1 -1.3 39.6 -1.7Q40.1 -2.1 40.1 -2.8Q40.1 -4 38.9 -4.2L36.2 -4.6Q35.2 -4.8 34.6 -5.4Q34.1 -6.1 34.1 -7.3Q34.1 -8.6 34.9 -9.3Q35.8 -10 37.4 -10H38.2Q39.6 -10 40.5 -9.3Q41.5 -8.6 41.5 -7.5H39.9Q39.9 -8 39.4 -8.3Q38.9 -8.7 38.2 -8.7H37.4Q36.6 -8.7 36.1 -8.3Q35.6 -7.9 35.6 -7.3Q35.6 -6.2 36.6 -6.1L39.1 -5.7Q41.7 -5.4 41.7 -2.8Q41.7 -1.4 40.8 -0.6Q39.9 0.1 38.2 0.1ZM58.5 0.2Q57 0.2 56.1 -0.7Q55.2 -1.5 55.2 -2.9Q55.2 -3.8 55.6 -4.5Q56 -5.2 56.8 -5.6Q57.5 -6 58.5 -6H61.5V-6.7Q61.5 -8.7 59.4 -8.7Q58.5 -8.7 57.9 -8.3Q57.3 -8 57.3 -7.4H55.7Q55.8 -8.5 56.8 -9.3Q57.8 -10.1 59.4 -10.1Q61.2 -10.1 62.2 -9.2Q63.1 -8.4 63.1 -6.8V0H61.5V-1.8H61.5Q61.4 -0.9 60.6 -0.4Q59.8 0.2 58.5 0.2ZM58.9 -1.2Q60.1 -1.2 60.8 -1.8Q61.5 -2.3 61.5 -3.3V-4.7H58.6Q57.9 -4.7 57.4 -4.2Q56.9 -3.8 56.9 -3Q56.9 -2.1 57.4 -1.7Q58 -1.2 58.9 -1.2ZM77.3 3.2V-9.9H78.9V-8H78.9Q79 -9 79.7 -9.5Q80.5 -10.1 81.6 -10.1Q83.1 -10.1 84 -9.1Q84.8 -8.1 84.8 -6.4V-3.5Q84.8 -1.8 84 -0.8Q83.1 0.2 81.6 0.2Q80.5 0.2 79.7 -0.4Q79 -0.9 78.9 -1.9H78.8L78.9 0.4V3.2ZM81 -1.2Q82.1 -1.2 82.6 -1.8Q83.2 -2.3 83.2 -3.5V-6.4Q83.2 -7.6 82.6 -8.1Q82.1 -8.7 81 -8.7Q80 -8.7 79.5 -8Q78.9 -7.4 78.9 -6.3V-3.6Q78.9 -2.5 79.5 -1.9Q80 -1.2 81 -1.2ZM93.2 0Q91.9 0 91.1 -0.8Q90.4 -1.5 90.4 -2.8V-11.7H86.9V-13.1H92V-2.8Q92 -2.2 92.3 -1.8Q92.7 -1.5 93.2 -1.5H96.3V0ZM102.6 0.2Q100.9 0.2 99.8 -0.9Q98.7 -1.9 98.7 -3.8V-6.1Q98.7 -8 99.8 -9Q100.9 -10.1 102.6 -10.1Q103.8 -10.1 104.6 -9.6Q105.5 -9.1 106 -8.3Q106.5 -7.5 106.5 -6.3V-4.5H100.3V-3.6Q100.3 -2.5 100.9 -1.9Q101.6 -1.2 102.6 -1.2Q103.5 -1.2 104.1 -1.6Q104.7 -1.9 104.8 -2.5H106.4Q106.3 -1.3 105.2 -0.5Q104.2 0.2 102.6 0.2ZM100.3 -5.8H104.9V-6.3Q104.9 -7.5 104.3 -8.1Q103.7 -8.7 102.6 -8.7Q101.5 -8.7 100.9 -8.1Q100.3 -7.5 100.3 -6.3ZM112.5 0.2Q111 0.2 110.1 -0.7Q109.2 -1.5 109.2 -2.9Q109.2 -3.8 109.6 -4.5Q110 -5.2 110.8 -5.6Q111.5 -6 112.5 -6H115.5V-6.7Q115.5 -8.7 113.4 -8.7Q112.5 -8.7 111.9 -8.3Q111.3 -8 111.3 -7.4H109.7Q109.8 -8.5 110.8 -9.3Q111.8 -10.1 113.4 -10.1Q115.2 -10.1 116.2 -9.2Q117.1 -8.4 117.1 -6.8V0H115.5V-1.8H115.5Q115.4 -0.9 114.6 -0.4Q113.8 0.2 112.5 0.2ZM112.9 -1.2Q114.1 -1.2 114.8 -1.8Q115.5 -2.3 115.5 -3.3V-4.7H112.6Q111.9 -4.7 111.4 -4.2Q110.9 -3.8 110.9 -3Q110.9 -2.1 111.4 -1.7Q112 -1.2 112.9 -1.2ZM123.8 0.1Q122.1 0.1 121.2 -0.6Q120.3 -1.3 120.3 -2.7H121.9Q121.9 -2 122.4 -1.6Q122.9 -1.3 123.8 -1.3H124.6Q125.5 -1.3 126 -1.7Q126.5 -2.1 126.5 -2.8Q126.5 -4 125.3 -4.2L122.6 -4.6Q121.6 -4.8 121 -5.4Q120.5 -6.1 120.5 -7.3Q120.5 -8.6 121.3 -9.3Q122.2 -10 123.8 -10H124.6Q126 -10 126.9 -9.3Q127.9 -8.6 127.9 -7.5H126.3Q126.3 -8 125.8 -8.3Q125.3 -8.7 124.6 -8.7H123.8Q123 -8.7 122.5 -8.3Q122 -7.9 122 -7.3Q122 -6.2 123 -6.1L125.5 -5.7Q128.1 -5.4 128.1 -2.8Q128.1 -1.4 127.2 -0.6Q126.3 0.1 124.6 0.1ZM135 0.2Q133.3 0.2 132.2 -0.8Q131.2 -1.9 131.2 -3.6V-9.9H132.8V-3.6Q132.8 -2.5 133.4 -1.9Q134 -1.2 135 -1.2Q136 -1.2 136.6 -1.9Q137.2 -2.5 137.2 -3.6V-9.9H138.8V-3.6Q138.8 -1.9 137.7 -0.8Q136.7 0.2 135 0.2ZM142.4 0V-9.9H144V-8H144.1Q144.2 -9 144.9 -9.5Q145.6 -10.1 146.7 -10.1Q148.3 -10.1 149.1 -9.2Q149.9 -8.2 149.9 -6.5V-5.7H148.3V-6.5Q148.3 -8.7 146.2 -8.7Q145.2 -8.7 144.6 -8.1Q144 -7.5 144 -6.3V0ZM156.6 0.2Q154.9 0.2 153.8 -0.9Q152.7 -1.9 152.7 -3.8V-6.1Q152.7 -8 153.8 -9Q154.9 -10.1 156.6 -10.1Q157.8 -10.1 158.6 -9.6Q159.5 -9.1 160 -8.3Q160.5 -7.5 160.5 -6.3V-4.5H154.3V-3.6Q154.3 -2.5 154.9 -1.9Q155.6 -1.2 156.6 -1.2Q157.5 -1.2 158.1 -1.6Q158.7 -1.9 158.8 -2.5H160.4Q160.3 -1.3 159.2 -0.5Q158.2 0.2 156.6 0.2ZM154.3 -5.8H158.9V-6.3Q158.9 -7.5 158.3 -8.1Q157.7 -8.7 156.6 -8.7Q155.5 -8.7 154.9 -8.1Q154.3 -7.5 154.3 -6.3ZM179.2 0Q178 0 177.2 -0.7Q176.5 -1.4 176.5 -2.6V-8.4H173.6V-9.9H176.5V-12.7H178.1V-9.9H182.2V-8.4H178.1V-2.6Q178.1 -2.1 178.4 -1.8Q178.7 -1.5 179.2 -1.5H182.1V0ZM189 0.1Q187.2 0.1 186.2 -0.9Q185.1 -1.9 185.1 -3.8V-6.1Q185.1 -8 186.2 -9Q187.2 -10 189 -10Q190.8 -10 191.8 -9Q192.9 -8 192.9 -6.1V-3.8Q192.9 -1.9 191.8 -0.9Q190.8 0.1 189 0.1ZM189 -1.3Q190.1 -1.3 190.7 -1.9Q191.3 -2.5 191.3 -3.6V-6.3Q191.3 -7.4 190.7 -8Q190.1 -8.6 189 -8.6Q188 -8.6 187.3 -8Q186.7 -7.4 186.7 -6.3V-3.6Q186.7 -2.5 187.3 -1.9Q188 -1.3 189 -1.3ZM206.3 0V-9.9H207.7V-8.6H207.7Q207.8 -9.3 208.3 -9.7Q208.7 -10.1 209.4 -10.1Q210 -10.1 210.5 -9.7Q210.9 -9.3 211.1 -8.7H211.1Q211.3 -9.3 211.7 -9.7Q212.1 -10.1 212.8 -10.1Q213.8 -10.1 214.4 -9.4Q214.9 -8.7 214.9 -7.5V0H213.4V-7.5Q213.4 -8.1 213.1 -8.5Q212.8 -8.8 212.3 -8.8Q211.8 -8.8 211.6 -8.5Q211.3 -8.2 211.3 -7.6V0H209.9V-7.5Q209.9 -8.1 209.6 -8.5Q209.4 -8.8 208.9 -8.8Q208.4 -8.8 208.1 -8.5Q207.8 -8.2 207.8 -7.6V0ZM221.4 0.2Q219.7 0.2 218.6 -0.9Q217.5 -1.9 217.5 -3.8V-6.1Q217.5 -8 218.6 -9Q219.7 -10.1 221.4 -10.1Q222.6 -10.1 223.4 -9.6Q224.3 -9.1 224.8 -8.3Q225.3 -7.5 225.3 -6.3V-4.5H219.1V-3.6Q219.1 -2.5 219.7 -1.9Q220.4 -1.2 221.4 -1.2Q222.3 -1.2 222.9 -1.6Q223.5 -1.9 223.6 -2.5H225.2Q225.1 -1.3 224 -0.5Q223 0.2 221.4 0.2ZM219.1 -5.8H223.7V-6.3Q223.7 -7.5 223.1 -8.1Q222.5 -8.7 221.4 -8.7Q220.3 -8.7 219.7 -8.1Q219.1 -7.5 219.1 -6.3ZM232.2 0.2Q230.5 0.2 229.4 -0.9Q228.3 -1.9 228.3 -3.8V-6.1Q228.3 -8 229.4 -9Q230.5 -10.1 232.2 -10.1Q233.4 -10.1 234.2 -9.6Q235.1 -9.1 235.6 -8.3Q236.1 -7.5 236.1 -6.3V-4.5H229.9V-3.6Q229.9 -2.5 230.5 -1.9Q231.2 -1.2 232.2 -1.2Q233.1 -1.2 233.7 -1.6Q234.3 -1.9 234.4 -2.5H236Q235.9 -1.3 234.8 -0.5Q233.8 0.2 232.2 0.2ZM229.9 -5.8H234.5V-6.3Q234.5 -7.5 233.9 -8.1Q233.3 -8.7 232.2 -8.7Q231.1 -8.7 230.5 -8.1Q229.9 -7.5 229.9 -6.3ZM244 0Q242.8 0 242 -0.7Q241.3 -1.4 241.3 -2.6V-8.4H238.4V-9.9H241.3V-12.7H242.9V-9.9H247V-8.4H242.9V-2.6Q242.9 -2.1 243.2 -1.8Q243.5 -1.5 244 -1.5H246.9V0ZM262.4 3.2 263.9 -0.6 260.2 -9.9H261.9L264.3 -3.8Q264.4 -3.4 264.5 -3Q264.7 -2.6 264.7 -2.3Q264.8 -2.6 264.9 -3Q265 -3.4 265.1 -3.8L267.3 -9.9H269L264.1 3.2ZM275.4 0.1Q273.6 0.1 272.6 -0.9Q271.5 -1.9 271.5 -3.8V-6.1Q271.5 -8 272.6 -9Q273.6 -10 275.4 -10Q277.2 -10 278.2 -9Q279.3 -8 279.3 -6.1V-3.8Q279.3 -1.9 278.2 -0.9Q277.2 0.1 275.4 0.1ZM275.4 -1.3Q276.5 -1.3 277.1 -1.9Q277.7 -2.5 277.7 -3.6V-6.3Q277.7 -7.4 277.1 -8Q276.5 -8.6 275.4 -8.6Q274.4 -8.6 273.7 -8Q273.1 -7.4 273.1 -6.3V-3.6Q273.1 -2.5 273.7 -1.9Q274.4 -1.3 275.4 -1.3ZM286.2 0.2Q284.5 0.2 283.4 -0.8Q282.4 -1.9 282.4 -3.6V-9.9H284V-3.6Q284 -2.5 284.6 -1.9Q285.2 -1.2 286.2 -1.2Q287.2 -1.2 287.8 -1.9Q288.4 -2.5 288.4 -3.6V-9.9H290V-3.6Q290 -1.9 288.9 -0.8Q287.9 0.2 286.2 0.2ZM304.1 0V-13.1H305.7V-8H305.7Q305.8 -9 306.5 -9.5Q307.2 -10.1 308.3 -10.1Q309.8 -10.1 310.7 -9.2Q311.6 -8.2 311.6 -6.7V0H310V-6.4Q310 -7.5 309.4 -8.1Q308.8 -8.7 307.9 -8.7Q306.8 -8.7 306.3 -8.1Q305.7 -7.5 305.7 -6.3V0ZM318.6 0.2Q316.9 0.2 315.8 -0.9Q314.7 -1.9 314.7 -3.8V-6.1Q314.7 -8 315.8 -9Q316.9 -10.1 318.6 -10.1Q319.8 -10.1 320.6 -9.6Q321.5 -9.1 322 -8.3Q322.5 -7.5 322.5 -6.3V-4.5H316.3V-3.6Q316.3 -2.5 316.9 -1.9Q317.6 -1.2 318.6 -1.2Q319.5 -1.2 320.1 -1.6Q320.7 -1.9 320.8 -2.5H322.4Q322.3 -1.3 321.2 -0.5Q320.2 0.2 318.6 0.2ZM316.3 -5.8H320.9V-6.3Q320.9 -7.5 320.3 -8.1Q319.7 -8.7 318.6 -8.7Q317.5 -8.7 316.9 -8.1Q316.3 -7.5 316.3 -6.3ZM326 0V-9.9H327.6V-8H327.7Q327.8 -9 328.5 -9.5Q329.2 -10.1 330.3 -10.1Q331.9 -10.1 332.7 -9.2Q333.5 -8.2 333.5 -6.5V-5.7H331.9V-6.5Q331.9 -8.7 329.8 -8.7Q328.8 -8.7 328.2 -8.1Q327.6 -7.5 327.6 -6.3V0ZM340.2 0.2Q338.5 0.2 337.4 -0.9Q336.3 -1.9 336.3 -3.8V-6.1Q336.3 -8 337.4 -9Q338.5 -10.1 340.2 -10.1Q341.4 -10.1 342.2 -9.6Q343.1 -9.1 343.6 -8.3Q344.1 -7.5 344.1 -6.3V-4.5H337.9V-3.6Q337.9 -2.5 338.5 -1.9Q339.2 -1.2 340.2 -1.2Q341.1 -1.2 341.7 -1.6Q342.3 -1.9 342.4 -2.5H344Q343.9 -1.3 342.8 -0.5Q341.8 0.2 340.2 0.2ZM337.9 -5.8H342.5V-6.3Q342.5 -7.5 341.9 -8.1Q341.3 -8.7 340.2 -8.7Q339.1 -8.7 338.5 -8.1Q337.9 -7.5 337.9 -6.3ZM351 0.2Q350.3 0.2 349.9 -0.2Q349.5 -0.6 349.5 -1.2Q349.5 -1.9 349.9 -2.3Q350.3 -2.7 351 -2.7Q351.7 -2.7 352.1 -2.3Q352.5 -1.9 352.5 -1.2Q352.5 -0.6 352.1 -0.2Q351.7 0.2 351 0.2ZM361.8 0.2Q361.1 0.2 360.7 -0.2Q360.3 -0.6 360.3 -1.2Q360.3 -1.9 360.7 -2.3Q361.1 -2.7 361.8 -2.7Q362.5 -2.7 362.9 -2.3Q363.3 -1.9 363.3 -1.2Q363.3 -0.6 362.9 -0.2Q362.5 0.2 361.8 0.2ZM372.6 0.2Q371.9 0.2 371.5 -0.2Q371.1 -0.6 371.1 -1.2Q371.1 -1.9 371.5 -2.3Q371.9 -2.7 372.6 -2.7Q373.3 -2.7 373.7 -2.3Q374.1 -1.9 374.1 -1.2Q374.1 -0.6 373.7 -0.2Q373.3 0.2 372.6 0.2Z"/></g>
+  <g clip-path="url(#c1)"><path transform="translate(177.76 80)" fill="#E6EDEF" d="M10.8 -28.4H24.2V-25.6H23.5Q22.3 -25.6 21.5 -25.4Q20.8 -25.1 20.8 -24.2V-9.2Q20.8 -6.5 20 -4.6Q19.3 -2.7 17.9 -1.5Q16.5 -0.4 14.6 0.2Q12.7 0.7 10.3 0.7Q8.1 0.7 6.3 0.2Q4.6 -0.2 3.3 -0.9Q2.1 -1.6 1.4 -2.2V-8.8H6.6V-2.4Q5.9 -2.6 5.4 -3Q4.9 -3.4 4.6 -3.8Q4.4 -4.2 4.5 -4.4Q4.6 -4.6 5.1 -4.5Q5.5 -4 6.2 -3.5Q6.9 -3 7.8 -2.7Q8.7 -2.4 9.9 -2.4Q11.4 -2.4 12.5 -3Q13.5 -3.5 14.1 -5Q14.6 -6.4 14.6 -9.1V-24.2Q14.6 -24.8 14.2 -25.1Q13.8 -25.4 13.2 -25.5Q12.5 -25.6 11.7 -25.6H10.8ZM34.8 -11.9H46L46.3 -9.2H34.5ZM39.8 -26.4 40.7 -25.5 33.6 -3.6Q33.6 -3.4 34 -3.2Q34.4 -3 35.1 -2.9Q35.8 -2.8 36.6 -2.8H37V0H27.9V-2.8H28.1Q29.1 -2.8 29.8 -3.2Q30.4 -3.6 30.8 -4.9L38.5 -28.6H45.3L53.2 -4.6Q53.5 -3.4 54.2 -3.1Q54.8 -2.8 55.8 -2.8H56V0H43.8V-2.8H44.3Q45.2 -2.8 45.8 -2.8Q46.5 -2.8 46.9 -2.9Q47.3 -3 47.3 -3.2ZM74.4 -26Q72.5 -26 71 -25.2Q69.6 -24.5 68.6 -23Q67.6 -21.5 67 -19.3Q66.5 -17.1 66.5 -14.2Q66.5 -11.2 67 -9Q67.6 -6.8 68.6 -5.3Q69.6 -3.9 71.2 -3.2Q72.8 -2.4 74.8 -2.4Q77.2 -2.4 78.9 -3.4Q80.6 -4.4 81.7 -6.2Q82.8 -8 83.4 -10.2L86.2 -9Q85.4 -6 83.9 -3.8Q82.3 -1.7 79.9 -0.5Q77.5 0.7 74.2 0.7Q71 0.7 68.4 -0.3Q65.8 -1.3 63.9 -3.2Q62 -5.1 61 -7.9Q60 -10.6 60 -14.2Q60 -17.8 61 -20.5Q62.1 -23.3 64 -25.2Q65.8 -27.1 68.3 -28.1Q70.8 -29.1 73.7 -29.1Q76.6 -29.1 78.6 -28.1Q80.6 -27 81.8 -25.1Q83 -23.2 83.5 -20.6L82 -21.7L82.6 -28.6H85.7V-19H82.2Q81.6 -21.1 80.5 -22.7Q79.5 -24.2 78 -25.1Q76.4 -26 74.4 -26ZM92.1 0V-2.8H92.6Q93.8 -2.8 94.5 -3Q95.3 -3.3 95.3 -4.2V-24.2Q95.3 -25.1 94.5 -25.4Q93.8 -25.6 92.6 -25.6H92.1V-28.4H104.8V-25.6H104.4Q104 -25.6 103.4 -25.6Q102.9 -25.6 102.5 -25.6Q102 -25.5 101.8 -25.5Q101.5 -25.4 101.5 -25.3V-3.1Q101.5 -3 101.8 -3Q102 -2.9 102.4 -2.9Q102.8 -2.8 103.3 -2.8Q103.7 -2.8 104.2 -2.8H104.5V0ZM108.3 0V-2.8H108.6Q109.3 -2.8 109.9 -2.8Q110.5 -2.8 110.9 -2.9Q111.3 -3 111.3 -3.2L102.9 -13.7V-14.7L113 -25.2Q113 -25.4 112.5 -25.5Q112 -25.6 111.3 -25.6Q110.6 -25.6 109.9 -25.6H109.4V-28.4H120.2V-25.6H119.2Q118.6 -25.6 118 -25.5Q117.5 -25.4 117.1 -25.2Q116.6 -24.9 116.2 -24.4L106.2 -14.2L107.6 -17.4L118.3 -3.8Q118.6 -3.4 119 -3.1Q119.4 -2.9 119.9 -2.8Q120.3 -2.8 120.9 -2.8H121.4V0ZM148.3 -28.4H161.7V-25.6H161Q159.8 -25.6 159.1 -25.4Q158.3 -25.1 158.3 -24.2V-9.2Q158.3 -6.5 157.5 -4.6Q156.8 -2.7 155.4 -1.5Q154 -0.4 152.1 0.2Q150.2 0.7 147.8 0.7Q145.6 0.7 143.8 0.2Q142.1 -0.2 140.9 -0.9Q139.6 -1.6 139 -2.2V-8.8H144.2V-2.4Q143.4 -2.6 142.9 -3Q142.4 -3.4 142.2 -3.8Q141.9 -4.2 142 -4.4Q142.1 -4.6 142.6 -4.5Q143 -4 143.7 -3.5Q144.4 -3 145.3 -2.7Q146.2 -2.4 147.4 -2.4Q149 -2.4 150 -3Q151 -3.5 151.6 -5Q152.1 -6.4 152.1 -9.1V-24.2Q152.1 -24.8 151.7 -25.1Q151.3 -25.4 150.7 -25.5Q150 -25.6 149.2 -25.6H148.3ZM169.7 0.5Q167.9 0.5 166.8 -0.5Q165.8 -1.4 165.8 -3.1Q165.8 -4.8 166.8 -5.8Q167.9 -6.8 169.7 -6.8Q171.5 -6.8 172.6 -5.8Q173.7 -4.8 173.7 -3.1Q173.7 -1.4 172.6 -0.5Q171.5 0.5 169.7 0.5ZM207.8 -28.4Q210.2 -28.4 212 -28Q213.8 -27.5 215 -26.6Q216.2 -25.8 216.8 -24.4Q217.5 -23.1 217.5 -21.4Q217.5 -19.4 216.5 -17.9Q215.4 -16.5 213.5 -15.7Q211.6 -15 208.8 -14.9L210.1 -15.9V-13.9L209 -15.1Q212 -14.9 214.2 -14.1Q216.3 -13.3 217.5 -11.7Q218.6 -10.2 218.6 -7.9Q218.6 -6 217.9 -4.5Q217.2 -3 215.9 -2Q214.6 -1 212.6 -0.5Q210.7 0 208.2 0H193.2V-2.8H193.7Q194.9 -2.8 195.7 -3Q196.4 -3.3 196.4 -4.2V-24.2Q196.4 -25.1 195.7 -25.4Q194.9 -25.6 193.7 -25.6H193.2V-28.4ZM201.1 -16.2H206.6Q208.3 -16.2 209.3 -16.8Q210.3 -17.3 210.8 -18.4Q211.2 -19.5 211.2 -21.1Q211.2 -22.5 210.8 -23.5Q210.3 -24.5 209.3 -25Q208.3 -25.5 206.7 -25.5H202.6V-2.9H207Q208.8 -2.9 210 -3.5Q211.1 -4.1 211.7 -5.3Q212.3 -6.4 212.3 -8.2Q212.3 -9.9 211.7 -11.1Q211.1 -12.2 209.9 -12.9Q208.7 -13.5 206.7 -13.5H201.1ZM233.6 -10.7Q233.6 -8.5 234 -7Q234.5 -5.4 235.3 -4.5Q236.2 -3.6 237.4 -3.2Q238.6 -2.8 240.1 -2.8Q241.5 -2.8 242.7 -3.2Q243.9 -3.7 244.8 -4.6Q245.6 -5.5 246.1 -7Q246.6 -8.5 246.6 -10.7V-24.9Q246.6 -25.1 246.3 -25.2Q246 -25.4 245.6 -25.5Q245.2 -25.6 244.7 -25.6Q244.2 -25.6 243.7 -25.6H243.3V-28.4H253V-25.6H252.5Q251.7 -25.6 251.1 -25.5Q250.4 -25.4 250.1 -25Q249.7 -24.6 249.7 -24V-10.7Q249.7 -7.6 248.9 -5.5Q248.1 -3.3 246.6 -1.9Q245.1 -0.6 243.1 0.1Q241.2 0.7 238.9 0.7Q236.3 0.7 234.2 0Q232.1 -0.6 230.6 -2Q229 -3.4 228.2 -5.5Q227.4 -7.7 227.4 -10.7V-24.2Q227.4 -25.1 226.6 -25.4Q225.8 -25.6 224.6 -25.6H224.2V-28.4H236.8V-25.7H236.4Q236 -25.7 235.5 -25.6Q235 -25.6 234.5 -25.5Q234.1 -25.5 233.9 -25.4Q233.6 -25.4 233.6 -25.2ZM272 -12.8 278.3 0H286.3V-2.8H285.9Q285.2 -2.8 284.7 -2.9Q284.2 -3 283.7 -3.4Q283.3 -3.8 282.8 -4.5L277.7 -14ZM268 -3.2V-25.5H272.2Q273.8 -25.5 274.9 -24.9Q276 -24.3 276.5 -23.1Q277 -22 277 -20.3Q277 -18.5 276.5 -17.2Q276 -15.9 274.8 -15.2Q273.7 -14.5 272 -14.5H267.2V-11.7H273.3Q273.6 -11.8 273.9 -11.9Q274.2 -12 274.5 -12.1Q274.8 -12.2 275 -12.4Q277.7 -12.8 279.6 -13.9Q281.5 -15 282.5 -16.6Q283.5 -18.3 283.5 -20.5Q283.5 -23 282.2 -24.8Q281 -26.6 278.7 -27.5Q276.4 -28.4 273 -28.4H258.6V-25.6H259Q260.2 -25.6 261 -25.4Q261.8 -25.1 261.8 -24.2V-4.2Q261.8 -3.3 261 -3Q260.2 -2.8 259 -2.8H258.6V0H271.4V-2.8H270.8Q270.2 -2.8 269.7 -2.8Q269.2 -2.8 268.9 -2.9Q268.5 -2.9 268.2 -3Q268 -3 268 -3.2ZM304.5 -28.4H291.5V-25.6H291.9Q293.1 -25.6 293.9 -25.4Q294.7 -25.1 294.7 -24.2V-4.2Q294.7 -3.3 293.9 -3Q293.1 -2.8 291.9 -2.8H291.5V0H314.5V-9.7H311.2L310.7 -4.7Q310.7 -4 310.2 -3.6Q309.7 -3.2 308.6 -3.1Q307.6 -3 306 -3H300.9V-24.2Q300.9 -25.1 301.7 -25.4Q302.6 -25.6 303.9 -25.6H304.5ZM343.7 -9V0H320.2V-2.8H320.7Q321.9 -2.8 322.7 -3Q323.4 -3.3 323.4 -4.2V-24.2Q323.4 -25.1 322.7 -25.4Q321.9 -25.6 320.7 -25.6H320.2V-28.4H342.8V-20.4H339.6L339.2 -23.7Q339.1 -24.4 338.6 -24.8Q338.1 -25.2 337.2 -25.3Q336.2 -25.4 334.8 -25.4H329.6V-3H335.2Q336.4 -3 337.3 -3Q338.2 -3.1 338.7 -3.3Q339.3 -3.5 339.6 -3.8Q339.9 -4.2 340 -4.7L340.5 -9ZM328.7 -15.9Q330.4 -16 332.2 -16.1Q333.9 -16.2 335.6 -16.3Q337.3 -16.4 339 -16.5V-12.7Q337.3 -12.8 335.6 -12.9Q333.9 -13 332.2 -13.1Q330.4 -13.2 328.7 -13.2ZM362.5 -2.3Q364.3 -2.3 365.5 -2.7Q366.6 -3.1 367.2 -4.1Q367.7 -5 367.7 -6.5Q367.7 -7.8 367.1 -8.7Q366.6 -9.6 365.5 -10.1Q364.4 -10.7 363 -11.1Q361.6 -11.6 360 -12Q358.2 -12.4 356.6 -13Q355 -13.6 353.8 -14.6Q352.5 -15.6 351.8 -17.1Q351.1 -18.6 351.1 -20.9Q351.1 -23.6 352.3 -25.4Q353.4 -27.2 355.6 -28.2Q357.7 -29.1 360.6 -29.1Q363 -29.1 364.7 -28.4Q366.4 -27.7 367.5 -26.1Q368.6 -24.6 369.2 -22L367.9 -23.2L368.6 -28.6H371.5V-20.5H368.2Q367.6 -22.3 366.6 -23.6Q365.6 -24.8 364.2 -25.5Q362.8 -26.2 361 -26.2Q359.4 -26.2 358.3 -25.7Q357.3 -25.2 356.8 -24.4Q356.3 -23.5 356.3 -22.3Q356.3 -21 356.9 -20.3Q357.4 -19.5 358.4 -19Q359.4 -18.5 360.7 -18.1Q362.1 -17.7 363.7 -17.3Q365.5 -16.9 367.2 -16.3Q368.9 -15.7 370.2 -14.7Q371.6 -13.8 372.4 -12.2Q373.2 -10.7 373.2 -8.4Q373.2 -5.4 371.9 -3.4Q370.6 -1.4 368.3 -0.3Q366 0.7 362.9 0.7Q360.3 0.7 358.2 -0.1Q356 -0.8 354.6 -2.6Q353.2 -4.4 352.6 -7.5L354 -6.3L353.4 0.1H350.3V-9.2H353.8Q354.5 -6.9 355.7 -5.3Q357 -3.8 358.7 -3Q360.4 -2.3 362.5 -2.3ZM393.4 0.7Q390.1 0.7 387.5 -0.3Q384.8 -1.3 382.9 -3.2Q380.9 -5.2 379.9 -7.9Q378.8 -10.7 378.8 -14.2Q378.8 -17.7 379.9 -20.5Q380.9 -23.2 382.9 -25.2Q384.8 -27.1 387.5 -28.1Q390.1 -29.1 393.4 -29.1Q396.6 -29.1 399.2 -28.1Q401.9 -27.1 403.8 -25.2Q405.7 -23.2 406.8 -20.5Q407.8 -17.7 407.8 -14.2Q407.8 -10.7 406.8 -7.9Q405.7 -5.2 403.8 -3.2Q401.9 -1.3 399.2 -0.3Q396.6 0.7 393.4 0.7ZM393.4 -2.4Q395.2 -2.4 396.7 -3.2Q398.2 -3.9 399.2 -5.3Q400.2 -6.8 400.8 -9Q401.3 -11.2 401.3 -14.2Q401.3 -17.2 400.8 -19.4Q400.2 -21.6 399.2 -23.1Q398.2 -24.5 396.7 -25.2Q395.2 -26 393.4 -26Q391.5 -26 390 -25.2Q388.5 -24.5 387.5 -23.1Q386.4 -21.6 385.9 -19.4Q385.4 -17.2 385.4 -14.2Q385.4 -11.2 385.9 -9Q386.4 -6.8 387.5 -5.3Q388.5 -3.9 390 -3.2Q391.5 -2.4 393.4 -2.4ZM413.9 0V-2.8H414.3Q415.1 -2.8 415.7 -2.9Q416.4 -3 416.7 -3.4Q417.1 -3.7 417.1 -4.3V-24.2Q417.1 -24.8 416.7 -25.1Q416.4 -25.4 415.7 -25.5Q415.1 -25.6 414.3 -25.6H413.9V-28.4H425.1L437.3 -5.2L436.6 -5.4V-25.2Q436.6 -25.3 436.1 -25.4Q435.7 -25.5 435 -25.6Q434.4 -25.6 433.7 -25.6H433.2V-28.4H443V-25.6H442.6Q441.8 -25.6 441.1 -25.5Q440.5 -25.4 440.1 -25.1Q439.8 -24.8 439.8 -24.2V0H433.5L419.4 -26.7L420.3 -26.5V-3.2Q420.3 -3.1 420.7 -3Q421.2 -2.9 421.9 -2.8Q422.5 -2.8 423.2 -2.8H423.7V0Z"/></g>
+  <path transform="translate(158.24 110)" fill="#4FC1CD" d="M2.1 -8.2H0.8V0H1.8V-3.3L1.8 -6.6L3.1 -2.3H3.7L5.3 -6.7L5.2 -3.3V0H6.2V-8.2H4.9L3.4 -4.1ZM13.4 -2.1 14 0H15.1L12.5 -8.2H11.6L9 0H10L10.7 -2.1ZM10.9 -3 12 -6.6 13.1 -3ZM23.3 -2.5H22.3Q22.2 -2.1 22.1 -1.8Q22 -1.5 21.8 -1.2Q21.5 -1 21.2 -0.9Q20.9 -0.7 20.5 -0.7Q20.2 -0.7 19.9 -0.9Q19.6 -1 19.4 -1.2Q19.2 -1.4 19 -1.7Q18.9 -1.9 18.8 -2.3Q18.7 -2.6 18.7 -2.9Q18.7 -3.2 18.7 -3.5V-4.7Q18.7 -5 18.7 -5.3Q18.7 -5.6 18.8 -5.9Q18.9 -6.2 19 -6.5Q19.2 -6.8 19.4 -7Q19.6 -7.2 19.9 -7.3Q20.2 -7.4 20.5 -7.4Q20.9 -7.4 21.2 -7.3Q21.5 -7.2 21.8 -6.9Q22 -6.7 22.1 -6.4Q22.2 -6 22.3 -5.7H23.3Q23.2 -6.3 23 -6.7Q22.8 -7.2 22.5 -7.6Q22.1 -7.9 21.6 -8.1Q21.1 -8.3 20.5 -8.3Q20 -8.3 19.6 -8.1Q19.2 -8 18.9 -7.7Q18.6 -7.5 18.3 -7.2Q18.1 -6.8 17.9 -6.4Q17.8 -6 17.7 -5.6Q17.6 -5.1 17.6 -4.7V-3.5Q17.6 -3.1 17.7 -2.6Q17.8 -2.2 17.9 -1.8Q18.1 -1.4 18.3 -1Q18.6 -0.7 18.9 -0.4Q19.2 -0.2 19.6 -0Q20 0.1 20.5 0.1Q21.1 0.1 21.6 -0.1Q22.1 -0.3 22.4 -0.6Q22.8 -0.9 23 -1.4Q23.2 -1.9 23.3 -2.5ZM31.6 0V-8.2H30.7V-4.7H27.3V-8.2H26.3V0H27.3V-3.8H30.7V0ZM35 -8.2V-7.3H36.9V-0.9H35V0H40V-0.9H38V-7.3H40V-8.2ZM48.7 0V-8.2H47.6L47.6 -2.1L44.4 -8.2H43.4V0H44.4L44.4 -6.1L47.6 0ZM56.5 -3.8V-4.7H53.1V-7.3H57.1V-8.2H52.1V0H57.1V-0.9H53.1V-3.8ZM70.2 -0.9V-8.2H69.2V0H74.2V-0.9ZM82.1 -3.8V-4.7H78.7V-7.3H82.6V-8.2H77.6V0H82.6V-0.9H78.7V-3.8ZM90 -2.1 90.6 0H91.7L89.1 -8.2H88.2L85.6 0H86.6L87.3 -2.1ZM87.5 -3 88.6 -6.6 89.7 -3ZM97.3 -3.3 98.9 0H100L100 -0.1L98.3 -3.6Q98.6 -3.7 98.9 -3.9Q99.2 -4.1 99.4 -4.4Q99.6 -4.7 99.7 -5Q99.8 -5.3 99.8 -5.7Q99.8 -6.3 99.6 -6.8Q99.4 -7.3 99 -7.6Q98.6 -7.9 98.1 -8Q97.6 -8.2 97 -8.2H94.6V0H95.7V-3.3ZM95.7 -4.2V-7.3H97Q97.4 -7.3 97.7 -7.2Q98 -7.1 98.3 -6.9Q98.5 -6.7 98.6 -6.4Q98.8 -6.1 98.8 -5.7Q98.8 -5.4 98.6 -5.1Q98.5 -4.8 98.3 -4.6Q98 -4.4 97.7 -4.3Q97.4 -4.2 97.1 -4.2ZM108.2 0V-8.2H107.2L107.2 -2.1L104 -8.2H102.9V0H104L104 -6.1L107.2 0ZM111.6 -8.2V-7.3H113.5V-0.9H111.6V0H116.6V-0.9H114.6V-7.3H116.6V-8.2ZM125.3 0V-8.2H124.2L124.2 -2.1L121 -8.2H120V0H121L121 -6.1L124.2 0ZM133.9 -1.1 133.9 -4.1H131.3V-3.2H132.9L132.9 -1.4Q132.8 -1.2 132.6 -1.1Q132.4 -0.9 132.2 -0.9Q132 -0.8 131.7 -0.8Q131.5 -0.8 131.3 -0.8Q130.9 -0.8 130.6 -0.9Q130.3 -1 130.1 -1.2Q129.9 -1.5 129.7 -1.7Q129.6 -2 129.5 -2.3Q129.4 -2.6 129.3 -3Q129.3 -3.3 129.3 -3.6V-4.6Q129.3 -4.9 129.3 -5.2Q129.4 -5.5 129.4 -5.8Q129.5 -6.2 129.7 -6.4Q129.8 -6.7 130 -6.9Q130.2 -7.1 130.5 -7.3Q130.8 -7.4 131.2 -7.4Q131.6 -7.4 131.9 -7.3Q132.2 -7.2 132.4 -6.9Q132.6 -6.7 132.7 -6.4Q132.8 -6.1 132.9 -5.8H133.9Q133.9 -6.4 133.7 -6.8Q133.4 -7.3 133.1 -7.6Q132.7 -7.9 132.2 -8.1Q131.7 -8.3 131.2 -8.3Q130.7 -8.3 130.2 -8.1Q129.8 -8 129.5 -7.7Q129.2 -7.5 128.9 -7.1Q128.7 -6.7 128.5 -6.3Q128.4 -5.9 128.3 -5.5Q128.2 -5 128.2 -4.6V-3.6Q128.2 -3.2 128.3 -2.7Q128.4 -2.2 128.6 -1.8Q128.8 -1.4 129 -1.1Q129.3 -0.7 129.6 -0.5Q129.9 -0.2 130.4 -0Q130.8 0.1 131.3 0.1Q131.8 0.1 132.2 0Q132.7 -0.1 133.1 -0.3Q133.3 -0.5 133.5 -0.7Q133.7 -0.8 133.9 -1.1ZM147 -4.4V-4.1Q147 -3.9 147.1 -3.7Q147.2 -3.5 147.3 -3.3Q147.5 -3.2 147.7 -3.1Q147.9 -3 148.1 -3Q148.4 -3 148.6 -3.1Q148.8 -3.2 149 -3.3Q149.1 -3.5 149.2 -3.7Q149.3 -3.9 149.3 -4.1V-4.4Q149.3 -4.7 149.2 -4.9Q149.1 -5.1 149 -5.2Q148.8 -5.4 148.6 -5.5Q148.4 -5.5 148.1 -5.5Q147.9 -5.5 147.7 -5.5Q147.4 -5.4 147.3 -5.2Q147.2 -5.1 147.1 -4.9Q147 -4.7 147 -4.4ZM162.6 0H164.5Q165.1 -0 165.6 -0.1Q166.1 -0.3 166.5 -0.5Q166.9 -0.8 167.2 -1.1Q167.5 -1.5 167.7 -1.9Q167.9 -2.3 168 -2.8Q168.1 -3.2 168.1 -3.8V-4.4Q168.1 -4.9 168 -5.4Q167.9 -5.9 167.7 -6.4Q167.4 -6.8 167 -7.2Q166.7 -7.6 166.2 -7.8Q165.8 -8 165.4 -8.1Q165 -8.2 164.5 -8.2H162.6ZM163.6 -7.3H164.5Q164.9 -7.3 165.2 -7.2Q165.5 -7.2 165.8 -7Q166.1 -6.8 166.4 -6.5Q166.7 -6.2 166.8 -5.8Q166.9 -5.5 167 -5.1Q167 -4.8 167.1 -4.4V-3.8Q167 -3.4 167 -3.1Q166.9 -2.7 166.8 -2.4Q166.7 -2.1 166.5 -1.8Q166.2 -1.5 165.9 -1.3Q165.7 -1.1 165.3 -1Q164.9 -0.9 164.5 -0.8H163.6ZM175.1 -2.1 175.7 0H176.8L174.2 -8.2H173.3L170.7 0H171.7L172.4 -2.1ZM172.7 -3 173.7 -6.6 174.8 -3ZM185.2 -7.3V-8.2H179.2V-7.3H181.7V0H182.7V-7.3ZM192.1 -2.1 192.8 0H193.8L191.2 -8.2H190.3L187.7 0H188.7L189.4 -2.1ZM189.7 -3 190.8 -6.6 191.8 -3ZM209.5 -2.1Q209.5 -1.7 209.4 -1.5Q209.2 -1.2 209 -1.1Q208.8 -0.9 208.5 -0.8Q208.2 -0.8 207.9 -0.8Q207.5 -0.8 207.2 -0.9Q206.8 -1 206.6 -1.2Q206.4 -1.4 206.2 -1.7Q206 -2 206 -2.4H204.9Q204.9 -1.8 205.2 -1.4Q205.4 -1 205.7 -0.7Q206.2 -0.3 206.7 -0.1Q207.3 0.1 207.9 0.1Q208.4 0.1 208.9 -0Q209.3 -0.2 209.7 -0.4Q210.1 -0.7 210.4 -1.1Q210.6 -1.5 210.6 -2.1Q210.6 -2.6 210.4 -3Q210.2 -3.5 209.8 -3.7Q209.4 -4 209 -4.2Q208.5 -4.4 208 -4.6Q207.8 -4.7 207.5 -4.8Q207.1 -4.9 206.9 -5.1Q206.6 -5.2 206.4 -5.5Q206.3 -5.7 206.3 -6.1Q206.3 -6.4 206.4 -6.6Q206.5 -6.9 206.7 -7.1Q207 -7.2 207.2 -7.3Q207.5 -7.4 207.8 -7.4Q208.2 -7.4 208.5 -7.3Q208.8 -7.2 209 -7Q209.2 -6.8 209.3 -6.5Q209.5 -6.2 209.5 -5.8H210.6Q210.6 -6.4 210.3 -6.8Q210.1 -7.3 209.7 -7.6Q209.3 -7.9 208.9 -8.1Q208.4 -8.3 207.8 -8.3Q207.3 -8.3 206.9 -8.1Q206.4 -8 206 -7.7Q205.6 -7.4 205.4 -7Q205.2 -6.6 205.2 -6.1Q205.2 -5.5 205.4 -5.1Q205.6 -4.8 206 -4.5Q206.4 -4.2 206.8 -4Q207.3 -3.8 207.7 -3.6Q208 -3.5 208.3 -3.4Q208.6 -3.3 208.9 -3.1Q209.2 -3 209.4 -2.7Q209.5 -2.4 209.5 -2.1ZM219.1 -2.5H218Q218 -2.1 217.8 -1.8Q217.7 -1.5 217.5 -1.2Q217.3 -1 217 -0.9Q216.7 -0.7 216.3 -0.7Q215.9 -0.7 215.6 -0.9Q215.3 -1 215.1 -1.2Q214.9 -1.4 214.8 -1.7Q214.7 -1.9 214.6 -2.3Q214.5 -2.6 214.5 -2.9Q214.4 -3.2 214.4 -3.5V-4.7Q214.4 -5 214.5 -5.3Q214.5 -5.6 214.6 -5.9Q214.7 -6.2 214.8 -6.5Q214.9 -6.8 215.1 -7Q215.3 -7.2 215.6 -7.3Q215.9 -7.4 216.3 -7.4Q216.7 -7.4 217 -7.3Q217.3 -7.2 217.5 -6.9Q217.7 -6.7 217.8 -6.4Q218 -6 218 -5.7H219.1Q219 -6.3 218.8 -6.7Q218.6 -7.2 218.2 -7.6Q217.9 -7.9 217.4 -8.1Q216.9 -8.3 216.3 -8.3Q215.8 -8.3 215.4 -8.1Q215 -8 214.6 -7.7Q214.3 -7.5 214.1 -7.2Q213.8 -6.8 213.7 -6.4Q213.5 -6 213.5 -5.6Q213.4 -5.1 213.4 -4.7V-3.5Q213.4 -3.1 213.5 -2.6Q213.5 -2.2 213.7 -1.8Q213.8 -1.4 214.1 -1Q214.3 -0.7 214.6 -0.4Q215 -0.2 215.4 -0Q215.8 0.1 216.3 0.1Q216.9 0.1 217.4 -0.1Q217.8 -0.3 218.2 -0.6Q218.5 -0.9 218.8 -1.4Q219 -1.9 219.1 -2.5ZM222.3 -8.2V-7.3H224.2V-0.9H222.3V0H227.2V-0.9H225.2V-7.3H227.2V-8.2ZM235.3 -3.8V-4.7H231.9V-7.3H235.8V-8.2H230.8V0H235.8V-0.9H231.9V-3.8ZM244.4 0V-8.2H243.4L243.3 -2.1L240.2 -8.2H239.1V0H240.2L240.2 -6.1L243.4 0ZM253.1 -2.5H252.1Q252 -2.1 251.9 -1.8Q251.8 -1.5 251.6 -1.2Q251.3 -1 251 -0.9Q250.7 -0.7 250.3 -0.7Q250 -0.7 249.7 -0.9Q249.4 -1 249.2 -1.2Q249 -1.4 248.8 -1.7Q248.7 -1.9 248.6 -2.3Q248.5 -2.6 248.5 -2.9Q248.5 -3.2 248.5 -3.5V-4.7Q248.5 -5 248.5 -5.3Q248.5 -5.6 248.6 -5.9Q248.7 -6.2 248.8 -6.5Q249 -6.8 249.2 -7Q249.4 -7.2 249.7 -7.3Q250 -7.4 250.3 -7.4Q250.7 -7.4 251 -7.3Q251.3 -7.2 251.6 -6.9Q251.8 -6.7 251.9 -6.4Q252 -6 252.1 -5.7H253.1Q253 -6.3 252.8 -6.7Q252.6 -7.2 252.3 -7.6Q251.9 -7.9 251.4 -8.1Q250.9 -8.3 250.3 -8.3Q249.8 -8.3 249.4 -8.1Q249 -8 248.7 -7.7Q248.4 -7.5 248.1 -7.2Q247.9 -6.8 247.7 -6.4Q247.6 -6 247.5 -5.6Q247.4 -5.1 247.4 -4.7V-3.5Q247.4 -3.1 247.5 -2.6Q247.6 -2.2 247.7 -1.8Q247.9 -1.4 248.1 -1Q248.4 -0.7 248.7 -0.4Q249 -0.2 249.4 -0Q249.8 0.1 250.3 0.1Q250.9 0.1 251.4 -0.1Q251.9 -0.3 252.2 -0.6Q252.6 -0.9 252.8 -1.4Q253 -1.9 253.1 -2.5ZM260.8 -3.8V-4.7H257.4V-7.3H261.3V-8.2H256.4V0H261.4V-0.9H257.4V-3.8ZM274.7 -4.4V-4.1Q274.7 -3.9 274.7 -3.7Q274.8 -3.5 275 -3.3Q275.1 -3.2 275.3 -3.1Q275.5 -3 275.8 -3Q276.1 -3 276.3 -3.1Q276.5 -3.2 276.6 -3.3Q276.8 -3.5 276.9 -3.7Q276.9 -3.9 276.9 -4.1V-4.4Q276.9 -4.7 276.9 -4.9Q276.8 -5.1 276.6 -5.2Q276.5 -5.4 276.3 -5.5Q276.1 -5.5 275.8 -5.5Q275.5 -5.5 275.3 -5.5Q275.1 -5.4 275 -5.2Q274.8 -5.1 274.7 -4.9Q274.7 -4.7 274.7 -4.4ZM294.3 -2.1 294.9 0H295.9L293.3 -8.2H292.5L289.8 0H290.9L291.5 -2.1ZM291.8 -3 292.9 -6.6 294 -3ZM298.9 -8.2V-7.3H300.8V-0.9H298.9V0H303.8V-0.9H301.8V-7.3H303.8V-8.2ZM320.4 -3.8V-4.7H317V-7.3H320.9V-8.2H315.9V0H321V-0.9H317V-3.8ZM329.5 0V-8.2H328.5L328.5 -2.1L325.3 -8.2H324.2V0H325.3L325.3 -6.1L328.5 0ZM338.2 -1.1 338.2 -4.1H335.5V-3.2H337.2L337.2 -1.4Q337.1 -1.2 336.9 -1.1Q336.7 -0.9 336.5 -0.9Q336.2 -0.8 336 -0.8Q335.8 -0.8 335.6 -0.8Q335.2 -0.8 334.9 -0.9Q334.6 -1 334.4 -1.2Q334.2 -1.5 334 -1.7Q333.8 -2 333.7 -2.3Q333.6 -2.6 333.6 -3Q333.5 -3.3 333.5 -3.6V-4.6Q333.5 -4.9 333.6 -5.2Q333.6 -5.5 333.7 -5.8Q333.8 -6.2 333.9 -6.4Q334.1 -6.7 334.3 -6.9Q334.5 -7.1 334.8 -7.3Q335.1 -7.4 335.4 -7.4Q335.8 -7.4 336.1 -7.3Q336.4 -7.2 336.6 -6.9Q336.8 -6.7 337 -6.4Q337.1 -6.1 337.2 -5.8H338.2Q338.1 -6.4 337.9 -6.8Q337.7 -7.3 337.3 -7.6Q337 -7.9 336.5 -8.1Q336 -8.3 335.4 -8.3Q334.9 -8.3 334.5 -8.1Q334.1 -8 333.8 -7.7Q333.4 -7.5 333.2 -7.1Q333 -6.7 332.8 -6.3Q332.7 -5.9 332.6 -5.5Q332.5 -5 332.5 -4.6V-3.6Q332.5 -3.2 332.6 -2.7Q332.7 -2.2 332.8 -1.8Q333 -1.4 333.3 -1.1Q333.5 -0.7 333.9 -0.5Q334.2 -0.2 334.6 -0Q335 0.1 335.6 0.1Q336 0.1 336.5 0Q337 -0.1 337.4 -0.3Q337.6 -0.5 337.8 -0.7Q338 -0.8 338.2 -1.1ZM341.4 -8.2V-7.3H343.3V-0.9H341.4V0H346.4V-0.9H344.4V-7.3H346.4V-8.2ZM355.1 0V-8.2H354L354 -2.1L350.8 -8.2H349.8V0H350.8L350.8 -6.1L354 0ZM362.9 -3.8V-4.7H359.5V-7.3H363.5V-8.2H358.5V0H363.5V-0.9H359.5V-3.8ZM371.5 -3.8V-4.7H368V-7.3H372V-8.2H367V0H372V-0.9H368V-3.8ZM378.2 -3.3 379.8 0H380.9L380.9 -0.1L379.1 -3.6Q379.5 -3.7 379.8 -3.9Q380 -4.1 380.2 -4.4Q380.4 -4.7 380.6 -5Q380.7 -5.3 380.7 -5.7Q380.7 -6.3 380.5 -6.8Q380.2 -7.3 379.9 -7.6Q379.5 -7.9 379 -8Q378.5 -8.2 377.9 -8.2H375.5V0H376.5V-3.3ZM376.5 -4.2V-7.3H377.9Q378.3 -7.3 378.6 -7.2Q378.9 -7.1 379.1 -6.9Q379.4 -6.7 379.5 -6.4Q379.6 -6.1 379.6 -5.7Q379.6 -5.4 379.5 -5.1Q379.4 -4.8 379.1 -4.6Q378.9 -4.4 378.6 -4.3Q378.3 -4.2 377.9 -4.2ZM384 -8.2V-7.3H385.9V-0.9H384V0H388.9V-0.9H387V-7.3H388.9V-8.2ZM397.6 0V-8.2H396.6L396.5 -2.1L393.4 -8.2H392.3V0H393.4L393.4 -6.1L396.6 0ZM406.3 -1.1 406.3 -4.1H403.6V-3.2H405.3L405.3 -1.4Q405.1 -1.2 405 -1.1Q404.8 -0.9 404.5 -0.9Q404.3 -0.8 404.1 -0.8Q403.9 -0.8 403.6 -0.8Q403.3 -0.8 403 -0.9Q402.7 -1 402.5 -1.2Q402.2 -1.5 402.1 -1.7Q401.9 -2 401.8 -2.3Q401.7 -2.6 401.7 -3Q401.6 -3.3 401.6 -3.6V-4.6Q401.6 -4.9 401.7 -5.2Q401.7 -5.5 401.8 -5.8Q401.9 -6.2 402 -6.4Q402.2 -6.7 402.4 -6.9Q402.6 -7.1 402.9 -7.3Q403.2 -7.4 403.5 -7.4Q403.9 -7.4 404.2 -7.3Q404.5 -7.2 404.7 -6.9Q404.9 -6.7 405.1 -6.4Q405.2 -6.1 405.3 -5.8H406.3Q406.2 -6.4 406 -6.8Q405.8 -7.3 405.4 -7.6Q405.1 -7.9 404.6 -8.1Q404.1 -8.3 403.5 -8.3Q403 -8.3 402.6 -8.1Q402.2 -8 401.9 -7.7Q401.5 -7.5 401.3 -7.1Q401.1 -6.7 400.9 -6.3Q400.7 -5.9 400.7 -5.5Q400.6 -5 400.6 -4.6V-3.6Q400.6 -3.2 400.7 -2.7Q400.8 -2.2 400.9 -1.8Q401.1 -1.4 401.4 -1.1Q401.6 -0.7 401.9 -0.5Q402.3 -0.2 402.7 -0Q403.1 0.1 403.6 0.1Q404.1 0.1 404.6 0Q405 -0.1 405.4 -0.3Q405.7 -0.5 405.9 -0.7Q406.1 -0.8 406.3 -1.1ZM417.6 -2.1Q417.6 -1.6 417.8 -1.2Q418 -0.8 418.3 -0.5Q418.6 -0.2 419.1 -0.1Q419.5 0.1 420.1 0.1Q420.4 0.1 420.7 0Q421.1 -0 421.4 -0.2Q421.5 -0.3 421.7 -0.4Q421.9 -0.5 422 -0.6L422.5 0H423.7L422.7 -1.3Q423.1 -1.8 423.3 -2.4Q423.5 -3.1 423.5 -3.8H422.6Q422.6 -3.3 422.5 -2.9Q422.4 -2.4 422.2 -2.1L420.4 -4.3L421 -4.8Q421.2 -5 421.4 -5.2Q421.6 -5.3 421.8 -5.6Q422 -5.8 422 -6Q422.1 -6.3 422.1 -6.6Q422.1 -6.9 422 -7.2Q421.9 -7.5 421.7 -7.8Q421.4 -8 421.1 -8.2Q420.8 -8.3 420.4 -8.3Q419.9 -8.3 419.5 -8.2Q419.2 -8 418.9 -7.8Q418.6 -7.5 418.5 -7.2Q418.4 -6.8 418.4 -6.3Q418.4 -6.1 418.4 -5.9Q418.5 -5.7 418.5 -5.5Q418.6 -5.2 418.8 -4.9Q419 -4.7 419.2 -4.4L419 -4.3Q418.7 -4.1 418.5 -3.8Q418.2 -3.6 418.1 -3.4Q417.9 -3.1 417.8 -2.8Q417.6 -2.5 417.6 -2.1ZM420.1 -0.7Q419.7 -0.7 419.5 -0.8Q419.2 -0.9 419 -1.1Q418.9 -1.3 418.8 -1.6Q418.7 -1.8 418.7 -2.1Q418.7 -2.2 418.7 -2.4Q418.7 -2.5 418.8 -2.7Q418.9 -2.9 419.1 -3.1Q419.3 -3.3 419.6 -3.6L419.7 -3.7L421.5 -1.3Q421.4 -1.2 421.3 -1.1Q421.1 -1 421 -0.9Q420.8 -0.8 420.5 -0.8Q420.3 -0.7 420.1 -0.7ZM419.4 -6.3Q419.4 -6.6 419.5 -6.8Q419.5 -7 419.7 -7.1Q419.8 -7.3 420 -7.4Q420.1 -7.4 420.4 -7.4Q420.6 -7.4 420.7 -7.4Q420.9 -7.3 421 -7.2Q421.1 -7 421.1 -6.9Q421.2 -6.7 421.2 -6.6Q421.2 -6.4 421.1 -6.3Q421.1 -6.2 421.1 -6Q421 -5.9 420.9 -5.8Q420.8 -5.6 420.6 -5.5L419.9 -5Q419.8 -5.2 419.7 -5.4Q419.6 -5.6 419.5 -5.8Q419.5 -5.9 419.4 -6.1Q419.4 -6.2 419.4 -6.3ZM439.3 -2.1Q439.3 -1.7 439.2 -1.5Q439 -1.2 438.8 -1.1Q438.6 -0.9 438.3 -0.8Q438 -0.8 437.7 -0.8Q437.3 -0.8 437 -0.9Q436.7 -1 436.4 -1.2Q436.2 -1.4 436 -1.7Q435.8 -2 435.8 -2.4H434.7Q434.7 -1.8 435 -1.4Q435.2 -1 435.5 -0.7Q436 -0.3 436.5 -0.1Q437.1 0.1 437.7 0.1Q438.2 0.1 438.7 -0Q439.1 -0.2 439.5 -0.4Q439.9 -0.7 440.2 -1.1Q440.4 -1.5 440.4 -2.1Q440.4 -2.6 440.2 -3Q440 -3.5 439.6 -3.7Q439.2 -4 438.8 -4.2Q438.3 -4.4 437.8 -4.6Q437.6 -4.7 437.3 -4.8Q436.9 -4.9 436.7 -5.1Q436.4 -5.2 436.2 -5.5Q436.1 -5.7 436.1 -6.1Q436.1 -6.4 436.2 -6.6Q436.3 -6.9 436.5 -7.1Q436.8 -7.2 437 -7.3Q437.3 -7.4 437.6 -7.4Q438 -7.4 438.3 -7.3Q438.6 -7.2 438.8 -7Q439 -6.8 439.1 -6.5Q439.3 -6.2 439.3 -5.8H440.4Q440.4 -6.4 440.1 -6.8Q439.9 -7.3 439.5 -7.6Q439.1 -7.9 438.7 -8.1Q438.2 -8.3 437.6 -8.3Q437.1 -8.3 436.7 -8.1Q436.2 -8 435.8 -7.7Q435.4 -7.4 435.2 -7Q435 -6.6 435 -6.1Q435 -5.5 435.2 -5.1Q435.4 -4.8 435.8 -4.5Q436.2 -4.2 436.6 -4Q437.1 -3.8 437.5 -3.6Q437.8 -3.5 438.1 -3.4Q438.4 -3.3 438.7 -3.1Q439 -3 439.2 -2.7Q439.3 -2.4 439.3 -2.1ZM447.5 -2.1 448.1 0H449.1L446.5 -8.2H445.7L443 0H444.1L444.7 -2.1ZM445 -3 446.1 -6.6 447.2 -3ZM456.6 -3.6V-4.5H453.2V-7.3H457.2V-8.2H452.2V0H453.2V-3.6ZM465.1 -3.8V-4.7H461.7V-7.3H465.6V-8.2H460.6V0H465.6V-0.9H461.7V-3.8ZM474.6 -7.3V-8.2H468.5V-7.3H471.1V0H472.1V-7.3ZM480 -4.1 478.2 -8.2H477L479.5 -3L479.5 0H480.5L480.5 -3L483.1 -8.2H481.9Z"/>
+  <g clip-path="url(#c2)"><path transform="translate(221.47 154)" fill="#93A3A9" d="M1.4 -12.1V-10.7H4.3V-1.3H1.4V0H8.7V-1.3H5.9V-10.7H8.7V-12.1ZM15.3 -11.2H13.7V-9H11.4V-7.8H13.7V-2.9Q13.7 -2.1 14 -1.5Q14.2 -0.9 14.6 -0.5Q14.9 -0.2 15.5 -0Q16 0.2 16.6 0.2Q16.9 0.2 17.3 0.1Q17.7 0.1 18 0Q18.3 -0 18.6 -0.1Q18.9 -0.2 19 -0.3L18.8 -1.4Q18.7 -1.4 18.5 -1.3Q18.2 -1.3 18 -1.2Q17.7 -1.2 17.5 -1.2Q17.2 -1.1 17 -1.1Q16.6 -1.1 16.3 -1.2Q16 -1.3 15.8 -1.5Q15.5 -1.7 15.4 -2.1Q15.3 -2.4 15.3 -2.9V-7.8H18.7V-9H15.3ZM26.5 -11.7V-12.9H25V-11.7Q25 -11 24.8 -10.4Q24.6 -9.7 24.2 -9.2L25.1 -8.6Q25.4 -8.9 25.7 -9.2Q25.9 -9.6 26.1 -10Q26.3 -10.5 26.4 -10.9Q26.5 -11.3 26.5 -11.7ZM38 -2.4Q38 -2.2 37.9 -2Q37.9 -1.8 37.7 -1.6Q37.4 -1.4 37 -1.2Q36.5 -1.1 35.9 -1.1Q35.5 -1.1 35.1 -1.2Q34.7 -1.2 34.4 -1.4Q34.1 -1.6 33.8 -2Q33.6 -2.3 33.6 -2.8H32.1Q32.1 -2.2 32.3 -1.7Q32.6 -1.1 33.1 -0.7Q33.6 -0.3 34.3 -0.1Q35 0.2 35.9 0.2Q36.7 0.2 37.4 -0Q38.1 -0.2 38.5 -0.6Q39 -0.9 39.3 -1.4Q39.6 -1.9 39.6 -2.5Q39.6 -3 39.3 -3.5Q39.1 -3.9 38.6 -4.2Q38.2 -4.5 37.5 -4.8Q36.9 -5 36 -5.2Q35.4 -5.3 35 -5.4Q34.6 -5.6 34.3 -5.7Q34.1 -5.9 34 -6.1Q33.9 -6.3 33.9 -6.6Q33.9 -6.8 34 -7.1Q34.1 -7.3 34.4 -7.5Q34.6 -7.7 35 -7.8Q35.4 -7.9 35.9 -7.9Q36.3 -7.9 36.7 -7.8Q37.1 -7.6 37.4 -7.4Q37.6 -7.2 37.8 -6.9Q37.9 -6.6 37.9 -6.3H39.5Q39.5 -6.9 39.2 -7.4Q39 -8 38.5 -8.3Q38 -8.7 37.4 -8.9Q36.7 -9.1 35.9 -9.1Q35.1 -9.1 34.5 -8.9Q33.8 -8.7 33.3 -8.4Q32.9 -8 32.6 -7.5Q32.4 -7.1 32.4 -6.5Q32.4 -6 32.6 -5.5Q32.9 -5.1 33.3 -4.8Q33.8 -4.5 34.4 -4.3Q35 -4.1 35.8 -3.9Q36.4 -3.8 36.9 -3.6Q37.3 -3.5 37.5 -3.3Q37.8 -3.1 37.9 -2.9Q38 -2.7 38 -2.4ZM58.4 0H60V-0.1Q59.8 -0.5 59.7 -1Q59.6 -1.5 59.6 -2V-6.1Q59.6 -6.9 59.4 -7.5Q59.1 -8 58.6 -8.4Q58.1 -8.8 57.5 -9Q56.8 -9.1 56.1 -9.1Q55.2 -9.1 54.6 -8.9Q53.9 -8.7 53.4 -8.3Q53 -7.9 52.7 -7.5Q52.5 -7 52.5 -6.5H54Q54 -6.8 54.2 -7Q54.3 -7.3 54.6 -7.5Q54.8 -7.7 55.2 -7.8Q55.5 -7.9 56 -7.9Q56.5 -7.9 56.9 -7.8Q57.3 -7.7 57.5 -7.4Q57.8 -7.2 58 -6.9Q58.1 -6.6 58.1 -6.2V-5.4H56.4Q55.5 -5.4 54.7 -5.3Q54 -5.1 53.4 -4.7Q52.9 -4.3 52.6 -3.8Q52.3 -3.2 52.3 -2.5Q52.3 -1.9 52.5 -1.4Q52.7 -1 53.1 -0.6Q53.5 -0.2 54.1 -0Q54.7 0.2 55.4 0.2Q55.9 0.2 56.2 0.1Q56.6 -0 57 -0.2Q57.3 -0.3 57.6 -0.5Q57.9 -0.7 58.1 -1Q58.2 -0.7 58.2 -0.4Q58.3 -0.2 58.4 0ZM55.6 -1.2Q55.2 -1.2 54.9 -1.3Q54.5 -1.4 54.3 -1.6Q54.1 -1.8 54 -2.1Q53.8 -2.4 53.8 -2.7Q53.8 -3.1 54 -3.3Q54.1 -3.6 54.3 -3.8Q54.7 -4.1 55.3 -4.2Q55.9 -4.4 56.7 -4.4H58.1V-2.5Q58 -2.3 57.7 -2Q57.5 -1.8 57.2 -1.6Q56.9 -1.4 56.5 -1.3Q56.1 -1.2 55.6 -1.2ZM72.8 3.5H74.4V-0.9Q74.5 -0.7 74.7 -0.5Q74.9 -0.4 75.1 -0.2Q75.5 -0 75.9 0.1Q76.4 0.2 76.9 0.2Q77.8 0.2 78.4 -0.2Q79.1 -0.5 79.5 -1.1Q80 -1.8 80.2 -2.6Q80.4 -3.4 80.4 -4.4V-4.6Q80.4 -5.6 80.2 -6.4Q80 -7.3 79.5 -7.9Q79.1 -8.5 78.4 -8.8Q77.7 -9.1 76.9 -9.1Q76.4 -9.1 76 -9Q75.5 -8.9 75.2 -8.7Q74.9 -8.6 74.7 -8.4Q74.5 -8.2 74.3 -8L74.3 -9H72.8ZM78.9 -4.6V-4.4Q78.9 -3.7 78.8 -3.1Q78.6 -2.5 78.3 -2.1Q78 -1.6 77.5 -1.4Q77.1 -1.1 76.4 -1.1Q76 -1.1 75.7 -1.2Q75.4 -1.3 75.1 -1.5Q74.9 -1.6 74.7 -1.8Q74.5 -2 74.4 -2.3V-6.6Q74.5 -6.9 74.7 -7.1Q75 -7.4 75.2 -7.5Q75.5 -7.7 75.8 -7.8Q76.1 -7.8 76.4 -7.8Q77.1 -7.8 77.5 -7.6Q78 -7.3 78.3 -6.9Q78.6 -6.4 78.8 -5.8Q78.9 -5.2 78.9 -4.6ZM83.3 -12.8V-11.4H86.4V-1.3H83.3V0H90.8V-1.3H87.9V-12.8ZM97.2 0.2Q98.5 0.2 99.4 -0.4Q100.3 -0.9 100.8 -1.6L99.8 -2.3Q99.4 -1.8 98.8 -1.4Q98.1 -1.1 97.3 -1.1Q96.7 -1.1 96.2 -1.3Q95.7 -1.6 95.3 -2Q94.9 -2.3 94.7 -2.8Q94.5 -3.3 94.5 -4V-4.1H100.9V-4.7Q100.9 -5.7 100.7 -6.5Q100.4 -7.3 99.9 -7.9Q99.5 -8.5 98.7 -8.8Q98 -9.1 97 -9.1Q96.3 -9.1 95.5 -8.8Q94.8 -8.5 94.2 -7.9Q93.6 -7.3 93.3 -6.5Q92.9 -5.6 92.9 -4.5V-4.2Q92.9 -3.2 93.3 -2.4Q93.6 -1.6 94.1 -1.1Q94.7 -0.5 95.5 -0.2Q96.3 0.2 97.2 0.2ZM97 -7.9Q97.6 -7.9 98 -7.7Q98.5 -7.5 98.8 -7.1Q99 -6.8 99.2 -6.3Q99.4 -5.8 99.4 -5.4V-5.3H94.5Q94.6 -5.9 94.8 -6.4Q95.1 -6.9 95.4 -7.2Q95.7 -7.5 96.1 -7.7Q96.6 -7.9 97 -7.9ZM109.4 0H111V-0.1Q110.8 -0.5 110.7 -1Q110.6 -1.5 110.6 -2V-6.1Q110.6 -6.9 110.4 -7.5Q110.1 -8 109.6 -8.4Q109.1 -8.8 108.5 -9Q107.8 -9.1 107.1 -9.1Q106.2 -9.1 105.6 -8.9Q104.9 -8.7 104.5 -8.3Q104 -7.9 103.7 -7.5Q103.5 -7 103.5 -6.5H105Q105 -6.8 105.2 -7Q105.3 -7.3 105.6 -7.5Q105.8 -7.7 106.2 -7.8Q106.5 -7.9 107 -7.9Q107.5 -7.9 107.9 -7.8Q108.3 -7.7 108.5 -7.4Q108.8 -7.2 109 -6.9Q109.1 -6.6 109.1 -6.2V-5.4H107.4Q106.5 -5.4 105.7 -5.3Q105 -5.1 104.4 -4.7Q103.9 -4.3 103.6 -3.8Q103.3 -3.2 103.3 -2.5Q103.3 -1.9 103.5 -1.4Q103.8 -1 104.2 -0.6Q104.6 -0.2 105.1 -0Q105.7 0.2 106.4 0.2Q106.9 0.2 107.3 0.1Q107.6 -0 108 -0.2Q108.3 -0.3 108.6 -0.5Q108.9 -0.7 109.1 -1Q109.2 -0.7 109.2 -0.4Q109.3 -0.2 109.4 0ZM106.6 -1.2Q106.2 -1.2 105.9 -1.3Q105.5 -1.4 105.3 -1.6Q105.1 -1.8 105 -2.1Q104.8 -2.4 104.8 -2.7Q104.8 -3.1 105 -3.3Q105.1 -3.6 105.4 -3.8Q105.7 -4.1 106.3 -4.2Q106.9 -4.4 107.7 -4.4H109.1V-2.5Q109 -2.3 108.7 -2Q108.5 -1.8 108.2 -1.6Q107.9 -1.4 107.5 -1.3Q107.1 -1.2 106.6 -1.2ZM119.6 -2.4Q119.6 -2.2 119.5 -2Q119.5 -1.8 119.3 -1.6Q119 -1.4 118.6 -1.2Q118.1 -1.1 117.5 -1.1Q117.1 -1.1 116.7 -1.2Q116.3 -1.2 116 -1.4Q115.7 -1.6 115.5 -2Q115.2 -2.3 115.2 -2.8H113.7Q113.7 -2.2 113.9 -1.7Q114.2 -1.1 114.7 -0.7Q115.2 -0.3 115.9 -0.1Q116.6 0.2 117.5 0.2Q118.3 0.2 119 -0Q119.7 -0.2 120.1 -0.6Q120.6 -0.9 120.9 -1.4Q121.2 -1.9 121.2 -2.5Q121.2 -3 120.9 -3.5Q120.7 -3.9 120.2 -4.2Q119.8 -4.5 119.1 -4.8Q118.5 -5 117.7 -5.2Q117 -5.3 116.6 -5.4Q116.2 -5.6 116 -5.7Q115.7 -5.9 115.6 -6.1Q115.5 -6.3 115.5 -6.6Q115.5 -6.8 115.6 -7.1Q115.8 -7.3 116 -7.5Q116.3 -7.7 116.6 -7.8Q117 -7.9 117.5 -7.9Q118 -7.9 118.3 -7.8Q118.7 -7.6 119 -7.4Q119.2 -7.2 119.4 -6.9Q119.5 -6.6 119.5 -6.3H121.1Q121.1 -6.9 120.8 -7.4Q120.6 -8 120.1 -8.3Q119.6 -8.7 119 -8.9Q118.3 -9.1 117.5 -9.1Q116.7 -9.1 116.1 -8.9Q115.4 -8.7 115 -8.4Q114.5 -8 114.2 -7.5Q114 -7.1 114 -6.5Q114 -6 114.2 -5.5Q114.5 -5.1 114.9 -4.8Q115.4 -4.5 116 -4.3Q116.7 -4.1 117.4 -3.9Q118.1 -3.8 118.5 -3.6Q118.9 -3.5 119.2 -3.3Q119.4 -3.1 119.5 -2.9Q119.6 -2.7 119.6 -2.4ZM129.8 0H131.2V-9H129.6V-2.5Q129.5 -2.2 129.3 -2Q129.1 -1.8 128.9 -1.6Q128.6 -1.4 128.2 -1.2Q127.8 -1.1 127.3 -1.1Q126.8 -1.1 126.5 -1.2Q126.1 -1.4 125.9 -1.7Q125.7 -1.9 125.6 -2.4Q125.4 -2.9 125.4 -3.6V-9H123.9V-3.6Q123.9 -2.6 124.1 -1.9Q124.4 -1.2 124.8 -0.7Q125.2 -0.3 125.7 -0.1Q126.3 0.2 127 0.2Q127.9 0.2 128.6 -0.2Q129.2 -0.6 129.7 -1.2ZM140 -9.1Q139 -9.1 138.2 -8.7Q137.4 -8.3 136.9 -7.6L136.9 -7.8L136.8 -9H135.4V0H136.9V-5.8Q137 -6.2 137.3 -6.5Q137.5 -6.8 137.8 -7.1Q138.1 -7.3 138.6 -7.5Q139.1 -7.6 139.6 -7.6Q140.1 -7.6 140.5 -7.6Q140.9 -7.5 141.3 -7.4L141.5 -8.9Q141.3 -9 140.8 -9.1Q140.4 -9.1 140 -9.1ZM148.2 0.2Q149.5 0.2 150.4 -0.4Q151.3 -0.9 151.8 -1.6L150.8 -2.3Q150.4 -1.8 149.8 -1.4Q149.1 -1.1 148.3 -1.1Q147.7 -1.1 147.2 -1.3Q146.7 -1.6 146.3 -2Q145.9 -2.3 145.7 -2.8Q145.5 -3.3 145.5 -4V-4.1H151.9V-4.7Q151.9 -5.7 151.7 -6.5Q151.4 -7.3 150.9 -7.9Q150.5 -8.5 149.7 -8.8Q149 -9.1 148 -9.1Q147.3 -9.1 146.5 -8.8Q145.8 -8.5 145.2 -7.9Q144.6 -7.3 144.3 -6.5Q143.9 -5.6 143.9 -4.5V-4.2Q143.9 -3.2 144.3 -2.4Q144.6 -1.6 145.1 -1.1Q145.7 -0.5 146.5 -0.2Q147.3 0.2 148.2 0.2ZM148 -7.9Q148.6 -7.9 149.1 -7.7Q149.5 -7.5 149.8 -7.1Q150 -6.8 150.2 -6.3Q150.4 -5.8 150.4 -5.4V-5.3H145.5Q145.6 -5.9 145.8 -6.4Q146.1 -6.9 146.4 -7.2Q146.7 -7.5 147.2 -7.7Q147.6 -7.9 148 -7.9ZM168.3 -11.2H166.8V-9H164.4V-7.8H166.8V-2.9Q166.8 -2.1 167 -1.5Q167.2 -0.9 167.6 -0.5Q168 -0.2 168.5 -0Q169 0.2 169.6 0.2Q170 0.2 170.3 0.1Q170.7 0.1 171 0Q171.3 -0 171.6 -0.1Q171.9 -0.2 172.1 -0.3L171.9 -1.4Q171.7 -1.4 171.5 -1.3Q171.3 -1.3 171 -1.2Q170.8 -1.2 170.5 -1.2Q170.2 -1.1 170 -1.1Q169.6 -1.1 169.3 -1.2Q169 -1.3 168.8 -1.5Q168.6 -1.7 168.4 -2.1Q168.3 -2.4 168.3 -2.9V-7.8H171.7V-9H168.3ZM174.4 -4.6V-4.4Q174.4 -3.4 174.7 -2.6Q175 -1.8 175.5 -1.1Q176.1 -0.5 176.8 -0.2Q177.6 0.2 178.5 0.2Q179.5 0.2 180.2 -0.2Q181 -0.5 181.5 -1.1Q182 -1.8 182.3 -2.6Q182.6 -3.4 182.6 -4.4V-4.6Q182.6 -5.5 182.3 -6.4Q182 -7.2 181.5 -7.8Q181 -8.4 180.2 -8.8Q179.5 -9.1 178.5 -9.1Q177.6 -9.1 176.8 -8.8Q176.1 -8.4 175.5 -7.8Q175 -7.2 174.7 -6.4Q174.4 -5.5 174.4 -4.6ZM176 -4.4V-4.6Q176 -5.2 176.1 -5.8Q176.3 -6.4 176.6 -6.9Q176.9 -7.3 177.4 -7.6Q177.9 -7.9 178.5 -7.9Q179.2 -7.9 179.6 -7.6Q180.1 -7.3 180.4 -6.9Q180.7 -6.4 180.9 -5.8Q181.1 -5.2 181.1 -4.6V-4.4Q181.1 -3.7 180.9 -3.1Q180.8 -2.5 180.4 -2.1Q180.1 -1.6 179.6 -1.3Q179.2 -1.1 178.5 -1.1Q177.9 -1.1 177.4 -1.3Q176.9 -1.6 176.6 -2.1Q176.3 -2.5 176.1 -3.1Q176 -3.7 176 -4.4ZM196 -9H194.6V0H196.1V-7.1Q196.1 -7.3 196.2 -7.4Q196.3 -7.5 196.4 -7.6Q196.5 -7.7 196.7 -7.8Q196.9 -7.8 197.2 -7.8Q197.5 -7.8 197.6 -7.8Q197.8 -7.7 197.9 -7.6Q198.1 -7.4 198.1 -7.2Q198.2 -7 198.2 -6.7V0H199.7V-6.7Q199.7 -6.8 199.7 -6.8Q199.7 -6.8 199.7 -6.9Q199.7 -7.1 199.8 -7.3Q199.8 -7.4 200 -7.6Q200.1 -7.7 200.3 -7.8Q200.5 -7.8 200.8 -7.8Q201 -7.8 201.2 -7.8Q201.4 -7.7 201.6 -7.6Q201.7 -7.4 201.8 -7.2Q201.8 -7 201.8 -6.7V0H203.3V-6.7Q203.3 -7.4 203.1 -7.8Q203 -8.3 202.7 -8.6Q202.4 -8.9 202.1 -9Q201.7 -9.1 201.2 -9.1Q200.9 -9.1 200.6 -9.1Q200.3 -9 200.1 -8.8Q199.9 -8.7 199.7 -8.5Q199.6 -8.4 199.5 -8.2Q199.4 -8.4 199.2 -8.6Q199.1 -8.7 199 -8.8Q198.7 -9 198.5 -9.1Q198.2 -9.1 197.8 -9.1Q197.2 -9.1 196.7 -8.9Q196.3 -8.6 196 -8.1ZM209.4 0.2Q210.8 0.2 211.6 -0.4Q212.5 -0.9 213 -1.6L212.1 -2.3Q211.6 -1.8 211 -1.4Q210.4 -1.1 209.5 -1.1Q208.9 -1.1 208.4 -1.3Q207.9 -1.6 207.5 -2Q207.2 -2.3 207 -2.8Q206.7 -3.3 206.7 -4V-4.1H213.1V-4.7Q213.1 -5.7 212.9 -6.5Q212.6 -7.3 212.2 -7.9Q211.7 -8.5 210.9 -8.8Q210.2 -9.1 209.2 -9.1Q208.5 -9.1 207.7 -8.8Q207 -8.5 206.4 -7.9Q205.9 -7.3 205.5 -6.5Q205.2 -5.6 205.2 -4.5V-4.2Q205.2 -3.2 205.5 -2.4Q205.8 -1.6 206.3 -1.1Q206.9 -0.5 207.7 -0.2Q208.5 0.2 209.4 0.2ZM209.2 -7.9Q209.8 -7.9 210.3 -7.7Q210.7 -7.5 211 -7.1Q211.3 -6.8 211.4 -6.3Q211.6 -5.8 211.6 -5.4V-5.3H206.7Q206.8 -5.9 207.1 -6.4Q207.3 -6.9 207.6 -7.2Q208 -7.5 208.4 -7.7Q208.8 -7.9 209.2 -7.9ZM219.6 0.2Q221 0.2 221.9 -0.4Q222.7 -0.9 223.2 -1.6L222.3 -2.3Q221.8 -1.8 221.2 -1.4Q220.6 -1.1 219.7 -1.1Q219.1 -1.1 218.6 -1.3Q218.1 -1.6 217.7 -2Q217.4 -2.3 217.2 -2.8Q216.9 -3.3 216.9 -4V-4.1H223.3V-4.7Q223.3 -5.7 223.1 -6.5Q222.8 -7.3 222.4 -7.9Q221.9 -8.5 221.1 -8.8Q220.4 -9.1 219.4 -9.1Q218.7 -9.1 217.9 -8.8Q217.2 -8.5 216.6 -7.9Q216.1 -7.3 215.7 -6.5Q215.4 -5.6 215.4 -4.5V-4.2Q215.4 -3.2 215.7 -2.4Q216 -1.6 216.6 -1.1Q217.1 -0.5 217.9 -0.2Q218.7 0.2 219.6 0.2ZM219.4 -7.9Q220 -7.9 220.5 -7.7Q220.9 -7.5 221.2 -7.1Q221.5 -6.8 221.6 -6.3Q221.8 -5.8 221.8 -5.4V-5.3H216.9Q217 -5.9 217.3 -6.4Q217.5 -6.9 217.8 -7.2Q218.2 -7.5 218.6 -7.7Q219 -7.9 219.4 -7.9ZM229.5 -11.2H228V-9H225.6V-7.8H228V-2.9Q228 -2.1 228.2 -1.5Q228.4 -0.9 228.8 -0.5Q229.2 -0.2 229.7 -0Q230.2 0.2 230.8 0.2Q231.2 0.2 231.5 0.1Q231.9 0.1 232.2 0Q232.5 -0 232.8 -0.1Q233.1 -0.2 233.3 -0.3L233.1 -1.4Q232.9 -1.4 232.7 -1.3Q232.5 -1.3 232.2 -1.2Q232 -1.2 231.7 -1.2Q231.4 -1.1 231.2 -1.1Q230.9 -1.1 230.6 -1.2Q230.2 -1.3 230 -1.5Q229.8 -1.7 229.6 -2.1Q229.5 -2.4 229.5 -2.9V-7.8H232.9V-9H229.5ZM247 3.6Q247.6 3.6 248.1 3.4Q248.5 3.2 248.9 2.8Q249.2 2.5 249.5 2.1Q249.7 1.7 249.9 1.4L254.4 -9H252.7L250.4 -3.2L250 -2.1L249.6 -3.2L247.1 -9H245.4L249.3 -0.4L248.7 0.8Q248.6 0.9 248.4 1.2Q248.3 1.5 248.1 1.7Q247.9 1.9 247.6 2.1Q247.4 2.3 247 2.3Q246.9 2.3 246.7 2.3Q246.5 2.3 246.3 2.2L246.1 3.5Q246.2 3.5 246.5 3.6Q246.8 3.6 247 3.6ZM256.1 -4.6V-4.4Q256.1 -3.4 256.3 -2.6Q256.6 -1.8 257.1 -1.1Q257.7 -0.5 258.4 -0.2Q259.2 0.2 260.1 0.2Q261.1 0.2 261.8 -0.2Q262.6 -0.5 263.1 -1.1Q263.7 -1.8 263.9 -2.6Q264.2 -3.4 264.2 -4.4V-4.6Q264.2 -5.5 263.9 -6.4Q263.7 -7.2 263.1 -7.8Q262.6 -8.4 261.8 -8.8Q261.1 -9.1 260.1 -9.1Q259.2 -9.1 258.4 -8.8Q257.7 -8.4 257.1 -7.8Q256.6 -7.2 256.3 -6.4Q256.1 -5.5 256.1 -4.6ZM257.6 -4.4V-4.6Q257.6 -5.2 257.7 -5.8Q257.9 -6.4 258.2 -6.9Q258.5 -7.3 259 -7.6Q259.5 -7.9 260.1 -7.9Q260.8 -7.9 261.2 -7.6Q261.7 -7.3 262 -6.9Q262.4 -6.4 262.5 -5.8Q262.7 -5.2 262.7 -4.6V-4.4Q262.7 -3.7 262.5 -3.1Q262.4 -2.5 262.1 -2.1Q261.7 -1.6 261.3 -1.3Q260.8 -1.1 260.1 -1.1Q259.5 -1.1 259 -1.3Q258.5 -1.6 258.2 -2.1Q257.9 -2.5 257.7 -3.1Q257.6 -3.7 257.6 -4.4ZM272.6 0H274V-9H272.5V-2.5Q272.3 -2.2 272.1 -2Q272 -1.8 271.7 -1.6Q271.4 -1.4 271 -1.2Q270.6 -1.1 270.1 -1.1Q269.6 -1.1 269.3 -1.2Q269 -1.4 268.7 -1.7Q268.5 -1.9 268.4 -2.4Q268.3 -2.9 268.3 -3.6V-9H266.7V-3.6Q266.7 -2.6 267 -1.9Q267.2 -1.2 267.6 -0.7Q268 -0.3 268.6 -0.1Q269.1 0.2 269.8 0.2Q270.7 0.2 271.4 -0.2Q272.1 -0.6 272.5 -1.2ZM288.6 -7.6V-12.8H287.1V0H288.6V-6.5Q288.8 -6.8 289 -7Q289.2 -7.2 289.5 -7.4Q289.8 -7.6 290.2 -7.7Q290.5 -7.8 290.9 -7.8Q291.4 -7.9 291.8 -7.7Q292.2 -7.6 292.5 -7.3Q292.7 -7 292.9 -6.6Q293 -6.2 293 -5.7V0H294.5V-5.7Q294.5 -6.6 294.3 -7.2Q294.1 -7.9 293.7 -8.3Q293.3 -8.7 292.7 -8.9Q292.1 -9.1 291.4 -9.1Q290.9 -9.1 290.4 -9Q289.9 -8.8 289.5 -8.5Q289.3 -8.4 289 -8.1Q288.8 -7.9 288.6 -7.6ZM301.3 0.2Q302.6 0.2 303.5 -0.4Q304.4 -0.9 304.8 -1.6L303.9 -2.3Q303.4 -1.8 302.8 -1.4Q302.2 -1.1 301.3 -1.1Q300.7 -1.1 300.2 -1.3Q299.7 -1.6 299.3 -2Q299 -2.3 298.8 -2.8Q298.6 -3.3 298.5 -4V-4.1H304.9V-4.7Q304.9 -5.7 304.7 -6.5Q304.4 -7.3 304 -7.9Q303.5 -8.5 302.8 -8.8Q302 -9.1 301.1 -9.1Q300.3 -9.1 299.6 -8.8Q298.8 -8.5 298.2 -7.9Q297.7 -7.3 297.3 -6.5Q297 -5.6 297 -4.5V-4.2Q297 -3.2 297.3 -2.4Q297.6 -1.6 298.2 -1.1Q298.7 -0.5 299.5 -0.2Q300.3 0.2 301.3 0.2ZM301.1 -7.9Q301.7 -7.9 302.1 -7.7Q302.5 -7.5 302.8 -7.1Q303.1 -6.8 303.2 -6.3Q303.4 -5.8 303.4 -5.4V-5.3H298.6Q298.6 -5.9 298.9 -6.4Q299.1 -6.9 299.4 -7.2Q299.8 -7.5 300.2 -7.7Q300.6 -7.9 301.1 -7.9ZM313.4 -9.1Q312.4 -9.1 311.6 -8.7Q310.9 -8.3 310.3 -7.6L310.3 -7.8L310.2 -9H308.8V0H310.3V-5.8Q310.5 -6.2 310.7 -6.5Q310.9 -6.8 311.2 -7.1Q311.6 -7.3 312 -7.5Q312.5 -7.6 313.1 -7.6Q313.5 -7.6 313.9 -7.6Q314.3 -7.5 314.7 -7.4L315 -8.9Q314.7 -9 314.3 -9.1Q313.8 -9.1 313.4 -9.1ZM321.7 0.2Q323 0.2 323.9 -0.4Q324.8 -0.9 325.2 -1.6L324.3 -2.3Q323.8 -1.8 323.2 -1.4Q322.6 -1.1 321.7 -1.1Q321.1 -1.1 320.6 -1.3Q320.1 -1.6 319.7 -2Q319.4 -2.3 319.2 -2.8Q319 -3.3 318.9 -4V-4.1H325.3V-4.7Q325.3 -5.7 325.1 -6.5Q324.9 -7.3 324.4 -7.9Q323.9 -8.5 323.2 -8.8Q322.4 -9.1 321.5 -9.1Q320.7 -9.1 320 -8.8Q319.2 -8.5 318.7 -7.9Q318.1 -7.3 317.7 -6.5Q317.4 -5.6 317.4 -4.5V-4.2Q317.4 -3.2 317.7 -2.4Q318 -1.6 318.6 -1.1Q319.1 -0.5 319.9 -0.2Q320.7 0.2 321.7 0.2ZM321.5 -7.9Q322.1 -7.9 322.5 -7.7Q322.9 -7.5 323.2 -7.1Q323.5 -6.8 323.6 -6.3Q323.8 -5.8 323.8 -5.4V-5.3H319Q319 -5.9 319.3 -6.4Q319.5 -6.9 319.8 -7.2Q320.2 -7.5 320.6 -7.7Q321 -7.9 321.5 -7.9ZM330.6 -1Q330.6 -0.5 330.9 -0.2Q331.2 0.2 331.8 0.2Q332.4 0.2 332.7 -0.2Q333 -0.5 333 -1Q333 -1.5 332.7 -1.8Q332.4 -2.2 331.8 -2.2Q331.2 -2.2 330.9 -1.8Q330.6 -1.5 330.6 -1ZM340.8 -1Q340.8 -0.5 341.1 -0.2Q341.4 0.2 342 0.2Q342.6 0.2 342.9 -0.2Q343.2 -0.5 343.2 -1Q343.2 -1.5 342.9 -1.8Q342.6 -2.2 342 -2.2Q341.4 -2.2 341.1 -1.8Q340.8 -1.5 340.8 -1ZM351 -1Q351 -0.5 351.3 -0.2Q351.6 0.2 352.2 0.2Q352.8 0.2 353.1 -0.2Q353.4 -0.5 353.4 -1Q353.4 -1.5 353.1 -1.8Q352.8 -2.2 352.2 -2.2Q351.6 -2.2 351.3 -1.8Q351 -1.5 351 -1Z"/></g>
 
-  <g class="cur"><rect class="bar" x="0" y="0" width="1" height="1" fill="#29A9F0"/></g>
+  <g class="cur"><rect class="bar" x="0" y="0" width="1" height="1" fill="#4FC1CD"/></g>
 </svg>
