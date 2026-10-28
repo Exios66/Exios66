@@ -1,6 +1,6 @@
 ## Greetings...
 
-#### My name is Jack J. Burleson, it is a true pleasure to meet you here.
+#### My name is Jack J. Burleson, it is a pleasure to meet you here...
 
 ---
 
