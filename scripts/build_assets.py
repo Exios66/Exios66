@@ -9,9 +9,14 @@ need no font loading. Edit the copy below, run the script, commit the SVGs.
     pip install fonttools uharfbuzz brotli
     python3 scripts/build_assets.py
 
+University logo: put the official full-colour file at assets/logo/uw-madison.svg (or
+.png) and re-run; the UW\u2013Madison badge then uses it. Without it a plain mortarboard
+icon is drawn.
+
 Fonts (in scripts/fonts/, licences alongside): Roboto, Roboto Serif, Roboto Mono.
 """
 import io
+import sys
 from pathlib import Path
 
 import uharfbuzz as hb
@@ -272,16 +277,16 @@ PROJECTS = [
                "from calibrated confidence, when to pass one to an LLM."),
          tags=["PyTorch", "Calibration", "ONNX"],
          alt="Mailroom-ML: a calibrated ModernBERT document classifier. PyTorch, Calibration, ONNX."),
-    dict(file="rvl-cdip-classifier.svg", kicker="Vision LLMs & prompts", title="RVL-CDIP-Classifier",
-         desc=("Zero-shot document classification with vision LLMs: 29 tracked prompt versions, "
-               "checked on larger slices, with the cost of every page measured."),
-         tags=["OpenRouter", "Evaluation", "Error analysis"],
-         alt="RVL-CDIP-Classifier: zero-shot document classification with vision LLMs. OpenRouter, Evaluation, Error analysis."),
+    dict(file="mapreduce-reloaded.svg", kicker="Distributed systems", title="MapReduce-Reloaded",
+         desc=("From-scratch MapReduce in Go: all 23 features of Google\u2019s paper, surviving worker "
+               "crashes and coordinator restarts, with benchmarks."),
+         tags=["Go", "Python", "gRPC"],
+         alt="MapReduce-Reloaded: a from-scratch rebuild of Google's MapReduce in Go with all 23 paper features, crash recovery and benchmarks. Go, Python, gRPC."),
     dict(file="psychometric-digital-twin.svg", kicker="Behavioral ML research", title="Psychometric Digital Twin",
-         desc=("Can an LLM persona predict communication apprehension? Tested against seven "
-               "classical models, the personas did not beat simple baselines."),
+         desc=("LLM personas vs seven cross-validated classical ML models, from Ridge to XGBoost, "
+               "on 241 respondents. The personas did not beat the simple models."),
          tags=["scikit-learn", "XGBoost", "SHAP"],
-         alt="Psychometric Digital Twin: LLM personas versus seven classical models on behavioral prediction. scikit-learn, XGBoost, SHAP."),
+         alt="Psychometric Digital Twin: LLM personas compared with seven cross-validated classical ML models, from Ridge to XGBoost, on 241 respondents. The personas did not beat the simple models. scikit-learn, XGBoost, SHAP."),
     dict(file="wave-laboratory.svg", kicker="Simulation & graphics", title="Wave Laboratory",
          desc=("A real-time 3D ocean to experiment with: spectral wave models, rogue waves, "
                "and ships that move in six directions, rendered with WebGL 2."),
@@ -349,7 +354,158 @@ def build_card(c):
     return wrap_svg(W, H, c["alt"], c["title"], "", "\n".join(out))
 
 
+# --------------------------------------------------------------------- badges
+# The university badge uses the official crest from assets/logo/ (supplied by the author) when that
+# file exists, and a plain mortarboard icon otherwise. Tool badges use brand colours only, no logos.
+UW_RED, WHITE = "#C5050C", "#FFFFFF"   # cardinal red used for the UW–Madison badge
+
+
+def _logo_data(path):
+    """Return a logo's base64 data URI and width/height aspect ratio.
+
+    A .svg suffix selects SVG; all other suffixes require a PNG signature.
+    SVG dimensions come from viewBox, then width/height, within the first
+    4,000 bytes; missing dimensions default to a square.
+
+    File errors propagate. Invalid PNG signatures or SVG numbers raise
+    ValueError, truncated PNG dimensions raise struct.error, and a zero
+    height raises ZeroDivisionError.
+    """
+    import base64
+    import re
+    raw = Path(path).read_bytes()
+    if Path(path).suffix.lower() == ".svg":
+        head = raw[:4000].decode("utf-8", "ignore")
+        vb = re.search(r'viewBox="[-\d.]+[ ,]+[-\d.]+[ ,]+([\d.]+)[ ,]+([\d.]+)"', head)
+        if vb:
+            aspect = float(vb.group(1)) / float(vb.group(2))
+        else:
+            wh = [re.search(rf'\b{k}="([\d.]+)', head) for k in ("width", "height")]
+            aspect = float(wh[0].group(1)) / float(wh[1].group(1)) if all(wh) else 1.0
+        mime = "image/svg+xml"
+    else:
+        import struct
+        if raw[:8] != b"\x89PNG\r\n\x1a\n":
+            raise ValueError(f"{path}: logo must be an SVG or a PNG file")
+        w, h = struct.unpack(">II", raw[16:24])   # IHDR width and height
+        aspect = w / h
+        mime = "image/png"
+    return f"data:{mime};base64,{base64.b64encode(raw).decode()}", aspect
+
+
+def build_uw_badge(logo=None):
+    """Return (university badge SVG, total width in pixels), including margins.
+
+    A truthy logo path embeds an SVG or PNG on a white cap; a falsy value
+    draws a plain mortarboard on cardinal red. Errors from _logo_data
+    propagate rather than selecting the placeholder. Font loading errors
+    and ValueError for missing text glyphs also propagate.
+    """
+    H = 68
+    title = "UNIVERSITY OF WISCONSIN\u2013MADISON"
+    sub = "M.S. DATA SCIENCE IN HUMAN BEHAVIOR \u00b7 MADISON, WI"
+    cap_w, art = 68, ""
+    if logo:
+        uri, aspect = _logo_data(logo)
+        lh = 52 if aspect < 1 else 44            # tall crests get more height
+        lw = min(lh * aspect, 120)
+        lh = lw / aspect
+        cap_w = max(68, round(lw + 28))
+        art = (f'<rect x="0" y="0" width="{cap_w}" height="{H}" fill="{WHITE}" clip-path="url(#plate)"/>'
+               f'<image x="{(cap_w - lw) / 2:.1f}" y="{(H - lh) / 2:.1f}" width="{lw:.1f}" height="{lh:.1f}" '
+               f'preserveAspectRatio="xMidYMid meet" href="{uri}"/>')
+    else:
+        art = (f'<rect x="0" y="0" width="{cap_w}" height="{H}" fill="{UW_RED}" clip-path="url(#plate)"/>'
+               f'<g fill="{WHITE}" stroke="{WHITE}" stroke-linejoin="round">'
+               f'<path d="M34 19 L54 28 L34 37 L14 28 Z" stroke-width="1"/>'
+               f'<path d="M24 33.5 V40 Q34 46 44 40 V33.5 L34 38.5 Z" stroke-width="1" opacity=".92"/>'
+               f'<path d="M54 28 V40" fill="none" stroke-width="1.6" stroke-linecap="round"/>'
+               f'<circle cx="54" cy="42" r="2" stroke="none"/></g>')
+    tx = cap_w + 20
+    t_w = width(roboto_serif(600), title, 15.5, 15.5 * 0.06)
+    s_w = width(mono(), sub, 10.5, 10.5 * 0.08)
+    W = round(max(520, tx + max(t_w, s_w) + 28))
+    out = [f'<clipPath id="plate"><rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="14"/></clipPath>',
+           frame(W, H).replace('rx="12"', 'rx="14"'), art,
+           text_path(roboto_serif(600), title, 15.5, tx, 32, INK, tracking=15.5 * 0.06),
+           text_path(mono(), sub, 10.5, tx, 51, MUTED, tracking=10.5 * 0.08)]
+    alt = "University of Wisconsin\u2013Madison. M.S. Data Science in Human Behavior. Madison, WI."
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W + 2 * M}" height="{H + 2 * M}" '
+            f'viewBox="0 0 {W + 2 * M} {H + 2 * M}" role="img" aria-label="{alt}">\n<title>{alt}</title>\n'
+            f'<g transform="translate({M} {M})">\n' + "\n".join(out) + '\n</g>\n</svg>\n'), W + 2 * M
+
+
+# (category, tool, brand colour): the category is the small label on the left of each badge.
+# Colours are each project's well-known brand colour; no logos are reproduced.
+TOOL_BADGES = [
+    ("LANGUAGE", "Python", "#3776AB"), ("LANGUAGE", "R", "#276DC3"),
+    ("DEEP LEARNING", "PyTorch", "#EE4C2C"), ("CLASSICAL ML", "scikit-learn", "#F7931E"),
+    ("AGENTS", "LangGraph", "#2D9C84"), ("MODELS", "Hugging Face", "#FFD21E"),
+    ("SERVING", "vLLM", "#30A2FF"), ("CONTAINERS", "Docker", "#2496ED"),
+]
+
+
+def slug(text):
+    """Lowercase alphanumeric characters, replace each other character with
+    a hyphen, and strip leading and trailing hyphens.
+    """
+    return "".join(ch.lower() if ch.isalnum() else "-" for ch in text).strip("-")
+
+
+def _lum(hex_color):
+    """Return relative luminance for a #RRGGBB color on a scale from 0 to 1.
+
+    Invalid hexadecimal channel slices raise ValueError.
+    """
+    def ch(v):
+        """Convert an 8-bit sRGB channel to its linear-light value."""
+        v /= 255
+        return v / 12.92 if v <= 0.03928 else ((v + 0.055) / 1.055) ** 2.4
+    r, g, b = (int(hex_color[i:i + 2], 16) for i in (1, 3, 5))
+    return 0.2126 * ch(r) + 0.7152 * ch(g) + 0.0722 * ch(b)
+
+
+def _on(bg):
+    """Dark or white text, whichever contrasts more with the brand colour."""
+    dark, light = "#0D1117", "#FFFFFF"
+    c = lambda a, b: (max(_lum(a), _lum(b)) + 0.05) / (min(_lum(a), _lum(b)) + 0.05)
+    return dark if c(bg, dark) >= c(bg, light) else light
+
+
+def build_tool_badge(category, tool, brand):
+    """Return a tool badge SVG with a category label and tool name.
+
+    brand is a #RRGGBB color for the category background and badge border;
+    category text uses whichever of dark or white has greater contrast.
+    Invalid hexadecimal channels raise ValueError. Font loading errors
+    and ValueError for missing text glyphs propagate.
+    """
+    H, PAD = 32, 12
+    cat_w = width(mono(), category, 9, 9 * 0.12) + 2 * PAD
+    val_w = width(roboto(500), tool, 13) + 2 * PAD
+    W = cat_w + val_w
+    alt = f"{tool} ({category.lower()})"
+    out = [f'<clipPath id="pill"><rect x="0.5" y="0.5" width="{W - 1:.1f}" height="{H - 1}" rx="16"/></clipPath>',
+           f'<rect x="0.5" y="0.5" width="{W - 1:.1f}" height="{H - 1}" rx="16" fill="{BG}"/>',
+           f'<rect x="0" y="0" width="{cat_w:.1f}" height="{H}" fill="{brand}" clip-path="url(#pill)"/>',
+           f'<rect x="0.5" y="0.5" width="{W - 1:.1f}" height="{H - 1}" rx="16" fill="none" stroke="{brand}" stroke-opacity=".7"/>',
+           text_path(mono(), category, 9, PAD, 19.5, _on(brand), tracking=9 * 0.12),
+           text_path(roboto(500), tool, 13, cat_w + PAD, 20.5, INK)]
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W + 2 * M:.0f}" height="{H + 2 * M}" '
+            f'viewBox="0 0 {W + 2 * M:.1f} {H + 2 * M}" role="img" aria-label="{alt}">\n<title>{alt}</title>\n'
+            f'<g transform="translate({M} {M})">\n' + "\n".join(out) + '\n</g>\n</svg>\n')
+
+
 def main():
+    """Write the header, cards, and badges under assets, overwriting matches.
+
+    Use the first command-line argument as the university logo path when
+    supplied; otherwise prefer assets/logo/uw-madison.svg, then .png, and
+    use a mortarboard if neither exists. Print a generation summary.
+
+    File, logo, and font errors propagate, as do card layout assertion
+    failures; files already written are not rolled back.
+    """
     ASSETS.mkdir(exist_ok=True)
     (ASSETS / "cards").mkdir(exist_ok=True)
     (ASSETS / "header.svg").write_text(build_header())
@@ -357,7 +513,16 @@ def main():
     (ASSETS / "cards" / FEATURED["compact"]).write_text(build_featured(FEATURED, compact=True))
     for p in PROJECTS:
         (ASSETS / "cards" / p["file"]).write_text(build_card(p))
-    print("wrote assets/header.svg and", 2 + len(PROJECTS), "cards")
+    (ASSETS / "badges").mkdir(exist_ok=True)
+    logo = next((q for q in (ASSETS / "logo" / "uw-madison.svg", ASSETS / "logo" / "uw-madison.png") if q.exists()), None)
+    if len(sys.argv) > 1:   # optional: python3 scripts/build_assets.py path/to/logo.svg|png
+        logo = sys.argv[1]
+    svg, badge_w = build_uw_badge(logo)
+    (ASSETS / "badges" / "uw-madison.svg").write_text(svg)
+    print("UW badge:", "official logo" if logo else "mortarboard placeholder", f"(width {badge_w})")
+    for cat, tool, brand in TOOL_BADGES:
+        (ASSETS / "badges" / f"{slug(tool)}.svg").write_text(build_tool_badge(cat, tool, brand))
+    print("wrote header, ", 2 + len(PROJECTS), "cards and", 1 + len(TOOL_BADGES), "badges")
 
 
 if __name__ == "__main__":

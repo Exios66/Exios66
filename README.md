@@ -3,10 +3,8 @@
 </p>
 
 <p align="center">
-  M.S. candidate in Psychology: Data Science in Human Behavior at UW–Madison. <br />
+  M.S. candidate in Psychology: Data Science in Human Behavior at UW–Madison.
 </p>
-
-<div align="center">
 
 <p align="center">
   I build AI systems from start to finish: multi-agent document pipelines,<br />
@@ -15,7 +13,7 @@
 </p>
 
 <p align="center">
-  <sub>Madison, WI</sub>
+  <img src="assets/badges/uw-madison.svg" width="528" alt="University of Wisconsin–Madison. M.S. Data Science in Human Behavior. Madison, WI." />
 </p>
 
 <p align="center">
@@ -24,10 +22,6 @@
   <a href="https://linkedin.com/in/jackjburleson">LinkedIn</a> &nbsp;·&nbsp;
   <a href="mailto:jackjburleson@proton.me">Email</a>
 </p>
-
-<div align="center">
-
-</div>
 
 <div align="center">
 
@@ -43,8 +37,8 @@
     </picture>
   </a>
   <a href="https://github.com/LLM-Mailroom-Services/mailroom-ml"><img src="assets/cards/mailroom-ml.svg" width="400" alt="Mailroom-ML: a calibrated ModernBERT document classifier that knows when to pass a document to an LLM. PyTorch, Calibration, ONNX." /></a>
-  <a href="https://github.com/Exios66/RVL-CDIP-Classifier"><img src="assets/cards/rvl-cdip-classifier.svg" width="400" alt="RVL-CDIP-Classifier: zero-shot document classification with vision LLMs, 29 tracked prompt versions and per-page cost. OpenRouter, Evaluation, Error analysis." /></a>
-  <a href="https://github.com/Exios66/psych755-jjb"><img src="assets/cards/psychometric-digital-twin.svg" width="400" alt="Psychometric Digital Twin: can an LLM persona predict communication apprehension? Tested against seven classical models, the personas did not beat simple baselines. scikit-learn, XGBoost, SHAP." /></a>
+  <a href="https://github.com/Exios66/MapReduce-Reloaded"><img src="assets/cards/mapreduce-reloaded.svg" width="400" alt="MapReduce-Reloaded: a from-scratch rebuild of Google’s MapReduce in Go with all 23 paper features, crash recovery and benchmarks. Go, Python, gRPC." /></a>
+  <a href="https://github.com/Exios66/psych755-jjb"><img src="assets/cards/psychometric-digital-twin.svg" width="400" alt="Psychometric Digital Twin: LLM personas compared with seven cross-validated classical ML models, from Ridge to XGBoost, on 241 respondents. The personas did not beat the simple models. scikit-learn, XGBoost, SHAP." /></a>
   <a href="https://github.com/Exios66/wave-laboratory"><img src="assets/cards/wave-laboratory.svg" width="400" alt="Wave Laboratory: a real-time 3D ocean to experiment with, with spectral wave models and rogue waves, rendered with WebGL 2. TypeScript, Three.js, Physics." /></a>
 </p>
 
@@ -53,7 +47,7 @@
     Also:
     <a href="https://github.com/Exios66/mailroom-reloaded">Mailroom Reloaded</a> ·
     <a href="https://github.com/Exios66/Mailroom-Corpus-EDA">Mailroom-Corpus-EDA</a> ·
-    <a href="https://github.com/Exios66/MapReduce-Reloaded">MapReduce-Reloaded</a> ·
+    <a href="https://github.com/Exios66/RVL-CDIP-Classifier">RVL-CDIP-Classifier</a> ·
     <a href="https://github.com/Exios66/aeroglobe">AeroGlobe</a> ·
     <a href="https://github.com/Exios66/truth-deception-architecture">Truth &amp; Deception study</a> ·
     <a href="https://github.com/Exios66/degen-llms">The Mandalay Bay</a> ·
@@ -68,6 +62,17 @@
 ## Toolbox
 
 </div>
+
+<p align="center">
+  <img src="assets/badges/python.svg" alt="Python (language)" />
+  <img src="assets/badges/pytorch.svg" alt="PyTorch (deep learning)" />
+  <img src="assets/badges/scikit-learn.svg" alt="scikit-learn (classical ML)" />
+  <img src="assets/badges/r.svg" alt="R (language)" />
+  <img src="assets/badges/langgraph.svg" alt="LangGraph (agents)" />
+  <img src="assets/badges/docker.svg" alt="Docker (containers)" />
+  <img src="assets/badges/hugging-face.svg" alt="Hugging Face (models)" />
+  <img src="assets/badges/vllm.svg" alt="vLLM (serving)" />
+</p>
 
 <table align="center">
   <tr><td><b>Languages &amp; data</b></td><td><code>Python</code> · <code>R</code> · <code>SQL</code> · <code>TypeScript</code> · <code>MATLAB</code></td></tr>
@@ -128,11 +133,9 @@
 
 ## Activity
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="assets/snake.svg" />
-  <img alt="Contribution graph snake eating my commits" src="assets/snake-dark.svg" />
-</picture>
+<!-- The #gh-*-mode-only suffixes follow GitHub's own theme setting (including "Sync with system"). -->
+<img alt="Contribution graph snake eating my commits" src="assets/snake-dark.svg#gh-dark-mode-only" />
+<img alt="Contribution graph snake eating my commits" src="assets/snake.svg#gh-light-mode-only" />
 
 </div>
 
