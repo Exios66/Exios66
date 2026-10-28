@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <sub>Madison, WI &nbsp;·&nbsp; Open to relocation</sub>
+  <sub>Madison, WI</sub>
 </p>
 
 <p align="center">
