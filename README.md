@@ -65,13 +65,13 @@
 
 <p align="center">
   <img src="assets/badges/python.svg" alt="Python (language)" />
-  <img src="assets/badges/r.svg" alt="R (language)" />
   <img src="assets/badges/pytorch.svg" alt="PyTorch (deep learning)" />
   <img src="assets/badges/scikit-learn.svg" alt="scikit-learn (classical ML)" />
+  <img src="assets/badges/r.svg" alt="R (language)" />
   <img src="assets/badges/langgraph.svg" alt="LangGraph (agents)" />
+  <img src="assets/badges/docker.svg" alt="Docker (containers)" />
   <img src="assets/badges/hugging-face.svg" alt="Hugging Face (models)" />
   <img src="assets/badges/vllm.svg" alt="vLLM (serving)" />
-  <img src="assets/badges/docker.svg" alt="Docker (containers)" />
 </p>
 
 <table align="center">

@@ -418,10 +418,13 @@ def build_uw_badge(logo=None):
             f'<g transform="translate({M} {M})">\n' + "\n".join(out) + '\n</g>\n</svg>\n'), W + 2 * M
 
 
-# (category, tool): the category is the small label on the left of each badge.
+# (category, tool, brand colour): the category is the small label on the left of each badge.
+# Colours are each project's well-known brand colour; no logos are reproduced.
 TOOL_BADGES = [
-    ("LANGUAGE", "Python"), ("LANGUAGE", "R"), ("DEEP LEARNING", "PyTorch"), ("CLASSICAL ML", "scikit-learn"),
-    ("AGENTS", "LangGraph"), ("MODELS", "Hugging Face"), ("SERVING", "vLLM"), ("CONTAINERS", "Docker"),
+    ("LANGUAGE", "Python", "#3776AB"), ("LANGUAGE", "R", "#276DC3"),
+    ("DEEP LEARNING", "PyTorch", "#EE4C2C"), ("CLASSICAL ML", "scikit-learn", "#F7931E"),
+    ("AGENTS", "LangGraph", "#2D9C84"), ("MODELS", "Hugging Face", "#FFD21E"),
+    ("SERVING", "vLLM", "#30A2FF"), ("CONTAINERS", "Docker", "#2496ED"),
 ]
 
 
@@ -429,16 +432,32 @@ def slug(text):
     return "".join(ch.lower() if ch.isalnum() else "-" for ch in text).strip("-")
 
 
-def build_tool_badge(category, tool):
+def _lum(hex_color):
+    def ch(v):
+        v /= 255
+        return v / 12.92 if v <= 0.03928 else ((v + 0.055) / 1.055) ** 2.4
+    r, g, b = (int(hex_color[i:i + 2], 16) for i in (1, 3, 5))
+    return 0.2126 * ch(r) + 0.7152 * ch(g) + 0.0722 * ch(b)
+
+
+def _on(bg):
+    """Dark or white text, whichever contrasts more with the brand colour."""
+    dark, light = "#0D1117", "#FFFFFF"
+    c = lambda a, b: (max(_lum(a), _lum(b)) + 0.05) / (min(_lum(a), _lum(b)) + 0.05)
+    return dark if c(bg, dark) >= c(bg, light) else light
+
+
+def build_tool_badge(category, tool, brand):
     H, PAD = 32, 12
     cat_w = width(mono(), category, 9, 9 * 0.12) + 2 * PAD
     val_w = width(roboto(500), tool, 13) + 2 * PAD
     W = cat_w + val_w
     alt = f"{tool} ({category.lower()})"
     out = [f'<clipPath id="pill"><rect x="0.5" y="0.5" width="{W - 1:.1f}" height="{H - 1}" rx="16"/></clipPath>',
-           f'<rect x="0.5" y="0.5" width="{W - 1:.1f}" height="{H - 1}" rx="16" fill="{BG}" stroke="{EDGE}"/>',
-           f'<rect x="0" y="0" width="{cat_w:.1f}" height="{H}" fill="{ACCENT_SOFT}" clip-path="url(#pill)"/>',
-           text_path(mono(), category, 9, PAD, 19.5, ACCENT, tracking=9 * 0.12),
+           f'<rect x="0.5" y="0.5" width="{W - 1:.1f}" height="{H - 1}" rx="16" fill="{BG}"/>',
+           f'<rect x="0" y="0" width="{cat_w:.1f}" height="{H}" fill="{brand}" clip-path="url(#pill)"/>',
+           f'<rect x="0.5" y="0.5" width="{W - 1:.1f}" height="{H - 1}" rx="16" fill="none" stroke="{brand}" stroke-opacity=".7"/>',
+           text_path(mono(), category, 9, PAD, 19.5, _on(brand), tracking=9 * 0.12),
            text_path(roboto(500), tool, 13, cat_w + PAD, 20.5, INK)]
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W + 2 * M:.0f}" height="{H + 2 * M}" '
             f'viewBox="0 0 {W + 2 * M:.1f} {H + 2 * M}" role="img" aria-label="{alt}">\n<title>{alt}</title>\n'
@@ -460,8 +479,8 @@ def main():
     svg, badge_w = build_uw_badge(logo)
     (ASSETS / "badges" / "uw-madison.svg").write_text(svg)
     print("UW badge:", "official logo" if logo else "mortarboard placeholder", f"(width {badge_w})")
-    for cat, tool in TOOL_BADGES:
-        (ASSETS / "badges" / f"{slug(tool)}.svg").write_text(build_tool_badge(cat, tool))
+    for cat, tool, brand in TOOL_BADGES:
+        (ASSETS / "badges" / f"{slug(tool)}.svg").write_text(build_tool_badge(cat, tool, brand))
     print("wrote header, ", 2 + len(PROJECTS), "cards and", 1 + len(TOOL_BADGES), "badges")
 
 
