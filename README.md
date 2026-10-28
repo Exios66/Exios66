@@ -2,54 +2,77 @@
   <img src="assets/header.svg" alt="Jack J. Burleson — It's a pleasure to meet you here..." />
 </p>
 
----
-
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a0d994ed-46e0-4185-886e-5568c9561843" alt="Profile banner" width="720" />
-</p>
-
----
-
-<p align="center">
-
-### Socials
-
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/jackjburleson)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=protonmail&logoColor=white)](mailto:jackjburleson@proton.me)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/jackjburleson)
-
+  I build and evaluate LLM systems: document-intelligence pipelines,<br />
+  multi-agent workflows, and the measurement that shows whether they work.
 </p>
 
 <p align="center">
-
-### Languages & Frameworks
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-
-![Machine Learning](https://img.shields.io/badge/Machine%20Learning-FF6F00?style=for-the-badge&logo=scikitlearn&logoColor=white)
-![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
-![AI Agents](https://img.shields.io/badge/AI%20Agents-673AB7?style=for-the-badge&logo=openai&logoColor=white)
-
-</p>
-
-<p align="center">
-
-### Highlighted Projects
-
-[![Digital Mailroom](https://img.shields.io/badge/Digital%20Mailroom-0EA5E9?style=for-the-badge&labelColor=1F2937&logo=readme&logoColor=white)](https://github.com/LLM-Mailroom-Services/Digital-Mailroom)
-[![RVL--CDIP Classifier](https://img.shields.io/badge/RVL--CDIP%20Classifier-CA8A04?style=for-the-badge&labelColor=1F2937&logo=readme&logoColor=white)](https://github.com/Exios66/RVL-CDIP-Classifier)
-[![PSYCH 755](https://img.shields.io/badge/PSYCH%20755-C5050C?style=for-the-badge&labelColor=1F2937&logo=readme&logoColor=white)](https://github.com/Exios66/psych755-jjb)
-[![The Mandalay Bay](https://img.shields.io/badge/The%20Mandalay%20Bay-8A2BE2?style=for-the-badge&labelColor=1F2937&logo=readme&logoColor=white)](https://github.com/Exios66/degen-llms)
-[![Agent Mailroom](https://img.shields.io/badge/Agent%20Mailroom-059669?style=for-the-badge&labelColor=1F2937&logo=readme&logoColor=white)](https://github.com/Exios66/agent-mailroom)
-
+  <a href="#featured-work">Work</a> &nbsp;·&nbsp;
+  <a href="#toolbox">Toolbox</a> &nbsp;·&nbsp;
+  <a href="#contact">Contact</a>
 </p>
 
 <div align="center">
 
-### Contribution Snake
+## Featured work
+
+</div>
+
+<p align="center">
+  <a href="https://github.com/LLM-Mailroom-Services/Digital-Mailroom">
+    <picture>
+      <source media="(max-width: 640px)" srcset="assets/cards/digital-mailroom-compact.svg" />
+      <img src="assets/cards/digital-mailroom.svg" width="800" alt="The Digital Mailroom: a multi-agent legal-document pipeline with intake, classify, extract, judge, compile and archive stages. 13-node LangGraph pipeline, 5 document classes, 3,302-row dataset." />
+    </picture>
+  </a>
+  <a href="https://github.com/Exios66/agent-mailroom"><img src="assets/cards/agent-mailroom.svg" width="400" alt="Agent Mailroom: the document pipeline on a walking pixel-art office floor. Python, OpenRouter, SQLite." /></a>
+  <a href="https://github.com/Exios66/RVL-CDIP-Classifier"><img src="assets/cards/rvl-cdip-classifier.svg" width="400" alt="RVL-CDIP Classifier: vision-model classification across 16 document classes with versioned prompts, Braintrust evals and cost projections. Python, OpenRouter, Tesseract." /></a>
+  <a href="https://github.com/Exios66/psych755-jjb"><img src="assets/cards/psych-755.svg" width="400" alt="PSYCH 755: can an LLM predict communication apprehension from a persona, and does it stereotype when it misses? Tested against seven ML baselines. Python, SHAP, Quarto." /></a>
+  <a href="https://github.com/Exios66/degen-llms"><img src="assets/cards/mandalay-bay.svg" width="400" alt="The Mandalay Bay: a satirical resort simulator with a Python CLI, browser terminal and Phaser pixel RPG, 200+ tests. Python, JavaScript, Phaser." /></a>
+</p>
+
+<div align="center">
+
+## Toolbox
+
+</div>
+
+<table align="center">
+  <tr><td><b>Languages</b></td><td><code>Python</code> · <code>R</code> · <code>TypeScript</code> · <code>JavaScript</code></td></tr>
+  <tr><td><b>LLMs &amp; agents</b></td><td><code>OpenRouter</code> · <code>LangGraph</code> · <code>Hugging Face</code> · <code>vLLM</code></td></tr>
+  <tr><td><b>ML &amp; evaluation</b></td><td><code>scikit-learn</code> · <code>XGBoost</code> · <code>SHAP</code> · <code>Braintrust</code></td></tr>
+  <tr><td><b>Data &amp; documents</b></td><td><code>SQLite</code> · <code>Tesseract OCR</code> · <code>Quarto</code></td></tr>
+  <tr><td><b>Front end</b></td><td><code>React</code> · <code>Phaser</code></td></tr>
+</table>
+
+<div align="center">
+
+## Contact
+
+</div>
+
+<table align="center">
+  <tr>
+    <td valign="middle">
+      <img src="https://github.com/user-attachments/assets/a0d994ed-46e0-4185-886e-5568c9561843" width="360" alt="Jack J. Burleson" />
+    </td>
+    <td valign="middle">
+      <b>Email</b><br />
+      <a href="mailto:jackjburleson@proton.me">jackjburleson@proton.me</a>
+      <br /><br />
+      <b>LinkedIn</b><br />
+      <a href="https://linkedin.com/in/jackjburleson">in/jackjburleson</a>
+      <br /><br />
+      <b>Instagram</b><br />
+      <a href="https://instagram.com/jackjburleson">@jackjburleson</a>
+    </td>
+  </tr>
+</table>
+
+<div align="center">
+
+## Activity
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/snake-dark.svg" />
