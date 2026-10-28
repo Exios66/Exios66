@@ -390,10 +390,10 @@ def build_uw_badge(logo=None):
     cap_w, art = 68, ""
     if logo:
         uri, aspect = _logo_data(logo)
-        lh = 44
+        lh = 52 if aspect < 1 else 44            # tall crests get more height
         lw = min(lh * aspect, 120)
         lh = lw / aspect
-        cap_w = round(lw + 28)
+        cap_w = max(68, round(lw + 28))
         art = (f'<rect x="0" y="0" width="{cap_w}" height="{H}" fill="{WHITE}" clip-path="url(#plate)"/>'
                f'<image x="{(cap_w - lw) / 2:.1f}" y="{(H - lh) / 2:.1f}" width="{lw:.1f}" height="{lh:.1f}" '
                f'preserveAspectRatio="xMidYMid meet" href="{uri}"/>')
