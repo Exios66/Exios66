@@ -33,13 +33,16 @@
   <a href="https://github.com/LLM-Mailroom-Services/Digital-Mailroom">
     <picture>
       <source media="(max-width: 640px)" srcset="assets/cards/digital-mailroom-compact.svg" />
-      <img src="assets/cards/digital-mailroom.svg" width="800" alt="Digital-Mailroom, a capstone with American Family Insurance: five Python packages and one LangGraph pipeline for legal-document routing, scoring and deployment. 13-node LangGraph pipeline, 5 document classes, 3,302-document dataset." />
+      <img src="assets/cards/digital-mailroom.svg" width="100%" alt="Digital-Mailroom, a capstone with American Family Insurance: five Python packages and one LangGraph pipeline for legal-document routing, scoring and deployment. 13-node LangGraph pipeline, 5 document classes, 3,302-document dataset." />
     </picture>
   </a>
-  <a href="https://github.com/LLM-Mailroom-Services/mailroom-ml"><img src="assets/cards/mailroom-ml.svg" width="400" alt="Mailroom-ML: a calibrated ModernBERT document classifier that knows when to pass a document to an LLM. PyTorch, Calibration, ONNX." /></a>
-  <a href="https://github.com/Exios66/MapReduce-Reloaded"><img src="assets/cards/mapreduce-reloaded.svg" width="400" alt="MapReduce-Reloaded: a from-scratch rebuild of Google’s MapReduce in Go with all 23 paper features, crash recovery and benchmarks. Go, Python, gRPC." /></a>
-  <a href="https://github.com/Exios66/psych755-jjb"><img src="assets/cards/psychometric-digital-twin.svg" width="400" alt="Psychometric Digital Twin: LLM personas compared with seven cross-validated classical ML models, from Ridge to XGBoost, on 241 respondents. The personas did not beat the simple models. scikit-learn, XGBoost, SHAP." /></a>
-  <a href="https://github.com/Exios66/wave-laboratory"><img src="assets/cards/wave-laboratory.svg" width="400" alt="Wave Laboratory: a real-time 3D ocean to experiment with, with spectral wave models and rogue waves, rendered with WebGL 2. TypeScript, Three.js, Physics." /></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/LLM-Mailroom-Services/mailroom-ml"><img src="assets/cards/mailroom-ml.svg" width="49%" alt="Mailroom-ML: a calibrated ModernBERT document classifier that knows when to pass a document to an LLM. PyTorch, Calibration, ONNX." /></a>
+  <a href="https://github.com/Exios66/MapReduce-Reloaded"><img src="assets/cards/mapreduce-reloaded.svg" width="49%" alt="MapReduce-Reloaded: a from-scratch rebuild of Google’s MapReduce in Go with all 23 paper features, crash recovery and benchmarks. Go, Python, gRPC." /></a>
+  <a href="https://github.com/Exios66/psych755-jjb"><img src="assets/cards/psychometric-digital-twin.svg" width="49%" alt="Psychometric Digital Twin: LLM personas compared with seven cross-validated classical ML models, from Ridge to XGBoost, on 241 respondents. The personas did not beat the simple models. scikit-learn, XGBoost, SHAP." /></a>
+  <a href="https://github.com/Exios66/wave-laboratory"><img src="assets/cards/wave-laboratory.svg" width="49%" alt="Wave Laboratory: a real-time 3D ocean to experiment with, with spectral wave models and rogue waves, rendered with WebGL 2. TypeScript, Three.js, Physics." /></a>
 </p>
 
 <p align="center">
