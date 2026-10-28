@@ -361,7 +361,16 @@ UW_RED, WHITE = "#C5050C", "#FFFFFF"   # cardinal red used for the UW–Madison 
 
 
 def _logo_data(path):
-    """Return (data URI, aspect ratio w/h) for an SVG or PNG logo file."""
+    """Return a logo's base64 data URI and width/height aspect ratio.
+
+    A .svg suffix selects SVG; all other suffixes require a PNG signature.
+    SVG dimensions come from viewBox, then width/height, within the first
+    4,000 bytes; missing dimensions default to a square.
+
+    File errors propagate. Invalid PNG signatures or SVG numbers raise
+    ValueError, truncated PNG dimensions raise struct.error, and a zero
+    height raises ZeroDivisionError.
+    """
     import base64
     import re
     raw = Path(path).read_bytes()
@@ -385,8 +394,13 @@ def _logo_data(path):
 
 
 def build_uw_badge(logo=None):
-    """University badge. With an official logo file it sits on a white cap; without one,
-    a plain mortarboard icon on cardinal red is drawn instead."""
+    """Return (university badge SVG, total width in pixels), including margins.
+
+    A truthy logo path embeds an SVG or PNG on a white cap; a falsy value
+    draws a plain mortarboard on cardinal red. Errors from _logo_data
+    propagate rather than selecting the placeholder. Font loading errors
+    and ValueError for missing text glyphs also propagate.
+    """
     H = 68
     title = "UNIVERSITY OF WISCONSIN\u2013MADISON"
     sub = "M.S. DATA SCIENCE IN HUMAN BEHAVIOR \u00b7 MADISON, WI"
@@ -432,11 +446,19 @@ TOOL_BADGES = [
 
 
 def slug(text):
+    """Lowercase alphanumeric characters, replace each other character with
+    a hyphen, and strip leading and trailing hyphens.
+    """
     return "".join(ch.lower() if ch.isalnum() else "-" for ch in text).strip("-")
 
 
 def _lum(hex_color):
+    """Return relative luminance for a #RRGGBB color on a scale from 0 to 1.
+
+    Invalid hexadecimal channel slices raise ValueError.
+    """
     def ch(v):
+        """Convert an 8-bit sRGB channel to its linear-light value."""
         v /= 255
         return v / 12.92 if v <= 0.03928 else ((v + 0.055) / 1.055) ** 2.4
     r, g, b = (int(hex_color[i:i + 2], 16) for i in (1, 3, 5))
@@ -451,6 +473,13 @@ def _on(bg):
 
 
 def build_tool_badge(category, tool, brand):
+    """Return a tool badge SVG with a category label and tool name.
+
+    brand is a #RRGGBB color for the category background and badge border;
+    category text uses whichever of dark or white has greater contrast.
+    Invalid hexadecimal channels raise ValueError. Font loading errors
+    and ValueError for missing text glyphs propagate.
+    """
     H, PAD = 32, 12
     cat_w = width(mono(), category, 9, 9 * 0.12) + 2 * PAD
     val_w = width(roboto(500), tool, 13) + 2 * PAD
@@ -468,6 +497,15 @@ def build_tool_badge(category, tool, brand):
 
 
 def main():
+    """Write the header, cards, and badges under assets, overwriting matches.
+
+    Use the first command-line argument as the university logo path when
+    supplied; otherwise prefer assets/logo/uw-madison.svg, then .png, and
+    use a mortarboard if neither exists. Print a generation summary.
+
+    File, logo, and font errors propagate, as do card layout assertion
+    failures; files already written are not rolled back.
+    """
     ASSETS.mkdir(exist_ok=True)
     (ASSETS / "cards").mkdir(exist_ok=True)
     (ASSETS / "header.svg").write_text(build_header())
