@@ -355,7 +355,8 @@ def build_card(c):
 
 
 # --------------------------------------------------------------------- badges
-# Typographic badges only: no institutional crests or product logos are reproduced.
+# The university badge uses the official crest from assets/logo/ (supplied by the author) when that
+# file exists, and a plain mortarboard icon otherwise. Tool badges use brand colours only, no logos.
 UW_RED, WHITE = "#C5050C", "#FFFFFF"   # cardinal red used for the UW–Madison badge
 
 
@@ -374,9 +375,11 @@ def _logo_data(path):
             aspect = float(wh[0].group(1)) / float(wh[1].group(1)) if all(wh) else 1.0
         mime = "image/svg+xml"
     else:
-        from PIL import Image
-        with Image.open(path) as im:
-            aspect = im.width / im.height
+        import struct
+        if raw[:8] != b"\x89PNG\r\n\x1a\n":
+            raise ValueError(f"{path}: logo must be an SVG or a PNG file")
+        w, h = struct.unpack(">II", raw[16:24])   # IHDR width and height
+        aspect = w / h
         mime = "image/png"
     return f"data:{mime};base64,{base64.b64encode(raw).decode()}", aspect
 
