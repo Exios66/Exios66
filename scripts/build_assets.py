@@ -9,9 +9,14 @@ need no font loading. Edit the copy below, run the script, commit the SVGs.
     pip install fonttools uharfbuzz brotli
     python3 scripts/build_assets.py
 
+University logo: put the official full-colour file at assets/logo/uw-madison.svg (or
+.png) and re-run; the UW\u2013Madison badge then uses it. Without it a plain mortarboard
+icon is drawn.
+
 Fonts (in scripts/fonts/, licences alongside): Roboto, Roboto Serif, Roboto Mono.
 """
 import io
+import sys
 from pathlib import Path
 
 import uharfbuzz as hb
@@ -354,25 +359,63 @@ def build_card(c):
 UW_RED, WHITE = "#C5050C", "#FFFFFF"   # cardinal red used for the UW–Madison badge
 
 
-def build_uw_badge():
-    W, H = 520, 68
+def _logo_data(path):
+    """Return (data URI, aspect ratio w/h) for an SVG or PNG logo file."""
+    import base64
+    import re
+    raw = Path(path).read_bytes()
+    if Path(path).suffix.lower() == ".svg":
+        head = raw[:4000].decode("utf-8", "ignore")
+        vb = re.search(r'viewBox="[-\d.]+[ ,]+[-\d.]+[ ,]+([\d.]+)[ ,]+([\d.]+)"', head)
+        if vb:
+            aspect = float(vb.group(1)) / float(vb.group(2))
+        else:
+            wh = [re.search(rf'\b{k}="([\d.]+)', head) for k in ("width", "height")]
+            aspect = float(wh[0].group(1)) / float(wh[1].group(1)) if all(wh) else 1.0
+        mime = "image/svg+xml"
+    else:
+        from PIL import Image
+        with Image.open(path) as im:
+            aspect = im.width / im.height
+        mime = "image/png"
+    return f"data:{mime};base64,{base64.b64encode(raw).decode()}", aspect
+
+
+def build_uw_badge(logo=None):
+    """University badge. With an official logo file it sits on a white cap; without one,
+    a plain mortarboard icon on cardinal red is drawn instead."""
+    H = 68
     title = "UNIVERSITY OF WISCONSIN\u2013MADISON"
     sub = "M.S. DATA SCIENCE IN HUMAN BEHAVIOR \u00b7 MADISON, WI"
-    out = [f'<clipPath id="plate"><rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="14"/></clipPath>',
-           frame(W, H).replace('rx="12"', 'rx="14"'),
-           f'<rect x="0" y="0" width="68" height="{H}" fill="{UW_RED}" clip-path="url(#plate)"/>']
-    # mortarboard icon, drawn from plain shapes
-    out.append(f'<g fill="{WHITE}" stroke="{WHITE}" stroke-linejoin="round">'
+    cap_w, art = 68, ""
+    if logo:
+        uri, aspect = _logo_data(logo)
+        lh = 44
+        lw = min(lh * aspect, 120)
+        lh = lw / aspect
+        cap_w = round(lw + 28)
+        art = (f'<rect x="0" y="0" width="{cap_w}" height="{H}" fill="{WHITE}" clip-path="url(#plate)"/>'
+               f'<image x="{(cap_w - lw) / 2:.1f}" y="{(H - lh) / 2:.1f}" width="{lw:.1f}" height="{lh:.1f}" '
+               f'preserveAspectRatio="xMidYMid meet" href="{uri}"/>')
+    else:
+        art = (f'<rect x="0" y="0" width="{cap_w}" height="{H}" fill="{UW_RED}" clip-path="url(#plate)"/>'
+               f'<g fill="{WHITE}" stroke="{WHITE}" stroke-linejoin="round">'
                f'<path d="M34 19 L54 28 L34 37 L14 28 Z" stroke-width="1"/>'
                f'<path d="M24 33.5 V40 Q34 46 44 40 V33.5 L34 38.5 Z" stroke-width="1" opacity=".92"/>'
                f'<path d="M54 28 V40" fill="none" stroke-width="1.6" stroke-linecap="round"/>'
                f'<circle cx="54" cy="42" r="2" stroke="none"/></g>')
-    out.append(text_path(roboto_serif(600), title, 15.5, 88, 32, INK, tracking=15.5 * 0.06))
-    out.append(text_path(mono(), sub, 10.5, 88, 51, MUTED, tracking=10.5 * 0.08))
+    tx = cap_w + 20
+    t_w = width(roboto_serif(600), title, 15.5, 15.5 * 0.06)
+    s_w = width(mono(), sub, 10.5, 10.5 * 0.08)
+    W = round(max(520, tx + max(t_w, s_w) + 28))
+    out = [f'<clipPath id="plate"><rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="14"/></clipPath>',
+           frame(W, H).replace('rx="12"', 'rx="14"'), art,
+           text_path(roboto_serif(600), title, 15.5, tx, 32, INK, tracking=15.5 * 0.06),
+           text_path(mono(), sub, 10.5, tx, 51, MUTED, tracking=10.5 * 0.08)]
     alt = "University of Wisconsin\u2013Madison. M.S. Data Science in Human Behavior. Madison, WI."
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W + 2 * M}" height="{H + 2 * M}" '
             f'viewBox="0 0 {W + 2 * M} {H + 2 * M}" role="img" aria-label="{alt}">\n<title>{alt}</title>\n'
-            f'<g transform="translate({M} {M})">\n' + "\n".join(out) + '\n</g>\n</svg>\n')
+            f'<g transform="translate({M} {M})">\n' + "\n".join(out) + '\n</g>\n</svg>\n'), W + 2 * M
 
 
 # (category, tool): the category is the small label on the left of each badge.
@@ -411,7 +454,12 @@ def main():
     for p in PROJECTS:
         (ASSETS / "cards" / p["file"]).write_text(build_card(p))
     (ASSETS / "badges").mkdir(exist_ok=True)
-    (ASSETS / "badges" / "uw-madison.svg").write_text(build_uw_badge())
+    logo = next((q for q in (ASSETS / "logo" / "uw-madison.svg", ASSETS / "logo" / "uw-madison.png") if q.exists()), None)
+    if len(sys.argv) > 1:   # optional: python3 scripts/build_assets.py path/to/logo.svg|png
+        logo = sys.argv[1]
+    svg, badge_w = build_uw_badge(logo)
+    (ASSETS / "badges" / "uw-madison.svg").write_text(svg)
+    print("UW badge:", "official logo" if logo else "mortarboard placeholder", f"(width {badge_w})")
     for cat, tool in TOOL_BADGES:
         (ASSETS / "badges" / f"{slug(tool)}.svg").write_text(build_tool_badge(cat, tool))
     print("wrote header, ", 2 + len(PROJECTS), "cards and", 1 + len(TOOL_BADGES), "badges")
