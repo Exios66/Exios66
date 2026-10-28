@@ -1,109 +1,346 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="170" viewBox="0 0 800 170" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" width="497" height="160" viewBox="0 0 497 160" role="img" aria-labelledby="t d">
   <title id="t">Jack J. Burleson</title>
   <desc id="d">It’s a pleasure to meet you here...</desc>
   <defs>
-    <linearGradient id="name" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#0EA5E9"/>
-      <stop offset="0.55" stop-color="#38BDF8"/>
-      <stop offset="1" stop-color="#8A2BE2"/>
-    </linearGradient>
-    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#0EA5E9" stop-opacity="0"/>
-      <stop offset="0.5" stop-color="#8A2BE2"/>
-      <stop offset="1" stop-color="#0EA5E9" stop-opacity="0"/>
-    </linearGradient>
-    <filter id="glow" x="-10%" y="-40%" width="120%" height="180%">
-      <feGaussianBlur stdDeviation="3.5" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <!-- type-on reveal windows; widths animate in steps, one step per character -->
-    <clipPath id="c1"><rect class="w1" x="0" y="14" width="1" height="70"/></clipPath>
-    <clipPath id="c2"><rect class="w2" x="0" y="92" width="1" height="40"/></clipPath>
+    <clipPath id="c1"><rect class="r1" x="52" y="20" width="1" height="72"/></clipPath>
+    <clipPath id="c2"><rect class="r2" x="52" y="96" width="1" height="38"/></clipPath>
   </defs>
-
   <style>
-    :root { --sub: #CBD5E1; --cursor: #38BDF8; }
-    @media (prefers-color-scheme: light) { :root { --sub: #475569; --cursor: #0EA5E9; } }
-
-    .name { font: 700 46px 'Quicksand','Nunito','Segoe UI',system-ui,-apple-system,sans-serif; fill: url(#name); }
-    .sub  { font: 500 22px 'Quicksand','Nunito','Segoe UI',system-ui,-apple-system,sans-serif; fill: var(--sub); }
-    .cur  { fill: var(--cursor); }
-
-    /* one 13s loop: type name, type tagline, hold, backspace tagline, backspace name */
-    .w1, .w2 { transform-box: view-box; transform-origin: 0 0; }
-    .w1 { animation: w1 13s infinite; }
-    .w2 { animation: w2 13s infinite; }
-    @keyframes w1 {
-      0%     { transform: translateX(185px) scaleX(0);   animation-timing-function: steps(1, end); }
-      4%     { transform: translateX(185px) scaleX(0);   animation-timing-function: steps(16, end); }
-      17%    { transform: translateX(185px) scaleX(430); }
-      83%    { transform: translateX(185px) scaleX(430); animation-timing-function: steps(16, end); }
-      91%    { transform: translateX(185px) scaleX(0); }
-      100%   { transform: translateX(185px) scaleX(0); }
+    .r1, .r2 { transform-box: view-box; transform-origin: 52px 0; }
+    .r1 { animation: r1 12.0s infinite; }
+    .r2 { animation: r2 12.0s infinite; }
+    .cur { animation: cur 12.0s infinite; }
+    .bar { animation: blink 1s steps(1, end) infinite; }
+    @keyframes r1 {
+      0.000% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      5.833% { transform: scaleX(27.60); animation-timing-function: steps(1, end); }
+      6.722% { transform: scaleX(59.00); animation-timing-function: steps(1, end); }
+      7.611% { transform: scaleX(85.00); animation-timing-function: steps(1, end); }
+      8.500% { transform: scaleX(113.45); animation-timing-function: steps(1, end); }
+      9.389% { transform: scaleX(127.45); animation-timing-function: steps(1, end); }
+      10.278% { transform: scaleX(155.05); animation-timing-function: steps(1, end); }
+      11.167% { transform: scaleX(167.50); animation-timing-function: steps(1, end); }
+      12.056% { transform: scaleX(181.50); animation-timing-function: steps(1, end); }
+      12.944% { transform: scaleX(214.25); animation-timing-function: steps(1, end); }
+      13.833% { transform: scaleX(243.60); animation-timing-function: steps(1, end); }
+      14.722% { transform: scaleX(265.30); animation-timing-function: steps(1, end); }
+      15.611% { transform: scaleX(278.30); animation-timing-function: steps(1, end); }
+      16.500% { transform: scaleX(307.80); animation-timing-function: steps(1, end); }
+      17.389% { transform: scaleX(331.90); animation-timing-function: steps(1, end); }
+      18.278% { transform: scaleX(363.10); animation-timing-function: steps(1, end); }
+      19.167% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      23.333% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      23.922% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      24.510% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      25.098% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      25.686% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      26.275% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      26.863% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      27.451% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      28.039% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      28.627% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      29.216% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      29.804% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      30.392% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      30.980% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      31.569% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      32.157% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      32.745% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      33.333% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      33.922% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      34.510% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      35.098% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      35.686% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      36.275% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      36.863% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      37.451% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      38.039% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      38.627% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      39.216% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      39.804% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      40.392% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      40.980% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      41.569% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      42.157% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      42.745% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      43.333% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      75.000% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      75.270% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      75.539% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      75.809% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      76.078% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      76.348% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      76.618% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      76.887% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      77.157% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      77.426% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      77.696% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      77.966% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      78.235% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      78.505% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      78.775% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      79.044% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      79.314% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      79.583% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      79.853% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      80.123% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      80.392% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      80.662% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      80.931% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      81.201% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      81.471% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      81.740% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      82.010% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      82.279% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      82.549% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      82.819% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      83.088% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      83.358% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      83.627% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      83.897% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      84.167% { transform: scaleX(392.90); animation-timing-function: steps(1, end); }
+      85.417% { transform: scaleX(363.10); animation-timing-function: steps(1, end); }
+      85.806% { transform: scaleX(331.90); animation-timing-function: steps(1, end); }
+      86.194% { transform: scaleX(307.80); animation-timing-function: steps(1, end); }
+      86.583% { transform: scaleX(278.30); animation-timing-function: steps(1, end); }
+      86.972% { transform: scaleX(265.30); animation-timing-function: steps(1, end); }
+      87.361% { transform: scaleX(243.60); animation-timing-function: steps(1, end); }
+      87.750% { transform: scaleX(214.25); animation-timing-function: steps(1, end); }
+      88.139% { transform: scaleX(181.50); animation-timing-function: steps(1, end); }
+      88.528% { transform: scaleX(167.50); animation-timing-function: steps(1, end); }
+      88.917% { transform: scaleX(155.05); animation-timing-function: steps(1, end); }
+      89.306% { transform: scaleX(127.45); animation-timing-function: steps(1, end); }
+      89.694% { transform: scaleX(113.45); animation-timing-function: steps(1, end); }
+      90.083% { transform: scaleX(85.00); animation-timing-function: steps(1, end); }
+      90.472% { transform: scaleX(59.00); animation-timing-function: steps(1, end); }
+      90.861% { transform: scaleX(27.60); animation-timing-function: steps(1, end); }
+      91.250% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      100.000% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
     }
-    @keyframes w2 {
-      0%     { transform: translateX(165px) scaleX(0);   animation-timing-function: steps(1, end); }
-      19%    { transform: translateX(165px) scaleX(0);   animation-timing-function: steps(35, end); }
-      46%    { transform: translateX(165px) scaleX(470); }
-      74%    { transform: translateX(165px) scaleX(470); animation-timing-function: steps(35, end); }
-      83%    { transform: translateX(165px) scaleX(0); }
-      100%   { transform: translateX(165px) scaleX(0); }
+    @keyframes r2 {
+      0.000% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      5.833% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      6.722% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      7.611% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      8.500% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      9.389% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      10.278% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      11.167% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      12.056% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      12.944% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      13.833% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      14.722% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      15.611% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      16.500% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      17.389% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      18.278% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      19.167% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      23.333% { transform: scaleX(10.80); animation-timing-function: steps(1, end); }
+      23.922% { transform: scaleX(21.60); animation-timing-function: steps(1, end); }
+      24.510% { transform: scaleX(32.40); animation-timing-function: steps(1, end); }
+      25.098% { transform: scaleX(43.20); animation-timing-function: steps(1, end); }
+      25.686% { transform: scaleX(54.00); animation-timing-function: steps(1, end); }
+      26.275% { transform: scaleX(64.80); animation-timing-function: steps(1, end); }
+      26.863% { transform: scaleX(75.60); animation-timing-function: steps(1, end); }
+      27.451% { transform: scaleX(86.40); animation-timing-function: steps(1, end); }
+      28.039% { transform: scaleX(97.20); animation-timing-function: steps(1, end); }
+      28.627% { transform: scaleX(108.00); animation-timing-function: steps(1, end); }
+      29.216% { transform: scaleX(118.80); animation-timing-function: steps(1, end); }
+      29.804% { transform: scaleX(129.60); animation-timing-function: steps(1, end); }
+      30.392% { transform: scaleX(140.40); animation-timing-function: steps(1, end); }
+      30.980% { transform: scaleX(151.20); animation-timing-function: steps(1, end); }
+      31.569% { transform: scaleX(162.00); animation-timing-function: steps(1, end); }
+      32.157% { transform: scaleX(172.80); animation-timing-function: steps(1, end); }
+      32.745% { transform: scaleX(183.60); animation-timing-function: steps(1, end); }
+      33.333% { transform: scaleX(194.40); animation-timing-function: steps(1, end); }
+      33.922% { transform: scaleX(205.20); animation-timing-function: steps(1, end); }
+      34.510% { transform: scaleX(216.00); animation-timing-function: steps(1, end); }
+      35.098% { transform: scaleX(226.80); animation-timing-function: steps(1, end); }
+      35.686% { transform: scaleX(237.60); animation-timing-function: steps(1, end); }
+      36.275% { transform: scaleX(248.40); animation-timing-function: steps(1, end); }
+      36.863% { transform: scaleX(259.20); animation-timing-function: steps(1, end); }
+      37.451% { transform: scaleX(270.00); animation-timing-function: steps(1, end); }
+      38.039% { transform: scaleX(280.80); animation-timing-function: steps(1, end); }
+      38.627% { transform: scaleX(291.60); animation-timing-function: steps(1, end); }
+      39.216% { transform: scaleX(302.40); animation-timing-function: steps(1, end); }
+      39.804% { transform: scaleX(313.20); animation-timing-function: steps(1, end); }
+      40.392% { transform: scaleX(324.00); animation-timing-function: steps(1, end); }
+      40.980% { transform: scaleX(334.80); animation-timing-function: steps(1, end); }
+      41.569% { transform: scaleX(345.60); animation-timing-function: steps(1, end); }
+      42.157% { transform: scaleX(356.40); animation-timing-function: steps(1, end); }
+      42.745% { transform: scaleX(367.20); animation-timing-function: steps(1, end); }
+      43.333% { transform: scaleX(378.00); animation-timing-function: steps(1, end); }
+      75.000% { transform: scaleX(367.20); animation-timing-function: steps(1, end); }
+      75.270% { transform: scaleX(356.40); animation-timing-function: steps(1, end); }
+      75.539% { transform: scaleX(345.60); animation-timing-function: steps(1, end); }
+      75.809% { transform: scaleX(334.80); animation-timing-function: steps(1, end); }
+      76.078% { transform: scaleX(324.00); animation-timing-function: steps(1, end); }
+      76.348% { transform: scaleX(313.20); animation-timing-function: steps(1, end); }
+      76.618% { transform: scaleX(302.40); animation-timing-function: steps(1, end); }
+      76.887% { transform: scaleX(291.60); animation-timing-function: steps(1, end); }
+      77.157% { transform: scaleX(280.80); animation-timing-function: steps(1, end); }
+      77.426% { transform: scaleX(270.00); animation-timing-function: steps(1, end); }
+      77.696% { transform: scaleX(259.20); animation-timing-function: steps(1, end); }
+      77.966% { transform: scaleX(248.40); animation-timing-function: steps(1, end); }
+      78.235% { transform: scaleX(237.60); animation-timing-function: steps(1, end); }
+      78.505% { transform: scaleX(226.80); animation-timing-function: steps(1, end); }
+      78.775% { transform: scaleX(216.00); animation-timing-function: steps(1, end); }
+      79.044% { transform: scaleX(205.20); animation-timing-function: steps(1, end); }
+      79.314% { transform: scaleX(194.40); animation-timing-function: steps(1, end); }
+      79.583% { transform: scaleX(183.60); animation-timing-function: steps(1, end); }
+      79.853% { transform: scaleX(172.80); animation-timing-function: steps(1, end); }
+      80.123% { transform: scaleX(162.00); animation-timing-function: steps(1, end); }
+      80.392% { transform: scaleX(151.20); animation-timing-function: steps(1, end); }
+      80.662% { transform: scaleX(140.40); animation-timing-function: steps(1, end); }
+      80.931% { transform: scaleX(129.60); animation-timing-function: steps(1, end); }
+      81.201% { transform: scaleX(118.80); animation-timing-function: steps(1, end); }
+      81.471% { transform: scaleX(108.00); animation-timing-function: steps(1, end); }
+      81.740% { transform: scaleX(97.20); animation-timing-function: steps(1, end); }
+      82.010% { transform: scaleX(86.40); animation-timing-function: steps(1, end); }
+      82.279% { transform: scaleX(75.60); animation-timing-function: steps(1, end); }
+      82.549% { transform: scaleX(64.80); animation-timing-function: steps(1, end); }
+      82.819% { transform: scaleX(54.00); animation-timing-function: steps(1, end); }
+      83.088% { transform: scaleX(43.20); animation-timing-function: steps(1, end); }
+      83.358% { transform: scaleX(32.40); animation-timing-function: steps(1, end); }
+      83.627% { transform: scaleX(21.60); animation-timing-function: steps(1, end); }
+      83.897% { transform: scaleX(10.80); animation-timing-function: steps(1, end); }
+      84.167% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      85.417% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      85.806% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      86.194% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      86.583% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      86.972% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      87.361% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      87.750% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      88.139% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      88.528% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      88.917% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      89.306% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      89.694% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      90.083% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      90.472% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      90.861% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      91.250% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
+      100.000% { transform: scaleX(0.00); animation-timing-function: steps(1, end); }
     }
-
-    /* cursors ride the leading edge of each reveal window */
-    .k1 { animation: k1 13s infinite; }
-    .k2 { animation: k2 13s infinite; }
-    @keyframes k1 {
-      0%     { transform: translateX(0);     opacity: 0; animation-timing-function: steps(1, end); }
-      4%     { transform: translateX(0);     opacity: 1; animation-timing-function: steps(16, end); }
-      17%    { transform: translateX(430px); opacity: 1; }
-      18%    { transform: translateX(430px); opacity: 0; }
-      83%    { transform: translateX(430px); opacity: 0; }
-      83.1%  { transform: translateX(430px); opacity: 1; animation-timing-function: steps(16, end); }
-      91%    { transform: translateX(0);     opacity: 1; }
-      93%    { transform: translateX(0);     opacity: 0; }
-      100%   { transform: translateX(0);     opacity: 0; }
+    @keyframes cur {
+      0.000% { transform: translate(56.00px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      5.833% { transform: translate(83.60px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      6.722% { transform: translate(115.00px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      7.611% { transform: translate(141.00px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      8.500% { transform: translate(169.45px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      9.389% { transform: translate(183.45px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      10.278% { transform: translate(211.05px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      11.167% { transform: translate(223.50px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      12.056% { transform: translate(237.50px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      12.944% { transform: translate(270.25px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      13.833% { transform: translate(299.60px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      14.722% { transform: translate(321.30px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      15.611% { transform: translate(334.30px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      16.500% { transform: translate(363.80px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      17.389% { transform: translate(387.90px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      18.278% { transform: translate(419.10px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      19.167% { transform: translate(448.90px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      23.333% { transform: translate(64.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      23.922% { transform: translate(75.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      24.510% { transform: translate(86.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      25.098% { transform: translate(97.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      25.686% { transform: translate(108.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      26.275% { transform: translate(118.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      26.863% { transform: translate(129.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      27.451% { transform: translate(140.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      28.039% { transform: translate(151.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      28.627% { transform: translate(162.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      29.216% { transform: translate(172.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      29.804% { transform: translate(183.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      30.392% { transform: translate(194.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      30.980% { transform: translate(205.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      31.569% { transform: translate(216.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      32.157% { transform: translate(226.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      32.745% { transform: translate(237.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      33.333% { transform: translate(248.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      33.922% { transform: translate(259.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      34.510% { transform: translate(270.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      35.098% { transform: translate(280.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      35.686% { transform: translate(291.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      36.275% { transform: translate(302.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      36.863% { transform: translate(313.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      37.451% { transform: translate(324.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      38.039% { transform: translate(334.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      38.627% { transform: translate(345.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      39.216% { transform: translate(356.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      39.804% { transform: translate(367.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      40.392% { transform: translate(378.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      40.980% { transform: translate(388.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      41.569% { transform: translate(399.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      42.157% { transform: translate(410.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      42.745% { transform: translate(421.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      43.333% { transform: translate(432.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      75.000% { transform: translate(421.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      75.270% { transform: translate(410.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      75.539% { transform: translate(399.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      75.809% { transform: translate(388.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      76.078% { transform: translate(378.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      76.348% { transform: translate(367.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      76.618% { transform: translate(356.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      76.887% { transform: translate(345.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      77.157% { transform: translate(334.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      77.426% { transform: translate(324.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      77.696% { transform: translate(313.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      77.966% { transform: translate(302.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      78.235% { transform: translate(291.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      78.505% { transform: translate(280.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      78.775% { transform: translate(270.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      79.044% { transform: translate(259.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      79.314% { transform: translate(248.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      79.583% { transform: translate(237.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      79.853% { transform: translate(226.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      80.123% { transform: translate(216.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      80.392% { transform: translate(205.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      80.662% { transform: translate(194.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      80.931% { transform: translate(183.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      81.201% { transform: translate(172.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      81.471% { transform: translate(162.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      81.740% { transform: translate(151.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      82.010% { transform: translate(140.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      82.279% { transform: translate(129.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      82.549% { transform: translate(118.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      82.819% { transform: translate(108.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      83.088% { transform: translate(97.20px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      83.358% { transform: translate(86.40px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      83.627% { transform: translate(75.60px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      83.897% { transform: translate(64.80px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      84.167% { transform: translate(54.00px, 104.00px) scale(2.5, 22); animation-timing-function: steps(1, end); }
+      85.417% { transform: translate(419.10px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      85.806% { transform: translate(387.90px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      86.194% { transform: translate(363.80px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      86.583% { transform: translate(334.30px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      86.972% { transform: translate(321.30px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      87.361% { transform: translate(299.60px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      87.750% { transform: translate(270.25px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      88.139% { transform: translate(237.50px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      88.528% { transform: translate(223.50px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      88.917% { transform: translate(211.05px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      89.306% { transform: translate(183.45px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      89.694% { transform: translate(169.45px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      90.083% { transform: translate(141.00px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      90.472% { transform: translate(115.00px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      90.861% { transform: translate(83.60px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      91.250% { transform: translate(56.00px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
+      100.000% { transform: translate(56.00px, 38.00px) scale(3, 43); animation-timing-function: steps(1, end); }
     }
-    @keyframes k2 {
-      0%     { transform: translateX(0);     opacity: 0; animation-timing-function: steps(1, end); }
-      19%    { transform: translateX(0);     opacity: 1; animation-timing-function: steps(35, end); }
-      46%    { transform: translateX(470px); opacity: 1; }
-      74%    { transform: translateX(470px); opacity: 1; animation-timing-function: steps(35, end); }
-      83%    { transform: translateX(0);     opacity: 1; }
-      83.1%  { transform: translateX(0);     opacity: 0; }
-      100%   { transform: translateX(0);     opacity: 0; }
-    }
-    .blink { animation: blink 0.9s steps(1, end) infinite; }
     @keyframes blink { 0%, 55% { opacity: 1; } 56%, 100% { opacity: 0; } }
-
-    /* accent rule draws in with the name, fades out with the erase */
-    .rule { stroke-dasharray: 560; animation: rule 13s infinite; }
-    @keyframes rule {
-      0%    { stroke-dashoffset: 560; opacity: 1; animation-timing-function: ease-out; }
-      14%   { stroke-dashoffset: 0;   opacity: 1; }
-      85%   { stroke-dashoffset: 0;   opacity: 1; }
-      95%   { stroke-dashoffset: 0;   opacity: 0; }
-      95.1% { stroke-dashoffset: 560; opacity: 0; }
-      100%  { stroke-dashoffset: 560; opacity: 1; }
-    }
-
     @media (prefers-reduced-motion: reduce) {
-      .w1, .w2, .k1, .k2, .rule, .blink { animation: none; }
-      .w1 { transform: translateX(185px) scaleX(430); } .w2 { transform: translateX(165px) scaleX(470); }
-      .k1, .k2 { opacity: 0; }
-      .rule { stroke-dashoffset: 0; }
+      .r1, .r2, .cur, .bar { animation: none; }
+      .r1 { transform: scaleX(392.90); } .r2 { transform: scaleX(378.00); }
+      .cur { display: none; }
     }
   </style>
 
-  <path class="rule" d="M120 152 H680" stroke="url(#rule)" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <rect x="0.5" y="0.5" width="496" height="159" rx="12" fill="#0D1117" stroke="#30363D"/>
 
-  <g clip-path="url(#c1)" filter="url(#glow)">
-    <text class="name" x="185" y="62" textLength="416" lengthAdjust="spacing">Jack J. Burleson</text>
-  </g>
-  <g clip-path="url(#c2)">
-    <text class="sub" x="165" y="118" textLength="456" lengthAdjust="spacing">It’s a pleasure to meet you here...</text>
-  </g>
+  <g clip-path="url(#c1)"><path transform="translate(52 76)" fill="#29A9F0" d="M11.9 0.5Q9.05 0.5 6.6 -0.65Q4.15 -1.8 2.6 -3.95Q2 -4.85 2 -5.7Q2 -6.95 2.98 -7.8Q3.95 -8.65 4.9 -8.65Q5.65 -8.65 6.38 -8.2Q7.1 -7.75 7.7 -7.15Q8.7 -6.25 9.68 -5.88Q10.65 -5.5 11.9 -5.5Q13.4 -5.5 14.7 -6.25Q16 -7 16.8 -8.25Q17.6 -9.5 17.6 -10.95V-31.95Q17.6 -33.25 18.55 -34.12Q19.5 -35 20.75 -35Q22.15 -35 23 -34.12Q23.85 -33.25 23.85 -31.95V-10.95Q23.85 -7.9 22.25 -5.3Q20.65 -2.7 17.95 -1.1Q15.25 0.5 11.9 0.5ZM52.75 -27.25Q54.05 -27.25 54.9 -26.4Q55.75 -25.55 55.75 -24.2V-3.05Q55.75 -1.75 54.9 -0.88Q54.05 0 52.75 0Q51.45 0 50.6 -0.9Q49.75 -1.75 49.75 -3Q49.15 -2.3 48.25 -1.65Q47.05 -0.75 45.42 -0.12Q43.8 0.5 41.9 0.5Q38.45 0.5 35.65 -1.28Q32.85 -3.05 31.23 -6.18Q29.6 -9.3 29.6 -13.35Q29.6 -17.45 31.23 -20.58Q32.85 -23.7 35.6 -25.48Q38.35 -27.25 41.7 -27.25Q43.85 -27.25 45.65 -26.6Q47.45 -25.95 48.8 -24.95Q49.3 -24.55 49.75 -24.15V-24.2Q49.75 -25.5 50.6 -26.38Q51.45 -27.25 52.75 -27.25ZM42.65 -5Q44.85 -5 46.5 -6.1Q48.15 -7.2 49.08 -9.1Q50 -11 50 -13.35Q50 -15.75 49.08 -17.65Q48.15 -19.55 46.5 -20.65Q44.85 -21.75 42.65 -21.75Q40.5 -21.75 38.85 -20.65Q37.2 -19.55 36.28 -17.65Q35.35 -15.75 35.35 -13.35Q35.35 -11 36.28 -9.1Q37.2 -7.2 38.85 -6.1Q40.5 -5 42.65 -5ZM74.15 -27.25Q77 -27.25 79.12 -26.65Q81.25 -26.05 82.42 -24.98Q83.6 -23.9 83.6 -22.4Q83.6 -21.4 83 -20.53Q82.4 -19.65 81.25 -19.65Q80.45 -19.65 79.93 -19.88Q79.4 -20.1 79 -20.45Q78.6 -20.8 78.05 -21.1Q77.55 -21.4 76.53 -21.58Q75.5 -21.75 75 -21.75Q72.45 -21.75 70.68 -20.65Q68.9 -19.55 67.95 -17.68Q67 -15.8 67 -13.35Q67 -10.95 67.97 -9.08Q68.95 -7.2 70.68 -6.1Q72.4 -5 74.65 -5Q75.9 -5 76.8 -5.15Q77.7 -5.3 78.3 -5.6Q79 -6 79.55 -6.45Q80.1 -6.9 81.2 -6.9Q82.5 -6.9 83.2 -6.08Q83.9 -5.25 83.9 -4.05Q83.9 -2.8 82.5 -1.78Q81.1 -0.75 78.82 -0.12Q76.55 0.5 73.9 0.5Q69.95 0.5 67.05 -1.33Q64.15 -3.15 62.58 -6.3Q61 -9.45 61 -13.35Q61 -17.45 62.67 -20.58Q64.35 -23.7 67.32 -25.48Q70.3 -27.25 74.15 -27.25ZM91.75 0Q90.45 0 89.6 -0.88Q88.75 -1.75 88.75 -3.05V-33.95Q88.75 -35.25 89.6 -36.12Q90.45 -37 91.75 -37Q93.05 -37 93.9 -36.12Q94.75 -35.25 94.75 -33.95V-15.45L105.45 -25.8Q106.4 -26.75 107.65 -26.75Q108.8 -26.75 109.65 -25.8Q110.5 -24.85 110.5 -23.95Q110.5 -22.75 109.3 -21.7L101.75 -14.75L110.5 -5.25Q111.45 -4.25 111.45 -3Q111.45 -1.7 110.43 -0.88Q109.4 -0.05 108.4 -0.05Q107.1 -0.05 106.2 -1.05L97.2 -10.55L94.75 -8.3V-3.05Q94.75 -1.75 93.9 -0.88Q93.05 0 91.75 0ZM139.35 0.5Q136.5 0.5 134.05 -0.65Q131.6 -1.8 130.05 -3.95Q129.45 -4.85 129.45 -5.7Q129.45 -6.95 130.43 -7.8Q131.4 -8.65 132.35 -8.65Q133.1 -8.65 133.82 -8.2Q134.55 -7.75 135.15 -7.15Q136.15 -6.25 137.12 -5.88Q138.1 -5.5 139.35 -5.5Q140.85 -5.5 142.15 -6.25Q143.45 -7 144.25 -8.25Q145.05 -9.5 145.05 -10.95V-31.95Q145.05 -33.25 146 -34.12Q146.95 -35 148.2 -35Q149.6 -35 150.45 -34.12Q151.3 -33.25 151.3 -31.95V-10.95Q151.3 -7.9 149.7 -5.3Q148.1 -2.7 145.4 -1.1Q142.7 0.5 139.35 0.5ZM160.95 -0.05Q159.5 -0.05 158.73 -0.83Q157.95 -1.6 157.95 -3.05V-3.9Q157.95 -5.35 158.73 -6.12Q159.5 -6.9 160.95 -6.9H161.6Q163.05 -6.9 163.83 -6.12Q164.6 -5.35 164.6 -3.9V-3.05Q164.6 -1.6 163.83 -0.83Q163.05 -0.05 161.6 -0.05ZM200.9 -35Q205.7 -35 208.05 -32.75Q210.4 -30.5 210.4 -26.1Q210.4 -23.75 209.25 -22Q208.2 -20.35 206.25 -19.4Q207.1 -19.05 207.95 -18.6Q209.8 -17.5 211.03 -15.57Q212.25 -13.65 212.25 -10.65Q212.25 -7.35 211.18 -5.25Q210.1 -3.15 208.35 -2Q206.6 -0.85 204.6 -0.43Q202.6 0 200.75 0H188.3Q187 0 186.12 -0.88Q185.25 -1.75 185.25 -3.05V-31.95Q185.25 -33.25 186.12 -34.12Q187 -35 188.3 -35ZM200.4 -15.4H191.75V-5.75H200.75Q203.05 -5.75 204.4 -6.98Q205.75 -8.2 205.75 -10.65Q205.75 -12.9 204.85 -13.9Q203.95 -14.9 202.7 -15.15Q201.45 -15.4 200.4 -15.4ZM200 -29.1H191.75V-21.3H200.15Q201.6 -21.3 202.75 -22.25Q203.9 -23.2 203.9 -25Q203.9 -27.15 202.82 -28.12Q201.75 -29.1 200 -29.1ZM237.35 -26.75Q238.65 -26.75 239.5 -25.88Q240.35 -25 240.35 -23.7V-11Q240.35 -5.7 237.4 -2.6Q234.45 0.5 228.9 0.5Q223.35 0.5 220.43 -2.6Q217.5 -5.7 217.5 -11V-23.7Q217.5 -25 218.35 -25.88Q219.2 -26.75 220.5 -26.75Q221.8 -26.75 222.65 -25.88Q223.5 -25 223.5 -23.7V-11Q223.5 -7.95 224.85 -6.47Q226.2 -5 228.9 -5Q231.65 -5 233 -6.47Q234.35 -7.95 234.35 -11V-23.7Q234.35 -25 235.2 -25.88Q236.05 -26.75 237.35 -26.75ZM249.85 0Q248.55 0 247.7 -0.88Q246.85 -1.75 246.85 -3.05V-23.7Q246.85 -25 247.7 -25.88Q248.55 -26.75 249.85 -26.75Q251.15 -26.75 252 -25.88Q252.85 -25 252.85 -23.7V-23.05Q253.3 -23.8 253.95 -24.5Q254.8 -25.4 255.9 -26.03Q257 -26.65 258.25 -26.95Q259.5 -27.25 260.75 -27.25Q262.25 -27.25 263.27 -26.4Q264.3 -25.55 264.3 -24.4Q264.3 -22.75 263.45 -22.02Q262.6 -21.3 261.6 -21.3Q260.65 -21.3 259.88 -21.65Q259.1 -22 258.1 -22Q257.2 -22 256.27 -21.58Q255.35 -21.15 254.57 -20.25Q253.8 -19.35 253.32 -18.02Q252.85 -16.7 252.85 -14.9V-3.05Q252.85 -1.75 252 -0.88Q251.15 0 249.85 0ZM275.05 -3.05Q275.05 -1.75 274.18 -0.88Q273.3 0 272 0Q270.75 0 269.9 -0.88Q269.05 -1.75 269.05 -3.05V-33.95Q269.05 -35.25 269.93 -36.12Q270.8 -37 272.1 -37Q273.4 -37 274.23 -36.12Q275.05 -35.25 275.05 -33.95ZM294.15 0.5Q289.9 0.5 286.78 -1.28Q283.65 -3.05 281.98 -6.1Q280.3 -9.15 280.3 -13Q280.3 -17.5 282.12 -20.68Q283.95 -23.85 286.9 -25.55Q289.85 -27.25 293.15 -27.25Q295.7 -27.25 297.98 -26.2Q300.25 -25.15 302 -23.33Q303.75 -21.5 304.77 -19.1Q305.8 -16.7 305.8 -14Q305.75 -12.8 304.85 -12.05Q303.95 -11.3 302.75 -11.3H286.25Q286.5 -9.9 287.2 -8.85Q288.3 -6.95 290.08 -5.97Q291.85 -5 293.85 -5Q295.7 -5 296.8 -5.3Q297.9 -5.6 298.58 -6.03Q299.25 -6.45 299.8 -6.75Q300.7 -7.2 301.5 -7.2Q302.6 -7.2 303.33 -6.45Q304.05 -5.7 304.05 -4.7Q304.05 -3.35 302.65 -2.25Q301.35 -1.15 299 -0.33Q296.65 0.5 294.15 0.5ZM286.3 -16.3H299.4V-16.65Q299.3 -18.1 298.38 -19.25Q297.45 -20.4 296.07 -21.08Q294.7 -21.75 293.15 -21.75Q291.65 -21.75 290.35 -21.35Q289.05 -20.95 288.1 -20Q287.15 -19.05 286.6 -17.45Q286.4 -16.9 286.3 -16.3ZM309.5 -4.15Q309 -4.85 309.05 -5.95Q309.1 -7.05 310.35 -7.85Q311.15 -8.35 312.05 -8.28Q312.95 -8.2 313.8 -7.35Q315.25 -5.9 316.85 -5.1Q318.45 -4.3 320.85 -4.3Q321.6 -4.35 322.5 -4.53Q323.4 -4.7 324.08 -5.33Q324.75 -5.95 324.75 -7.25Q324.75 -8.35 324 -9Q323.25 -9.65 322.02 -10.1Q320.8 -10.55 319.3 -10.95Q317.75 -11.4 316.12 -11.95Q314.5 -12.5 313.15 -13.38Q311.8 -14.25 310.95 -15.7Q310.1 -17.15 310.1 -19.35Q310.1 -21.85 311.5 -23.6Q312.9 -25.35 315.12 -26.3Q317.35 -27.25 319.8 -27.25Q321.35 -27.25 323.05 -26.88Q324.75 -26.5 326.3 -25.68Q327.85 -24.85 328.9 -23.5Q329.45 -22.75 329.55 -21.7Q329.65 -20.65 328.6 -19.8Q327.85 -19.2 326.85 -19.28Q325.85 -19.35 325.2 -19.95Q324.35 -21.05 322.93 -21.7Q321.5 -22.35 319.65 -22.35Q318.9 -22.35 318.03 -22.18Q317.15 -22 316.5 -21.43Q315.85 -20.85 315.85 -19.6Q315.85 -18.45 316.6 -17.77Q317.35 -17.1 318.62 -16.68Q319.9 -16.25 321.35 -15.85Q322.85 -15.45 324.4 -14.9Q325.95 -14.35 327.25 -13.45Q328.55 -12.55 329.35 -11.12Q330.15 -9.7 330.15 -7.5Q330.15 -4.95 328.65 -3.15Q327.15 -1.35 324.9 -0.43Q322.65 0.5 320.3 0.5Q317.35 0.5 314.4 -0.53Q311.45 -1.55 309.5 -4.15ZM361.1 -13.35Q361.1 -9.25 359.28 -6.12Q357.45 -3 354.38 -1.25Q351.3 0.5 347.5 0.5Q343.7 0.5 340.62 -1.25Q337.55 -3 335.73 -6.12Q333.9 -9.25 333.9 -13.35Q333.9 -17.45 335.73 -20.58Q337.55 -23.7 340.62 -25.48Q343.7 -27.25 347.5 -27.25Q351.3 -27.25 354.38 -25.48Q357.45 -23.7 359.28 -20.58Q361.1 -17.45 361.1 -13.35ZM355.1 -13.35Q355.1 -15.9 354.08 -17.78Q353.05 -19.65 351.33 -20.7Q349.6 -21.75 347.5 -21.75Q345.4 -21.75 343.68 -20.7Q341.95 -19.65 340.93 -17.78Q339.9 -15.9 339.9 -13.35Q339.9 -10.85 340.93 -8.98Q341.95 -7.1 343.68 -6.05Q345.4 -5 347.5 -5Q349.6 -5 351.33 -6.05Q353.05 -7.1 354.08 -8.98Q355.1 -10.85 355.1 -13.35ZM380.65 -27.25Q384.35 -27.25 386.28 -25.7Q388.2 -24.15 388.93 -21.58Q389.65 -19 389.65 -15.85V-3.05Q389.65 -1.75 388.8 -0.88Q387.95 0 386.65 0Q385.35 0 384.5 -0.88Q383.65 -1.75 383.65 -3.05V-15.85Q383.65 -17.5 383.23 -18.83Q382.8 -20.15 381.7 -20.95Q380.6 -21.75 378.55 -21.75Q376.55 -21.75 375.18 -20.95Q373.8 -20.15 373.08 -18.83Q372.35 -17.5 372.35 -15.85V-3.05Q372.35 -1.75 371.5 -0.88Q370.65 0 369.35 0Q368.05 0 367.2 -0.88Q366.35 -1.75 366.35 -3.05V-23.7Q366.35 -25 367.2 -25.88Q368.05 -26.75 369.35 -26.75Q370.65 -26.75 371.5 -25.88Q372.35 -25 372.35 -23.7V-22.85Q372.6 -23.2 372.9 -23.55Q373.75 -24.5 374.9 -25.35Q376.05 -26.2 377.5 -26.73Q378.95 -27.25 380.65 -27.25Z"/></g>
+  <g clip-path="url(#c2)"><path transform="translate(52 120)" fill="#A9B4C2" d="M1.89 0V-1.48H4.57V-11.66H1.89V-13.14H8.91V-11.66H6.23V-1.48H8.91V0ZM17.19 0Q15.97 0 15.23 -0.71Q14.49 -1.42 14.49 -2.61V-8.42H11.65V-9.9H14.49V-12.69H16.11V-9.9H20.16V-8.42H16.11V-2.61Q16.11 -2.11 16.41 -1.79Q16.7 -1.48 17.19 -1.48H20.07V0ZM25.56 -7.65 26.57 -9.86Q26.73 -10.22 26.82 -10.6Q26.91 -10.98 26.91 -11.25Q26.91 -11.77 26.66 -12.28Q26.41 -12.8 25.96 -13.14H27.77Q28.17 -12.78 28.39 -12.28Q28.62 -11.77 28.62 -11.25Q28.62 -10.89 28.49 -10.39Q28.37 -9.88 28.17 -9.43L27.36 -7.65ZM37.4 0.14Q35.75 0.14 34.84 -0.6Q33.93 -1.35 33.93 -2.72H35.55Q35.55 -2.03 36.04 -1.65Q36.52 -1.26 37.4 -1.26H38.2Q39.1 -1.26 39.59 -1.66Q40.09 -2.05 40.09 -2.77Q40.09 -4.05 38.92 -4.21L36.18 -4.61Q35.17 -4.75 34.61 -5.45Q34.06 -6.14 34.06 -7.27Q34.06 -8.57 34.95 -9.31Q35.84 -10.04 37.4 -10.04H38.2Q39.64 -10.04 40.54 -9.33Q41.45 -8.62 41.53 -7.47H39.89Q39.85 -7.99 39.39 -8.33Q38.93 -8.68 38.2 -8.68H37.4Q36.58 -8.68 36.11 -8.3Q35.64 -7.92 35.64 -7.27Q35.64 -6.23 36.59 -6.08L39.15 -5.72Q41.67 -5.36 41.67 -2.77Q41.67 -1.39 40.76 -0.62Q39.85 0.14 38.2 0.14ZM58.54 0.18Q57.01 0.18 56.11 -0.67Q55.21 -1.53 55.21 -2.92Q55.21 -3.83 55.62 -4.52Q56.03 -5.2 56.77 -5.59Q57.51 -5.98 58.46 -5.98H61.52V-6.75Q61.52 -8.68 59.42 -8.68Q58.48 -8.68 57.91 -8.33Q57.33 -7.99 57.29 -7.38H55.67Q55.76 -8.55 56.76 -9.31Q57.76 -10.08 59.42 -10.08Q61.22 -10.08 62.18 -9.22Q63.14 -8.35 63.14 -6.8V0H61.54V-1.8H61.51Q61.36 -0.88 60.59 -0.35Q59.81 0.18 58.54 0.18ZM58.93 -1.19Q60.12 -1.19 60.82 -1.76Q61.52 -2.34 61.52 -3.33V-4.72H58.64Q57.85 -4.72 57.36 -4.24Q56.86 -3.76 56.86 -2.97Q56.86 -2.14 57.41 -1.67Q57.96 -1.19 58.93 -1.19ZM77.26 3.24V-9.9H78.88V-8.01H78.89Q79.02 -8.98 79.74 -9.53Q80.46 -10.08 81.58 -10.08Q83.07 -10.08 83.95 -9.1Q84.83 -8.12 84.83 -6.41V-3.51Q84.83 -1.8 83.95 -0.81Q83.07 0.18 81.58 0.18Q80.46 0.18 79.74 -0.38Q79.02 -0.94 78.89 -1.89H78.84L78.88 0.36V3.24ZM81.04 -1.22Q82.06 -1.22 82.64 -1.76Q83.21 -2.3 83.21 -3.51V-6.39Q83.21 -7.61 82.64 -8.14Q82.06 -8.68 81.04 -8.68Q80.05 -8.68 79.46 -8.05Q78.88 -7.42 78.88 -6.3V-3.6Q78.88 -2.48 79.46 -1.85Q80.05 -1.22 81.04 -1.22ZM93.24 0Q91.93 0 91.14 -0.76Q90.36 -1.53 90.36 -2.79V-11.66H86.94V-13.14H91.98V-2.79Q91.98 -2.18 92.32 -1.83Q92.66 -1.48 93.24 -1.48H96.3V0ZM102.6 0.18Q100.85 0.18 99.78 -0.87Q98.71 -1.93 98.71 -3.78V-6.12Q98.71 -7.97 99.78 -9.03Q100.85 -10.08 102.6 -10.08Q103.77 -10.08 104.64 -9.61Q105.52 -9.14 106 -8.3Q106.49 -7.45 106.49 -6.3V-4.54H100.3V-3.6Q100.3 -2.5 100.93 -1.86Q101.56 -1.22 102.6 -1.22Q103.5 -1.22 104.08 -1.57Q104.67 -1.93 104.8 -2.52H106.42Q106.25 -1.28 105.21 -0.55Q104.17 0.18 102.6 0.18ZM100.3 -5.8H104.9V-6.3Q104.9 -7.47 104.3 -8.11Q103.7 -8.75 102.6 -8.75Q101.5 -8.75 100.9 -8.11Q100.3 -7.47 100.3 -6.3ZM112.54 0.18Q111.01 0.18 110.11 -0.67Q109.21 -1.53 109.21 -2.92Q109.21 -3.83 109.62 -4.52Q110.03 -5.2 110.77 -5.59Q111.51 -5.98 112.46 -5.98H115.52V-6.75Q115.52 -8.68 113.42 -8.68Q112.48 -8.68 111.91 -8.33Q111.33 -7.99 111.29 -7.38H109.67Q109.76 -8.55 110.76 -9.31Q111.76 -10.08 113.42 -10.08Q115.22 -10.08 116.18 -9.22Q117.14 -8.35 117.14 -6.8V0H115.54V-1.8H115.51Q115.36 -0.88 114.59 -0.35Q113.81 0.18 112.54 0.18ZM112.93 -1.19Q114.12 -1.19 114.82 -1.76Q115.52 -2.34 115.52 -3.33V-4.72H112.64Q111.85 -4.72 111.36 -4.24Q110.86 -3.76 110.86 -2.97Q110.86 -2.14 111.41 -1.67Q111.96 -1.19 112.93 -1.19ZM123.8 0.14Q122.15 0.14 121.24 -0.6Q120.33 -1.35 120.33 -2.72H121.95Q121.95 -2.03 122.44 -1.65Q122.92 -1.26 123.8 -1.26H124.6Q125.5 -1.26 125.99 -1.66Q126.49 -2.05 126.49 -2.77Q126.49 -4.05 125.32 -4.21L122.58 -4.61Q121.57 -4.75 121.01 -5.45Q120.46 -6.14 120.46 -7.27Q120.46 -8.57 121.35 -9.31Q122.24 -10.04 123.8 -10.04H124.6Q126.04 -10.04 126.94 -9.33Q127.85 -8.62 127.93 -7.47H126.29Q126.25 -7.99 125.79 -8.33Q125.33 -8.68 124.6 -8.68H123.8Q122.98 -8.68 122.51 -8.3Q122.04 -7.92 122.04 -7.27Q122.04 -6.23 122.99 -6.08L125.55 -5.72Q128.07 -5.36 128.07 -2.77Q128.07 -1.39 127.16 -0.62Q126.25 0.14 124.6 0.14ZM134.98 0.18Q133.27 0.18 132.25 -0.84Q131.22 -1.85 131.22 -3.6V-9.9H132.84V-3.6Q132.84 -2.52 133.42 -1.88Q133.99 -1.24 134.98 -1.24Q135.99 -1.24 136.57 -1.88Q137.16 -2.52 137.16 -3.6V-9.9H138.78V-3.6Q138.78 -1.85 137.74 -0.84Q136.69 0.18 134.98 0.18ZM142.42 0V-9.9H144.04V-8.01H144.07Q144.2 -8.96 144.88 -9.52Q145.57 -10.08 146.72 -10.08Q148.27 -10.08 149.1 -9.15Q149.94 -8.23 149.94 -6.52V-5.67H148.32V-6.52Q148.32 -8.68 146.21 -8.68Q145.15 -8.68 144.59 -8.06Q144.04 -7.45 144.04 -6.3V0ZM156.6 0.18Q154.85 0.18 153.78 -0.87Q152.71 -1.93 152.71 -3.78V-6.12Q152.71 -7.97 153.78 -9.03Q154.85 -10.08 156.6 -10.08Q157.77 -10.08 158.64 -9.61Q159.52 -9.14 160 -8.3Q160.49 -7.45 160.49 -6.3V-4.54H154.3V-3.6Q154.3 -2.5 154.93 -1.86Q155.56 -1.22 156.6 -1.22Q157.5 -1.22 158.09 -1.57Q158.67 -1.93 158.8 -2.52H160.42Q160.25 -1.28 159.21 -0.55Q158.17 0.18 156.6 0.18ZM154.3 -5.8H158.9V-6.3Q158.9 -7.47 158.3 -8.11Q157.7 -8.75 156.6 -8.75Q155.5 -8.75 154.9 -8.11Q154.3 -7.47 154.3 -6.3ZM179.19 0Q177.97 0 177.23 -0.71Q176.49 -1.42 176.49 -2.61V-8.42H173.65V-9.9H176.49V-12.69H178.11V-9.9H182.16V-8.42H178.11V-2.61Q178.11 -2.11 178.41 -1.79Q178.7 -1.48 179.19 -1.48H182.07V0ZM189 0.14Q187.22 0.14 186.17 -0.9Q185.11 -1.94 185.11 -3.82V-6.08Q185.11 -7.97 186.16 -9.01Q187.2 -10.04 189 -10.04Q190.8 -10.04 191.84 -9.01Q192.89 -7.97 192.89 -6.08V-3.82Q192.89 -1.94 191.84 -0.9Q190.78 0.14 189 0.14ZM189 -1.3Q190.06 -1.3 190.67 -1.89Q191.27 -2.48 191.27 -3.64V-6.26Q191.27 -7.42 190.67 -8.01Q190.06 -8.6 189 -8.6Q187.96 -8.6 187.34 -8.01Q186.73 -7.42 186.73 -6.26V-3.64Q186.73 -2.48 187.34 -1.89Q187.96 -1.3 189 -1.3ZM206.28 0V-9.9H207.68V-8.59H207.72Q207.81 -9.25 208.25 -9.67Q208.69 -10.08 209.38 -10.08Q210.02 -10.08 210.47 -9.7Q210.92 -9.32 211.12 -8.68H211.14Q211.27 -9.32 211.71 -9.7Q212.15 -10.08 212.83 -10.08Q213.79 -10.08 214.35 -9.37Q214.92 -8.66 214.92 -7.52V0H213.41V-7.54Q213.41 -8.14 213.12 -8.49Q212.83 -8.84 212.33 -8.84Q211.84 -8.84 211.55 -8.5Q211.27 -8.15 211.27 -7.56V0H209.93V-7.54Q209.93 -8.14 209.65 -8.49Q209.36 -8.84 208.87 -8.84Q208.37 -8.84 208.08 -8.5Q207.79 -8.15 207.79 -7.56V0ZM221.4 0.18Q219.65 0.18 218.58 -0.87Q217.51 -1.93 217.51 -3.78V-6.12Q217.51 -7.97 218.58 -9.03Q219.65 -10.08 221.4 -10.08Q222.57 -10.08 223.44 -9.61Q224.32 -9.14 224.8 -8.3Q225.29 -7.45 225.29 -6.3V-4.54H219.1V-3.6Q219.1 -2.5 219.73 -1.86Q220.36 -1.22 221.4 -1.22Q222.3 -1.22 222.89 -1.57Q223.47 -1.93 223.6 -2.52H225.22Q225.05 -1.28 224.01 -0.55Q222.97 0.18 221.4 0.18ZM219.1 -5.8H223.7V-6.3Q223.7 -7.47 223.1 -8.11Q222.5 -8.75 221.4 -8.75Q220.3 -8.75 219.7 -8.11Q219.1 -7.47 219.1 -6.3ZM232.2 0.18Q230.45 0.18 229.38 -0.87Q228.31 -1.93 228.31 -3.78V-6.12Q228.31 -7.97 229.38 -9.03Q230.45 -10.08 232.2 -10.08Q233.37 -10.08 234.24 -9.61Q235.12 -9.14 235.6 -8.3Q236.09 -7.45 236.09 -6.3V-4.54H229.9V-3.6Q229.9 -2.5 230.53 -1.86Q231.16 -1.22 232.2 -1.22Q233.1 -1.22 233.69 -1.57Q234.27 -1.93 234.4 -2.52H236.02Q235.85 -1.28 234.81 -0.55Q233.77 0.18 232.2 0.18ZM229.9 -5.8H234.5V-6.3Q234.5 -7.47 233.9 -8.11Q233.3 -8.75 232.2 -8.75Q231.1 -8.75 230.5 -8.11Q229.9 -7.47 229.9 -6.3ZM243.99 0Q242.77 0 242.03 -0.71Q241.29 -1.42 241.29 -2.61V-8.42H238.45V-9.9H241.29V-12.69H242.91V-9.9H246.96V-8.42H242.91V-2.61Q242.91 -2.11 243.21 -1.79Q243.5 -1.48 243.99 -1.48H246.87V0ZM262.4 3.24 263.86 -0.61 260.17 -9.9H261.92L264.26 -3.78Q264.4 -3.42 264.53 -3.02Q264.65 -2.63 264.71 -2.34Q264.76 -2.63 264.89 -3.02Q265.01 -3.42 265.14 -3.78L267.32 -9.9H269.03L264.1 3.24ZM275.4 0.14Q273.62 0.14 272.57 -0.9Q271.51 -1.94 271.51 -3.82V-6.08Q271.51 -7.97 272.56 -9.01Q273.6 -10.04 275.4 -10.04Q277.2 -10.04 278.24 -9.01Q279.29 -7.97 279.29 -6.08V-3.82Q279.29 -1.94 278.24 -0.9Q277.18 0.14 275.4 0.14ZM275.4 -1.3Q276.46 -1.3 277.07 -1.89Q277.67 -2.48 277.67 -3.64V-6.26Q277.67 -7.42 277.07 -8.01Q276.46 -8.6 275.4 -8.6Q274.36 -8.6 273.74 -8.01Q273.13 -7.42 273.13 -6.26V-3.64Q273.13 -2.48 273.74 -1.89Q274.36 -1.3 275.4 -1.3ZM286.18 0.18Q284.47 0.18 283.45 -0.84Q282.42 -1.85 282.42 -3.6V-9.9H284.04V-3.6Q284.04 -2.52 284.62 -1.88Q285.19 -1.24 286.18 -1.24Q287.19 -1.24 287.78 -1.88Q288.36 -2.52 288.36 -3.6V-9.9H289.98V-3.6Q289.98 -1.85 288.94 -0.84Q287.89 0.18 286.18 0.18ZM304.06 0V-13.14H305.68V-8.01H305.69Q305.82 -9 306.5 -9.54Q307.19 -10.08 308.32 -10.08Q309.82 -10.08 310.7 -9.16Q311.58 -8.24 311.58 -6.66V0H309.96V-6.39Q309.96 -7.51 309.39 -8.11Q308.83 -8.71 307.85 -8.71Q306.85 -8.71 306.26 -8.08Q305.68 -7.45 305.68 -6.3V0ZM318.6 0.18Q316.85 0.18 315.78 -0.87Q314.71 -1.93 314.71 -3.78V-6.12Q314.71 -7.97 315.78 -9.03Q316.85 -10.08 318.6 -10.08Q319.77 -10.08 320.64 -9.61Q321.52 -9.14 322 -8.3Q322.49 -7.45 322.49 -6.3V-4.54H316.3V-3.6Q316.3 -2.5 316.93 -1.86Q317.56 -1.22 318.6 -1.22Q319.5 -1.22 320.09 -1.57Q320.67 -1.93 320.8 -2.52H322.42Q322.25 -1.28 321.21 -0.55Q320.17 0.18 318.6 0.18ZM316.3 -5.8H320.9V-6.3Q320.9 -7.47 320.3 -8.11Q319.7 -8.75 318.6 -8.75Q317.5 -8.75 316.9 -8.11Q316.3 -7.47 316.3 -6.3ZM326.02 0V-9.9H327.64V-8.01H327.67Q327.8 -8.96 328.48 -9.52Q329.17 -10.08 330.32 -10.08Q331.87 -10.08 332.7 -9.15Q333.54 -8.23 333.54 -6.52V-5.67H331.92V-6.52Q331.92 -8.68 329.81 -8.68Q328.75 -8.68 328.19 -8.06Q327.64 -7.45 327.64 -6.3V0ZM340.2 0.18Q338.45 0.18 337.38 -0.87Q336.31 -1.93 336.31 -3.78V-6.12Q336.31 -7.97 337.38 -9.03Q338.45 -10.08 340.2 -10.08Q341.37 -10.08 342.24 -9.61Q343.12 -9.14 343.6 -8.3Q344.09 -7.45 344.09 -6.3V-4.54H337.9V-3.6Q337.9 -2.5 338.53 -1.86Q339.16 -1.22 340.2 -1.22Q341.1 -1.22 341.69 -1.57Q342.27 -1.93 342.4 -2.52H344.02Q343.85 -1.28 342.81 -0.55Q341.77 0.18 340.2 0.18ZM337.9 -5.8H342.5V-6.3Q342.5 -7.47 341.9 -8.11Q341.3 -8.75 340.2 -8.75Q339.1 -8.75 338.5 -8.11Q337.9 -7.47 337.9 -6.3ZM351 0.18Q350.33 0.18 349.93 -0.22Q349.52 -0.61 349.52 -1.24Q349.52 -1.91 349.93 -2.32Q350.33 -2.74 351 -2.74Q351.67 -2.74 352.07 -2.32Q352.48 -1.91 352.48 -1.24Q352.48 -0.61 352.07 -0.22Q351.67 0.18 351 0.18ZM361.8 0.18Q361.13 0.18 360.73 -0.22Q360.32 -0.61 360.32 -1.24Q360.32 -1.91 360.73 -2.32Q361.13 -2.74 361.8 -2.74Q362.47 -2.74 362.87 -2.32Q363.28 -1.91 363.28 -1.24Q363.28 -0.61 362.87 -0.22Q362.47 0.18 361.8 0.18ZM372.6 0.18Q371.93 0.18 371.53 -0.22Q371.12 -0.61 371.12 -1.24Q371.12 -1.91 371.53 -2.32Q371.93 -2.74 372.6 -2.74Q373.27 -2.74 373.67 -2.32Q374.08 -1.91 374.08 -1.24Q374.08 -0.61 373.67 -0.22Q373.27 0.18 372.6 0.18Z"/></g>
 
-  <g class="k1"><rect class="cur blink" x="187" y="22" width="3" height="46" rx="1.5"/></g>
-  <g class="k2"><rect class="cur blink" x="167" y="97" width="2.5" height="28" rx="1.25"/></g>
+  <g class="cur"><rect class="bar" x="0" y="0" width="1" height="1" fill="#29A9F0"/></g>
 </svg>

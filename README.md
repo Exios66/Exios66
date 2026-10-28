@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/header.svg" alt="Jack J. Burleson — It's a pleasure to meet you here..." width="800" />
+  <img src="assets/header.svg" alt="Jack J. Burleson — It's a pleasure to meet you here..." />
 </p>
 
 ---
