@@ -690,12 +690,17 @@ MAX_PHOTOS = 6
 PHOTO_EXT = {".jpg", ".jpeg", ".png", ".webp"}
 
 
-def load_photos():
-    """Photos in assets/photos, sorted by file name, as [(path, caption, focus)].
+QUALITY = 95      # JPEG quality of the embedded photos
+MAX_SCALE = 3     # embed at most this many pixels per displayed pixel; smaller sources are never upscaled
 
-    assets/photos/photos.json may map a file name to {"caption": "...", "focus": [x, y]}; focus is
-    the point of the photo (0..1) that stays in frame when it is cropped. The default (0.5, 0.35)
-    keeps heads in frame on portraits.
+
+def load_photos():
+    """Photos in assets/photos, sorted by file name, as [(path, caption, focus, fit)].
+
+    assets/photos/photos.json may map a file name to {"caption": "...", "focus": [x, y], "fit": "..."}.
+    fit "cover" (default) fills the stage and crops; focus is the point of the photo (0..1) that
+    stays in frame, default (0.5, 0.35) to keep heads in frame on portraits. fit "contain" shows the
+    whole photo, uncropped, on a soft blurred backdrop of itself, which suits portrait photos.
     """
     if not PHOTOS.is_dir():
         return []
@@ -703,32 +708,62 @@ def load_photos():
     meta = json.loads(meta_file.read_text()) if meta_file.exists() else {}
     files = sorted(q for q in PHOTOS.iterdir() if q.suffix.lower() in PHOTO_EXT)
     assert len(files) <= MAX_PHOTOS, f"at most {MAX_PHOTOS} photos fit the thumbnail strip, found {len(files)}"
-    return [(q, meta.get(q.name, {}).get("caption", ""), tuple(meta.get(q.name, {}).get("focus", (0.5, 0.35))))
-            for q in files]
+    out = []
+    for q in files:
+        m = meta.get(q.name, {})
+        fit = m.get("fit", "cover")
+        assert fit in ("cover", "contain"), f"{q.name}: fit must be cover or contain, not {fit!r}"
+        out.append((q, m.get("caption", ""), tuple(m.get("focus", (0.5, 0.35))), fit))
+    return out
 
 
-def _photo_data(path, size, focus, quality=78):
-    """Cover-crop to size around focus and return a base64 JPEG. Re-encoding drops EXIF, GPS included."""
-    from PIL import Image, ImageOps
-    im = ImageOps.exif_transpose(Image.open(path)).convert("RGB")
-    w, h = size
-    scale = max(w / im.width, h / im.height)
-    im = im.resize((max(w, round(im.width * scale)), max(h, round(im.height * scale))), Image.LANCZOS)
-    left = round((im.width - w) * focus[0])
-    top = round((im.height - h) * focus[1])
-    im = im.crop((left, top, left + w, top + h))
+def _jpeg_b64(im):
     buf = io.BytesIO()
-    im.save(buf, "JPEG", quality=quality, optimize=True, progressive=True)
-    return base64.b64encode(buf.getvalue()).decode()
+    im.save(buf, "JPEG", quality=QUALITY, optimize=True, progressive=True, subsampling=0)
+    return "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
+
+
+def _photo_group(path, sw, sh, focus, fit):
+    """SVG for one photo in a stage of sw x sh. Re-encoding drops EXIF, GPS included.
+
+    The source is resampled only to shrink it to MAX_SCALE times the displayed size, never enlarged.
+    """
+    from PIL import Image, ImageCms, ImageOps
+    im = Image.open(path)
+    icc = im.info.get("icc_profile")
+    im = ImageOps.exif_transpose(im).convert("RGB")
+    if icc:   # phones shoot in Display P3; without this conversion the colours look flat in sRGB browsers
+        im = ImageCms.profileToProfile(im, ImageCms.ImageCmsProfile(io.BytesIO(icc)), ImageCms.createProfile("sRGB"),
+                                       outputMode="RGB")
+
+    def shrink(img, w):
+        return img if img.width <= w else img.resize((w, round(img.height * w / img.width)), Image.LANCZOS)
+
+    def cover(img, ratio):
+        """Crop img to the aspect ratio around focus, no resampling."""
+        w, h = (img.width, round(img.width / ratio)) if img.width / img.height < ratio else (round(img.height * ratio), img.height)
+        left, top = round((img.width - w) * focus[0]), round((img.height - h) * focus[1])
+        return img.crop((left, top, left + w, top + h))
+
+    if fit == "cover":
+        photo = shrink(cover(im, sw / sh), sw * MAX_SCALE)
+        return f'<image width="{sw}" height="{sh}" preserveAspectRatio="none" href="{_jpeg_b64(photo)}"/>'
+    k = min(sw / im.width, sh / im.height)
+    dw, dh = im.width * k, im.height * k
+    photo = shrink(im, round(dw * MAX_SCALE))
+    backdrop = cover(im, sw / sh).resize((64, round(64 * sh / sw)), Image.LANCZOS)  # scaled up smoothly = blur
+    return (f'<image width="{sw}" height="{sh}" preserveAspectRatio="none" href="{_jpeg_b64(backdrop)}"/>'
+            f'<rect width="{sw}" height="{sh}" fill="{BG}" opacity=".45"/>'
+            f'<image x="{(sw - dw) / 2:.2f}" y="{(sh - dh) / 2:.2f}" width="{dw:.2f}" height="{dh:.2f}" href="{_jpeg_b64(photo)}"/>')
 
 
 def build_gallery(photos, compact=False):
     """Carousel card: stage on top, caption and counter below, thumbnail strip underneath."""
     n = len(photos)
     if compact:
-        W, PAD, SH, TG, px, cap_size, cap_y, thumb_y = 392, 16, 270, 6, (720, 540), 14, 26, 44
+        W, PAD, SH, TG, cap_size, cap_y, thumb_y = 392, 16, 270, 6, 14, 26, 44
     else:
-        W, PAD, SH, TG, px, cap_size, cap_y, thumb_y = 792, 16, 475, 10, (1200, 750), 16, 30, 50
+        W, PAD, SH, TG, cap_size, cap_y, thumb_y = 792, 16, 475, 10, 16, 30, 50
     SW = W - 2 * PAD
     tw = (SW - (n - 1) * TG) / n
     k = tw / SW
@@ -737,14 +772,13 @@ def build_gallery(photos, compact=False):
     T = n * HOLD
 
     defs = [f'<clipPath id="stage"><rect x="{PAD}" y="{PAD}" width="{SW}" height="{SH}" rx="8"/></clipPath>']
-    for i, (path, _, focus) in enumerate(photos):
-        defs.append(f'<g id="p{i}"><image width="{SW}" height="{SH}" preserveAspectRatio="none" '
-                    f'href="data:image/jpeg;base64,{_photo_data(path, px, focus)}"/></g>')
+    for i, (path, _, focus, fit) in enumerate(photos):
+        defs.append(f'<g id="p{i}">{_photo_group(path, SW, SH, focus, fit)}</g>')
         defs.append(f'<clipPath id="t{i}"><rect x="{PAD + i * (tw + TG):.2f}" y="{PAD + SH + thumb_y}" '
                     f'width="{tw:.2f}" height="{th:.2f}" rx="5"/></clipPath>')
 
     body, thumbs = [], []
-    for i, (path, caption, _) in enumerate(photos):
+    for i, (path, caption, _, _) in enumerate(photos):
         count_n, count_all = f"{i + 1:02d}", f" / {n:02d}"
         cw = width(mono(), count_n + count_all, 11, 1.1)
         slide = [f'<g clip-path="url(#stage)"><use href="#p{i}" x="{PAD}" y="{PAD}"/></g>']
@@ -774,7 +808,7 @@ def build_gallery(photos, compact=False):
                 f"{pct(HOLD + FADE)}{{opacity:.55}}100%{{opacity:.55}}}}" if n > 1 else "")
              + "</style>\n")
     stage_edge = f'<rect x="{PAD - 0.5}" y="{PAD - 0.5}" width="{SW + 1}" height="{SH + 1}" rx="8.5" fill="none" stroke="{EDGE}"/>'
-    names = "; ".join(c for _, c, _ in photos if c)
+    names = "; ".join(c for _, c, _, _ in photos if c)
     alt = f"Photo carousel of Jack J. Burleson, {n} photos" + (f": {names}." if names else ".")
     return wrap_svg(W, H, alt, "Photos", f"<defs>{''.join(defs)}</defs>\n{style}",
                     "\n".join([stage_edge] + body + thumbs))
