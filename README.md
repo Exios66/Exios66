@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="assets/header.svg" alt="Jack J. Burleson. Machine Learning, Data Science, AI Engineering &amp; Safety. It’s a pleasure to meet you here..." />
+  <picture>
+    <source media="(max-width: 640px)" srcset="assets/header-compact.svg" />
+    <img src="assets/header.svg" width="100%" alt="Jack J. Burleson. Machine Learning, Data Science, AI Engineering &amp; Safety. It’s a pleasure to meet you here..." />
+  </picture>
 </p>
 
 <p align="center">
@@ -9,20 +12,28 @@
 ---
 
 <p align="center">
-  I build AI systems from start to finish: multi-agent document pipelines,<br />
-  fine-tuned and calibrated transformers, LLM evaluation harnesses,<br />
-  and behavioral prediction models.
+  I build AI systems from start to finish: multi-agent document pipelines, fine-tuned and calibrated transformers, LLM evaluation harnesses, and behavioral prediction models.
 </p>
 
 <p align="center">
-  <img src="assets/badges/uw-madison.svg" width="528" alt="University of Wisconsin–Madison. M.S. Data Science in Human Behavior. Madison, WI." />
+  <picture>
+    <source media="(max-width: 640px)" srcset="assets/badges/uw-madison-compact.svg" />
+    <img src="assets/badges/uw-madison.svg" width="528" alt="University of Wisconsin–Madison. M.S. Data Science in Human Behavior. Madison, WI." />
+  </picture>
 </p>
 
 <p align="center">
-  <a href="https://exios66.github.io/resume/">Portfolio</a> &nbsp;·&nbsp;
-  <a href="https://exios66.github.io/resume/assets/Jack_Burleson_Resume.pdf">Résumé (PDF)</a> &nbsp;·&nbsp;
-  <a href="https://linkedin.com/in/jackjburleson">LinkedIn</a> &nbsp;·&nbsp;
-  <a href="mailto:jackjburleson@proton.me">Email</a>
+  <a href="https://exios66.github.io/resume/"><img src="assets/buttons/portfolio.svg" alt="Portfolio" /></a>
+  <a href="https://exios66.github.io/resume/assets/Jack_Burleson_Resume.pdf"><img src="assets/buttons/resume.svg" alt="Résumé (PDF)" /></a>
+  <a href="https://linkedin.com/in/jackjburleson"><img src="assets/buttons/linkedin.svg" alt="LinkedIn" /></a>
+  <a href="mailto:jackjburleson@proton.me"><img src="assets/buttons/email.svg" alt="Email" /></a>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(max-width: 640px)" srcset="assets/highlights-compact.svg" />
+    <img src="assets/highlights.svg" width="100%" alt="Highlights: 3,302 documents in the dataset I built; 23 of 23 paper features built and tested; 3.8 times faster on 4 workers for word count; 241 respondents, 7 ML models versus 4 LLMs." />
+  </picture>
 </p>
 
 <div align="center">
@@ -41,10 +52,24 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/LLM-Mailroom-Services/mailroom-ml"><img src="assets/cards/mailroom-ml.svg" width="49%" alt="Mailroom-ML: a calibrated ModernBERT document classifier that knows when to pass a document to an LLM. PyTorch, Calibration, ONNX." /></a>
-  <a href="https://github.com/Exios66/MapReduce-Reloaded"><img src="assets/cards/mapreduce-reloaded.svg" width="49%" alt="MapReduce-Reloaded: a from-scratch rebuild of Google’s MapReduce in Go with all 23 paper features, crash recovery and benchmarks. Go, Python, gRPC." /></a>
-  <a href="https://github.com/Exios66/psych755-jjb"><img src="assets/cards/psychometric-digital-twin.svg" width="49%" alt="Psychometric Digital Twin: LLM personas compared with seven cross-validated classical ML models, from Ridge to XGBoost, on 241 respondents. The personas did not beat the simple models. scikit-learn, XGBoost, SHAP." /></a>
-  <a href="https://github.com/Exios66/wave-laboratory"><img src="assets/cards/wave-laboratory.svg" width="49%" alt="Wave Laboratory: a real-time 3D ocean to experiment with, with spectral wave models and rogue waves, rendered with WebGL 2. TypeScript, Three.js, Physics." /></a>
+  <a href="https://github.com/LLM-Mailroom-Services/mailroom-ml"><picture><source media="(max-width: 640px)" srcset="assets/cards/mailroom-ml-compact.svg" /><img src="assets/cards/mailroom-ml.svg" width="49%" alt="Mailroom-ML: a calibrated ModernBERT document classifier that knows when to pass a document to an LLM. PyTorch, Calibration, ONNX." /></picture></a>
+  <a href="https://github.com/Exios66/MapReduce-Reloaded"><picture><source media="(max-width: 640px)" srcset="assets/cards/mapreduce-reloaded-compact.svg" /><img src="assets/cards/mapreduce-reloaded.svg" width="49%" alt="MapReduce-Reloaded: a from-scratch rebuild of Google’s MapReduce in Go with all 23 paper features, crash recovery and benchmarks. Go, Python, gRPC." /></picture></a>
+  <a href="https://github.com/Exios66/psych755-jjb"><picture><source media="(max-width: 640px)" srcset="assets/cards/psychometric-digital-twin-compact.svg" /><img src="assets/cards/psychometric-digital-twin.svg" width="49%" alt="Psychometric Digital Twin: LLM personas compared with seven cross-validated classical ML models, from Ridge to XGBoost, on 241 respondents. The personas did not beat the simple models. scikit-learn, XGBoost, SHAP." /></picture></a>
+  <a href="https://github.com/Exios66/wave-laboratory"><picture><source media="(max-width: 640px)" srcset="assets/cards/wave-laboratory-compact.svg" /><img src="assets/cards/wave-laboratory.svg" width="49%" alt="Wave Laboratory: a real-time 3D ocean to experiment with, with spectral wave models and rogue waves, rendered with WebGL 2. TypeScript, Three.js, Physics." /></picture></a>
+</p>
+
+<p align="center">
+  <sub><b>Try it in the browser</b></sub><br />
+  <a href="https://exios66.github.io/wave-laboratory/"><img src="assets/buttons/demo-wave-laboratory.svg" alt="Wave Laboratory (live demo)" /></a>
+  <a href="https://exios66.github.io/langtons-ant/"><img src="assets/buttons/demo-langtons-ant.svg" alt="Langton’s Ant (live demo)" /></a>
+  <a href="https://exios66.github.io/aeroglobe/"><img src="assets/buttons/demo-aeroglobe.svg" alt="AeroGlobe (live demo)" /></a>
+  <a href="https://exios66.github.io/degen-llms/"><img src="assets/buttons/demo-mandalay-bay.svg" alt="The Mandalay Bay (live demo)" /></a>
+  <a href="https://exios66.github.io/degen-llms/rpg/"><img src="assets/buttons/demo-mandalay-rpg.svg" alt="Mandalay Pixel RPG (live demo)" /></a>
+</p>
+
+<p align="center">
+  <sub><b>Explore the data</b></sub><br />
+  <a href="https://huggingface.co/datasets/Lucius-Morningstar/mailroom-dataset"><img src="assets/buttons/mailroom-dataset.svg" alt="mailroom-dataset on Hugging Face" /></a>
 </p>
 
 <p align="center">
@@ -75,7 +100,7 @@
   <img src="assets/badges/r.svg" alt="R (language)" />
   <img src="assets/badges/langgraph.svg" alt="LangGraph (agents)" />
   <img src="assets/badges/docker.svg" alt="Docker (containers)" />
-  <img src="assets/badges/hugging-face.svg" alt="Hugging Face (models)" />
+  <a href="https://huggingface.co/Lucius-Morningstar"><img src="assets/badges/hugging-face.svg" alt="Hugging Face (models), my profile" /></a>
   <img src="assets/badges/vllm.svg" alt="vLLM (serving)" />
 </p>
 
@@ -113,26 +138,17 @@
 
 </div>
 
-<table align="center">
-  <tr>
-    <td valign="middle">
-      <img src="https://github.com/user-attachments/assets/a0d994ed-46e0-4185-886e-5568c9561843" width="360" alt="Jack J. Burleson" />
-    </td>
-    <td valign="middle">
-      <b>Email</b><br />
-      <a href="mailto:jackjburleson@proton.me">jackjburleson@proton.me</a>
-      <br /><br />
-      <b>LinkedIn</b><br />
-      <a href="https://linkedin.com/in/jackjburleson">in/jackjburleson</a>
-      <br /><br />
-      <b>Portfolio</b><br />
-      <a href="https://exios66.github.io/resume/">exios66.github.io/resume</a>
-      <br /><br />
-      <b>Instagram</b><br />
-      <a href="https://instagram.com/jackjburleson">@jackjburleson</a>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a0d994ed-46e0-4185-886e-5568c9561843" width="360" alt="Jack J. Burleson" />
+</p>
+
+<p align="center">
+  <a href="mailto:jackjburleson@proton.me"><img src="assets/buttons/email.svg" alt="Email" /></a>
+  <a href="https://linkedin.com/in/jackjburleson"><img src="assets/buttons/linkedin.svg" alt="LinkedIn" /></a>
+  <a href="https://exios66.github.io/resume/"><img src="assets/buttons/portfolio.svg" alt="Portfolio" /></a>
+  <a href="https://huggingface.co/Lucius-Morningstar"><img src="assets/buttons/hugging-face.svg" alt="Hugging Face" /></a>
+  <a href="https://instagram.com/jackjburleson"><img src="assets/buttons/instagram.svg" alt="Instagram" /></a>
+</p>
 
 <div align="center">
 
@@ -143,10 +159,19 @@
 <img alt="Contribution graph snake eating my commits" src="assets/snake.svg#gh-light-mode-only" />
 
 <p align="center">
-  <img src="assets/stats.svg" width="100%" alt="Activity stats under the snake: active days, current streak, longest streak and active weeks over the last 12 months, with a weekly activity chart." />
+  <picture>
+    <source media="(max-width: 640px)" srcset="assets/stats-compact.svg" />
+    <img src="assets/stats.svg" width="100%" alt="Activity stats under the snake: active days, current streak, longest streak and active weeks over the last 12 months, with a weekly activity chart." />
+  </picture>
 </p>
 
-</div>
+<br />
 
-<!-- my-badges start -->
-<!-- my-badges end -->
+Don't hesitate to reach out, I would love to connect with likeminded individuals!
+
+*As always, wishing you the godspeed my friend...*
+
+<img alt="Signature of Jack J. Burleson" src="assets/signature-dark.svg#gh-dark-mode-only" />
+<img alt="Signature of Jack J. Burleson" src="assets/signature-light.svg#gh-light-mode-only" />
+
+</div>
