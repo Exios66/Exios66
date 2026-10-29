@@ -157,7 +157,7 @@
 
 Don't hesitate to reach out, I would love to connect with likeminded individuals!
 
-*As always, wishing you the godspeed my friend...*
+*As always, wishing you godspeed my friend...*
 
 <img alt="Signature of Jack J. Burleson" src="assets/signature-dark.svg#gh-dark-mode-only" />
 <img alt="Signature of Jack J. Burleson" src="assets/signature-light.svg#gh-light-mode-only" />
