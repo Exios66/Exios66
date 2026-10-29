@@ -29,13 +29,6 @@
   <a href="mailto:jackjburleson@proton.me"><img src="assets/buttons/email.svg" alt="Email" /></a>
 </p>
 
-<p align="center">
-  <picture>
-    <source media="(max-width: 640px)" srcset="assets/highlights-compact.svg" />
-    <img src="assets/highlights.svg" width="100%" alt="Highlights: 3,302 documents in the dataset I built; 23 of 23 paper features built and tested; 3.8 times faster on 4 workers for word count; 241 respondents, 7 ML models versus 4 LLMs." />
-  </picture>
-</p>
-
 <div align="center">
 
 ## Featured work
@@ -65,11 +58,6 @@
   <a href="https://exios66.github.io/aeroglobe/"><img src="assets/buttons/demo-aeroglobe.svg" alt="AeroGlobe (live demo)" /></a>
   <a href="https://exios66.github.io/degen-llms/"><img src="assets/buttons/demo-mandalay-bay.svg" alt="The Mandalay Bay (live demo)" /></a>
   <a href="https://exios66.github.io/degen-llms/rpg/"><img src="assets/buttons/demo-mandalay-rpg.svg" alt="Mandalay Pixel RPG (live demo)" /></a>
-</p>
-
-<p align="center">
-  <sub><b>Explore the data</b></sub><br />
-  <a href="https://huggingface.co/datasets/Lucius-Morningstar/mailroom-dataset"><img src="assets/buttons/mailroom-dataset.svg" alt="mailroom-dataset on Hugging Face" /></a>
 </p>
 
 <p align="center">

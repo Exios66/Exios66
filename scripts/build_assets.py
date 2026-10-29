@@ -661,54 +661,12 @@ def build_stats(st, compact=False):
     return wrap_svg(W, H, alt, "Activity stats", "", "\n".join(out))
 
 
-# ------------------------------------------------------------------ highlights strip
-# Figures come from each project's own README / portfolio page.
-HIGHLIGHTS = [
-    ("3,302", ["DOCUMENTS IN THE", "DATASET I BUILT"]),
-    ("23/23", ["PAPER FEATURES", "BUILT AND TESTED"]),
-    ("3.8\u00d7", ["FASTER ON 4 WORKERS,", "WORD COUNT"]),
-    ("241", ["RESPONDENTS: 7 ML", "MODELS VS 4 LLMS"]),
-]
-
-
-def build_highlights(compact=False):
-    """Four headline numbers. compact=True is the phone variant (2x2)."""
-    alt = ("Highlights: " + "; ".join(f"{v} {' '.join(l).lower()}" for v, l in HIGHLIGHTS) + ".")
-    out = []
-    if compact:
-        W, H, PAD = 336, 214, 16
-        out.append(kicker("Highlights", PAD, 28, size=9))
-        tw = (W - 2 * PAD) / 2
-        for i, (value, lab) in enumerate(HIGHLIGHTS):
-            col, row = i % 2, i // 2
-            x = PAD + col * tw + (14 if col else 0)
-            y = 80 + row * 74
-            out.append(text_path(roboto_serif(600), value, 30, x, y, ACCENT))
-            for j, ln in enumerate(lab):
-                out.append(text_path(mono(), ln, 8.5, x, y + 16 + j * 12, MUTED, tracking=0.85))
-        out.append(f'<line x1="{PAD + tw:.1f}" y1="48" x2="{PAD + tw:.1f}" y2="{H - 18}" stroke="{EDGE}"/>')
-        out.append(f'<line x1="{PAD}" y1="121" x2="{W - PAD}" y2="121" stroke="{EDGE}"/>')
-    else:
-        W, H, PAD = 792, 150, 36
-        out.append(kicker("Highlights", PAD, 38))
-        tw = (W - 2 * PAD) / 4
-        for i, (value, lab) in enumerate(HIGHLIGHTS):
-            x = PAD + i * tw + (0 if i == 0 else 20)
-            out.append(text_path(roboto_serif(600), value, 40, x, 92, ACCENT))
-            for j, ln in enumerate(lab):
-                out.append(text_path(mono(), ln, 9.5, x, 112 + j * 14, MUTED, tracking=0.95))
-            if i:
-                out.append(f'<line x1="{PAD + i * tw:.1f}" y1="60" x2="{PAD + i * tw:.1f}" y2="{H - 20}" stroke="{EDGE}"/>')
-    return wrap_svg(W, H, alt, "Highlights", "", "\n".join(out))
-
-
 # ------------------------------------------------------------------ link buttons
 # (label, kind, file): "link" ends in a pink arrow, "demo" starts with a pink play triangle.
 BUTTONS = [
     ("Portfolio", "link", "portfolio"), ("R\u00e9sum\u00e9 (PDF)", "link", "resume"),
     ("LinkedIn", "link", "linkedin"), ("Email", "link", "email"),
     ("Hugging Face", "link", "hugging-face"), ("Instagram", "link", "instagram"),
-    ("mailroom-dataset", "link", "mailroom-dataset"),
     ("Wave Laboratory", "demo", "demo-wave-laboratory"), ("Langton\u2019s Ant", "demo", "demo-langtons-ant"),
     ("AeroGlobe", "demo", "demo-aeroglobe"), ("The Mandalay Bay", "demo", "demo-mandalay-bay"),
     ("Mandalay Pixel RPG", "demo", "demo-mandalay-rpg"),
@@ -800,8 +758,6 @@ def main():
         (ASSETS / "badges" / f"{slug(tool)}.svg").write_text(build_tool_badge(cat, tool, brand))
     for label, kind, file in BUTTONS:
         (ASSETS / "buttons" / f"{file}.svg").write_text(build_button(label, kind))
-    (ASSETS / "highlights.svg").write_text(build_highlights())
-    (ASSETS / "highlights-compact.svg").write_text(build_highlights(compact=True))
     (ASSETS / "signature-dark.svg").write_text(build_signature(dark=True))
     (ASSETS / "signature-light.svg").write_text(build_signature(dark=False))
     activity = load_activity()
@@ -809,7 +765,7 @@ def main():
         stats = activity_stats(activity)
         (ASSETS / "stats.svg").write_text(build_stats(stats))
         (ASSETS / "stats-compact.svg").write_text(build_stats(stats, compact=True))
-    print("wrote the header, cards, badges, buttons, highlights, signature and stats")
+    print("wrote the header, cards, badges, buttons, signature and stats")
 
 
 if __name__ == "__main__":
