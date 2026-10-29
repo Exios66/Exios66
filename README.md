@@ -155,7 +155,7 @@
 
 <br />
 
-Don't hesitate to reach out, I would love to connect with likeminded individuals!
+_Don't hesitate to reach out, I would always love to connect with likeminded individuals!_
 
 *As always, wishing you godspeed my friend...*
 
