@@ -14,7 +14,7 @@ University logo: put the official full-colour file at assets/logo/uw-madison.svg
 icon is drawn.
 
 Photo carousel: put photos in assets/photos/ (optionally described by photos.json) and
-re-run; needs Pillow (pip install pillow). Without photos the gallery is skipped.
+re-run; needs Pillow (pip install pillow). Without photos the gallery SVGs and README block are removed.
 
 Fonts (in scripts/fonts/, licences alongside): Roboto, Roboto Serif, Roboto Mono.
 """
@@ -23,6 +23,7 @@ import io
 import json
 import sys
 from datetime import date, timedelta
+from html import escape
 from pathlib import Path
 
 import uharfbuzz as hb
@@ -812,8 +813,28 @@ def build_gallery(photos, compact=False):
     stage_edge = f'<rect x="{PAD - 0.5}" y="{PAD - 0.5}" width="{SW + 1}" height="{SH + 1}" rx="8.5" fill="none" stroke="{EDGE}"/>'
     names = "; ".join(c for _, c, _, _ in photos if c)
     alt = f"Photo carousel of Jack J. Burleson, {n} photos" + (f": {names}." if names else ".")
+    alt = escape(alt, quote=True)
     return wrap_svg(W, H, alt, "Photos", f"<defs>{''.join(defs)}</defs>\n{style}",
                     "\n".join([stage_edge] + body + thumbs))
+
+
+def update_gallery_readme(count):
+    """Keep the marked README gallery block in sync with the generated SVGs."""
+    path = ROOT / "README.md"
+    readme = path.read_text()
+    start, end = "<!-- gallery:start -->\n", "<!-- gallery:end -->"
+    before, rest = readme.split(start, 1)
+    _, after = rest.split(end, 1)
+    gallery = f'''<p align="center">
+  <picture>
+    <source media="(max-width: 640px)" srcset="assets/gallery-compact.svg" />
+    <img src="assets/gallery.svg" width="100%" alt="Photo carousel of Jack J. Burleson, {count} photos." />
+  </picture>
+</p>
+''' if count else ""
+    updated = before + start + gallery + end + after
+    if updated != readme:
+        path.write_text(updated)
 
 
 # ------------------------------------------------------------------ link buttons
@@ -892,7 +913,7 @@ def build_signature(dark):
 
 
 def main():
-    """Write the header, cards, and badges under assets, overwriting matches.
+    """Write artwork under assets and sync the README gallery block.
 
     Use the first command-line argument as the university logo path when
     supplied; otherwise prefer assets/logo/uw-madison.svg, then .png, and
@@ -935,7 +956,10 @@ def main():
         (ASSETS / "gallery-compact.svg").write_text(build_gallery(photos, compact=True))
         print(f"photo carousel: {len(photos)} photos")
     else:
+        (ASSETS / "gallery.svg").unlink(missing_ok=True)
+        (ASSETS / "gallery-compact.svg").unlink(missing_ok=True)
         print("no photos in assets/photos, carousel skipped")
+    update_gallery_readme(len(photos))
     print("wrote the header, cards, badges, buttons, signature and stats")
 
 
