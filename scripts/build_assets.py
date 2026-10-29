@@ -13,12 +13,17 @@ University logo: put the official full-colour file at assets/logo/uw-madison.svg
 .png) and re-run; the UW\u2013Madison badge then uses it. Without it a plain mortarboard
 icon is drawn.
 
+Photo carousel: put photos in assets/photos/ (optionally described by photos.json) and
+re-run; needs Pillow (pip install pillow). Without photos the gallery SVGs and README block are removed.
+
 Fonts (in scripts/fonts/, licences alongside): Roboto, Roboto Serif, Roboto Mono.
 """
+import base64
 import io
 import json
 import sys
 from datetime import date, timedelta
+from html import escape
 from pathlib import Path
 
 import uharfbuzz as hb
@@ -677,6 +682,161 @@ def build_stats(st, compact=False):
     return wrap_svg(W, H, alt, "Activity stats", "", "\n".join(out))
 
 
+# ------------------------------------------------------------------ photo carousel
+# GitHub strips scripts, so the carousel is a CSS-animated SVG: the photos are embedded as
+# JPEGs, cross-fade one after another, and the thumbnail strip highlights the current one.
+PHOTOS = ASSETS / "photos"
+HOLD, FADE = 4.5, 0.7   # seconds each photo is shown, and the cross-fade into the next
+MAX_PHOTOS = 6
+PHOTO_EXT = {".jpg", ".jpeg", ".png", ".webp"}
+
+
+QUALITY = 95      # JPEG quality of the embedded photos
+MAX_SCALE = 3     # embed at most this many pixels per displayed pixel; smaller sources are never upscaled
+
+
+def load_photos():
+    """Photos in assets/photos, sorted by file name, as [(path, caption, focus, fit)].
+
+    assets/photos/photos.json may map a file name to {"caption": "...", "focus": [x, y], "fit": "..."}.
+    fit "cover" (default) fills the stage and crops; focus is the point of the photo (0..1) that
+    stays in frame, default (0.5, 0.35) to keep heads in frame on portraits. fit "contain" shows the
+    whole photo, uncropped, on a soft blurred backdrop of itself, which suits portrait photos.
+    """
+    if not PHOTOS.is_dir():
+        return []
+    meta_file = PHOTOS / "photos.json"
+    meta = json.loads(meta_file.read_text()) if meta_file.exists() else {}
+    files = sorted(q for q in PHOTOS.iterdir() if q.suffix.lower() in PHOTO_EXT)
+    assert len(files) <= MAX_PHOTOS, f"at most {MAX_PHOTOS} photos fit the thumbnail strip, found {len(files)}"
+    out = []
+    for q in files:
+        m = meta.get(q.name, {})
+        fit = m.get("fit", "cover")
+        assert fit in ("cover", "contain"), f"{q.name}: fit must be cover or contain, not {fit!r}"
+        out.append((q, m.get("caption", ""), tuple(m.get("focus", (0.5, 0.35))), fit))
+    return out
+
+
+def _jpeg_b64(im):
+    buf = io.BytesIO()
+    im.save(buf, "JPEG", quality=QUALITY, optimize=True, progressive=True, subsampling=0)
+    return "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
+
+
+def _photo_group(path, sw, sh, focus, fit):
+    """SVG for one photo in a stage of sw x sh. Re-encoding drops EXIF, GPS included.
+
+    The source is resampled only to shrink it to MAX_SCALE times the displayed size, never enlarged.
+    """
+    from PIL import Image, ImageCms, ImageOps
+    im = Image.open(path)
+    icc = im.info.get("icc_profile")
+    im = ImageOps.exif_transpose(im).convert("RGB")
+    if icc:   # phones shoot in Display P3; without this conversion the colours look flat in sRGB browsers
+        im = ImageCms.profileToProfile(im, ImageCms.ImageCmsProfile(io.BytesIO(icc)), ImageCms.createProfile("sRGB"),
+                                       outputMode="RGB")
+
+    def shrink(img, w):
+        return img if img.width <= w else img.resize((w, round(img.height * w / img.width)), Image.LANCZOS)
+
+    def cover(img, ratio):
+        """Crop img to the aspect ratio around focus, no resampling."""
+        w, h = (img.width, round(img.width / ratio)) if img.width / img.height < ratio else (round(img.height * ratio), img.height)
+        left, top = round((img.width - w) * focus[0]), round((img.height - h) * focus[1])
+        return img.crop((left, top, left + w, top + h))
+
+    if fit == "cover":
+        photo = shrink(cover(im, sw / sh), sw * MAX_SCALE)
+        return f'<image width="{sw}" height="{sh}" preserveAspectRatio="none" href="{_jpeg_b64(photo)}"/>'
+    k = min(sw / im.width, sh / im.height)
+    dw, dh = im.width * k, im.height * k
+    photo = shrink(im, round(dw * MAX_SCALE))
+    backdrop = cover(im, sw / sh).resize((64, round(64 * sh / sw)), Image.LANCZOS)  # scaled up smoothly = blur
+    return (f'<image width="{sw}" height="{sh}" preserveAspectRatio="none" href="{_jpeg_b64(backdrop)}"/>'
+            f'<rect width="{sw}" height="{sh}" fill="{BG}" opacity=".45"/>'
+            f'<image x="{(sw - dw) / 2:.2f}" y="{(sh - dh) / 2:.2f}" width="{dw:.2f}" height="{dh:.2f}" href="{_jpeg_b64(photo)}"/>')
+
+
+def build_gallery(photos, compact=False):
+    """Carousel card: stage on top, caption and counter below, thumbnail strip underneath."""
+    n = len(photos)
+    if compact:
+        W, PAD, SH, TG, cap_size, cap_y, thumb_y = 392, 16, 270, 6, 14, 26, 44
+    else:
+        W, PAD, SH, TG, cap_size, cap_y, thumb_y = 792, 16, 475, 10, 16, 30, 50
+    if not any(c for _, c, _, _ in photos):   # counter only, so the row can be shorter
+        cap_y, thumb_y = cap_y - 2, thumb_y - 10
+    SW = W - 2 * PAD
+    tw = (SW - (n - 1) * TG) / n
+    k = tw / SW
+    th = SH * k
+    H = round(PAD + SH + thumb_y + th + PAD)
+    T = n * HOLD
+
+    defs = [f'<clipPath id="stage"><rect x="{PAD}" y="{PAD}" width="{SW}" height="{SH}" rx="8"/></clipPath>']
+    for i, (path, _, focus, fit) in enumerate(photos):
+        defs.append(f'<g id="p{i}">{_photo_group(path, SW, SH, focus, fit)}</g>')
+        defs.append(f'<clipPath id="t{i}"><rect x="{PAD + i * (tw + TG):.2f}" y="{PAD + SH + thumb_y}" '
+                    f'width="{tw:.2f}" height="{th:.2f}" rx="5"/></clipPath>')
+
+    body, thumbs = [], []
+    for i, (path, caption, _, _) in enumerate(photos):
+        count_n, count_all = f"{i + 1:02d}", f" / {n:02d}"
+        cw = width(mono(), count_n + count_all, 11, 1.1)
+        slide = [f'<g clip-path="url(#stage)"><use href="#p{i}" x="{PAD}" y="{PAD}"/></g>']
+        if caption:
+            assert width(roboto(400), caption, cap_size) < SW - cw - 24, f"caption too long: {caption}"
+            slide.append(text_path(roboto(400), caption, cap_size, PAD + 2, PAD + SH + cap_y, INK))
+        nw = width(mono(), count_n, 11, 1.1)
+        slide.append(text_path(mono(), count_n, 11, W - PAD - cw, PAD + SH + cap_y, PINK, tracking=1.1))
+        slide.append(text_path(mono(), count_all, 11, W - PAD - cw + nw, PAD + SH + cap_y, MUTED, tracking=1.1))
+        body.append(f'<g class="s s{i}">{"".join(slide)}</g>')
+        tx, ty = PAD + i * (tw + TG), PAD + SH + thumb_y
+        thumbs.append(f'<g clip-path="url(#t{i})"><use href="#p{i}" transform="translate({tx:.2f} {ty}) scale({k:.5f})"/>'
+                      f'<rect class="d d{i}" x="{tx:.2f}" y="{ty}" width="{tw:.2f}" height="{th:.2f}" fill="{BG}"/></g>'
+                      f'<rect class="b b{i}" x="{tx + 1:.2f}" y="{ty + 1}" width="{tw - 2:.2f}" height="{th - 2:.2f}" '
+                      f'rx="4" fill="none" stroke="{PINK}" stroke-width="2"/>')
+
+    # Photo i is fully shown from i*HOLD and starts fading in FADE earlier, so it overlaps its
+    # predecessor's fade-out. Photo 0 starts mid-cycle, so the first frame is already its own.
+    pct = lambda t: f"{t / T * 100:.3f}%"
+    delays = "".join(f".s{i},.d{i},.b{i}{{animation-delay:{i * HOLD - FADE:.2f}s}}" for i in range(n))
+    style = (f"<style>.s{{opacity:0}}.s0,.b0{{opacity:1}}.b{{opacity:0}}.d{{opacity:.55}}.d0{{opacity:0}}"
+             + (f"@media (prefers-reduced-motion:no-preference){{.s,.b{{animation:show {T:g}s linear infinite}}"
+                f".d{{animation:dim {T:g}s linear infinite}}{delays}}}"
+                f"@keyframes show{{0%{{opacity:0}}{pct(FADE)}{{opacity:1}}{pct(HOLD)}{{opacity:1}}"
+                f"{pct(HOLD + FADE)}{{opacity:0}}100%{{opacity:0}}}}"
+                f"@keyframes dim{{0%{{opacity:.55}}{pct(FADE)}{{opacity:0}}{pct(HOLD)}{{opacity:0}}"
+                f"{pct(HOLD + FADE)}{{opacity:.55}}100%{{opacity:.55}}}}" if n > 1 else "")
+             + "</style>\n")
+    stage_edge = f'<rect x="{PAD - 0.5}" y="{PAD - 0.5}" width="{SW + 1}" height="{SH + 1}" rx="8.5" fill="none" stroke="{EDGE}"/>'
+    names = "; ".join(c for _, c, _, _ in photos if c)
+    alt = f"Photo carousel of Jack J. Burleson, {n} photos" + (f": {names}." if names else ".")
+    alt = escape(alt, quote=True)
+    return wrap_svg(W, H, alt, "Photos", f"<defs>{''.join(defs)}</defs>\n{style}",
+                    "\n".join([stage_edge] + body + thumbs))
+
+
+def update_gallery_readme(count):
+    """Keep the marked README gallery block in sync with the generated SVGs."""
+    path = ROOT / "README.md"
+    readme = path.read_text()
+    start, end = "<!-- gallery:start -->\n", "<!-- gallery:end -->"
+    before, rest = readme.split(start, 1)
+    _, after = rest.split(end, 1)
+    gallery = f'''<p align="center">
+  <picture>
+    <source media="(max-width: 640px)" srcset="assets/gallery-compact.svg" />
+    <img src="assets/gallery.svg" width="100%" alt="Photo carousel of Jack J. Burleson, {count} photos." />
+  </picture>
+</p>
+''' if count else ""
+    updated = before + start + gallery + end + after
+    if updated != readme:
+        path.write_text(updated)
+
+
 # ------------------------------------------------------------------ link buttons
 # (label, kind, file): "link" ends in a pink arrow, "demo" starts with a pink play triangle.
 BUTTONS = [
@@ -753,7 +913,7 @@ def build_signature(dark):
 
 
 def main():
-    """Write the header, cards, and badges under assets, overwriting matches.
+    """Write artwork under assets and sync the README gallery block.
 
     Use the first command-line argument as the university logo path when
     supplied; otherwise prefer assets/logo/uw-madison.svg, then .png, and
@@ -790,6 +950,16 @@ def main():
         stats = activity_stats(activity)
         (ASSETS / "stats.svg").write_text(build_stats(stats))
         (ASSETS / "stats-compact.svg").write_text(build_stats(stats, compact=True))
+    photos = load_photos()
+    if photos:
+        (ASSETS / "gallery.svg").write_text(build_gallery(photos))
+        (ASSETS / "gallery-compact.svg").write_text(build_gallery(photos, compact=True))
+        print(f"photo carousel: {len(photos)} photos")
+    else:
+        (ASSETS / "gallery.svg").unlink(missing_ok=True)
+        (ASSETS / "gallery-compact.svg").unlink(missing_ok=True)
+        print("no photos in assets/photos, carousel skipped")
+    update_gallery_readme(len(photos))
     print("wrote the header, cards, badges, buttons, signature and stats")
 
 

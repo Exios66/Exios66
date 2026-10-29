@@ -1,0 +1,17 @@
+{
+  "01-snow.jpg": {
+    "fit": "contain"
+  },
+  "02-dock.jpg": {
+    "focus": [
+      0.5,
+      0.3
+    ]
+  },
+  "03-terminal.jpg": {
+    "fit": "contain"
+  },
+  "04-hack-time.jpg": {
+    "fit": "contain"
+  }
+}
