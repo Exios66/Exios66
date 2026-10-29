@@ -6,6 +6,8 @@
   M.S. candidate in Psychology: Data Science in Human Behavior at UW–Madison.
 </p>
 
+---
+
 <p align="center">
   I build AI systems from start to finish: multi-agent document pipelines,<br />
   fine-tuned and calibrated transformers, LLM evaluation harnesses,<br />
