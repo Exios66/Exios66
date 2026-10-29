@@ -97,6 +97,22 @@ def shape(fc, text, size, tracking=0.0, outline=True):
     return "".join(d), xs, x - tracking
 
 
+def ink_bounds(fc, text, size):
+    """Return (xmin, ymin, xmax, ymax) of the glyph outlines, y pointing down from the baseline."""
+    from fontTools.pens.boundsPen import BoundsPen
+    s = size / fc.upm
+    buf = hb.Buffer()
+    buf.add_str(text)
+    buf.guess_segment_properties()
+    hb.shape(fc.hb, buf, {"liga": False, "calt": False, "clig": False})
+    bp, x = BoundsPen(fc.glyphs), 0.0
+    for info, pos in zip(buf.glyph_infos, buf.glyph_positions):
+        tp = TransformPen(bp, (s, 0, 0, -s, x + pos.x_offset * s, -pos.y_offset * s))
+        fc.glyphs[fc.order[info.codepoint]].draw(tp)
+        x += pos.x_advance * s
+    return bp.bounds
+
+
 def width(fc, text, size, tracking=0.0):
     return shape(fc, text, size, tracking, outline=False)[2]
 
@@ -661,54 +677,12 @@ def build_stats(st, compact=False):
     return wrap_svg(W, H, alt, "Activity stats", "", "\n".join(out))
 
 
-# ------------------------------------------------------------------ highlights strip
-# Figures come from each project's own README / portfolio page.
-HIGHLIGHTS = [
-    ("3,302", ["DOCUMENTS IN THE", "DATASET I BUILT"]),
-    ("23/23", ["PAPER FEATURES", "BUILT AND TESTED"]),
-    ("3.8\u00d7", ["FASTER ON 4 WORKERS,", "WORD COUNT"]),
-    ("241", ["RESPONDENTS: 7 ML", "MODELS VS 4 LLMS"]),
-]
-
-
-def build_highlights(compact=False):
-    """Four headline numbers. compact=True is the phone variant (2x2)."""
-    alt = ("Highlights: " + "; ".join(f"{v} {' '.join(l).lower()}" for v, l in HIGHLIGHTS) + ".")
-    out = []
-    if compact:
-        W, H, PAD = 336, 214, 16
-        out.append(kicker("Highlights", PAD, 28, size=9))
-        tw = (W - 2 * PAD) / 2
-        for i, (value, lab) in enumerate(HIGHLIGHTS):
-            col, row = i % 2, i // 2
-            x = PAD + col * tw + (14 if col else 0)
-            y = 80 + row * 74
-            out.append(text_path(roboto_serif(600), value, 30, x, y, ACCENT))
-            for j, ln in enumerate(lab):
-                out.append(text_path(mono(), ln, 8.5, x, y + 16 + j * 12, MUTED, tracking=0.85))
-        out.append(f'<line x1="{PAD + tw:.1f}" y1="48" x2="{PAD + tw:.1f}" y2="{H - 18}" stroke="{EDGE}"/>')
-        out.append(f'<line x1="{PAD}" y1="121" x2="{W - PAD}" y2="121" stroke="{EDGE}"/>')
-    else:
-        W, H, PAD = 792, 150, 36
-        out.append(kicker("Highlights", PAD, 38))
-        tw = (W - 2 * PAD) / 4
-        for i, (value, lab) in enumerate(HIGHLIGHTS):
-            x = PAD + i * tw + (0 if i == 0 else 20)
-            out.append(text_path(roboto_serif(600), value, 40, x, 92, ACCENT))
-            for j, ln in enumerate(lab):
-                out.append(text_path(mono(), ln, 9.5, x, 112 + j * 14, MUTED, tracking=0.95))
-            if i:
-                out.append(f'<line x1="{PAD + i * tw:.1f}" y1="60" x2="{PAD + i * tw:.1f}" y2="{H - 20}" stroke="{EDGE}"/>')
-    return wrap_svg(W, H, alt, "Highlights", "", "\n".join(out))
-
-
 # ------------------------------------------------------------------ link buttons
 # (label, kind, file): "link" ends in a pink arrow, "demo" starts with a pink play triangle.
 BUTTONS = [
     ("Portfolio", "link", "portfolio"), ("R\u00e9sum\u00e9 (PDF)", "link", "resume"),
     ("LinkedIn", "link", "linkedin"), ("Email", "link", "email"),
     ("Hugging Face", "link", "hugging-face"), ("Instagram", "link", "instagram"),
-    ("mailroom-dataset", "link", "mailroom-dataset"),
     ("Wave Laboratory", "demo", "demo-wave-laboratory"), ("Langton\u2019s Ant", "demo", "demo-langtons-ant"),
     ("AeroGlobe", "demo", "demo-aeroglobe"), ("The Mandalay Bay", "demo", "demo-mandalay-bay"),
     ("Mandalay Pixel RPG", "demo", "demo-mandalay-rpg"),
@@ -735,18 +709,29 @@ def build_button(label, kind):
 
 # ------------------------------------------------------------------ signature
 def build_signature(dark):
-    """Hand-signed look: script outlines, a slight slant, a tapered pink flourish, written once on load."""
+    """Hand-signed look: script outlines, a slight slant, a tapered pink flourish, written once on load.
+
+    The canvas is sized from the measured outline of the ink (after the tilt), so no stroke can be clipped.
+    """
+    import math
     ink = INK if dark else "#1B2428"
     fc = face("mr-de-haviland-latin-400-normal.woff2")
-    d, _, w = shape(fc, "Jack J. Burleson", 84)
-    W, H = 420, 170
-    x = (W - w) / 2
-    base = 100
-    sw = 230                                    # flourish length
-    fx = (W - sw) / 2 + 22
-    fy = 128
-    flourish = (f"M{fx:.1f} {fy + 6} C{fx + 60:.1f} {fy - 8} {fx + 150:.1f} {fy - 16} {fx + sw:.1f} {fy - 6} "
-                f"C{fx + 150:.1f} {fy - 10} {fx + 70:.1f} {fy - 2} {fx:.1f} {fy + 6} Z")
+    text, size, tilt, pad = "Jack J. Burleson", 84, -3.5, 18
+    d, _, _ = shape(fc, text, size)
+    x0, y0, x1, y1 = ink_bounds(fc, text, size)         # name drawn with its origin at (0, 0)
+    iw = x1 - x0
+    sw = iw * 0.66                                      # flourish length
+    fx, fy = x0 + iw * 0.24, y1 * 0.0 + 30              # flourish start, below the baseline
+    flourish = (f"M{fx:.1f} {fy + 6:.1f} C{fx + sw * .26:.1f} {fy - 8:.1f} {fx + sw * .65:.1f} {fy - 16:.1f} {fx + sw:.1f} {fy - 6:.1f} "
+                f"C{fx + sw * .65:.1f} {fy - 10:.1f} {fx + sw * .3:.1f} {fy - 2:.1f} {fx:.1f} {fy + 6:.1f} Z")
+    # bounds of everything after the tilt (rotation about the middle of the name, on the baseline)
+    cx, a = (x0 + x1) / 2, math.radians(tilt)
+    pts = [(x0, y0), (x1, y0), (x0, y1), (x1, y1), (fx, fy - 16), (fx, fy + 8), (fx + sw, fy - 16), (fx + sw, fy + 8)]
+    rot = [(cx + (px - cx) * math.cos(a) - py * math.sin(a), (px - cx) * math.sin(a) + py * math.cos(a)) for px, py in pts]
+    minx, maxx = min(r[0] for r in rot) - pad, max(r[0] for r in rot) + pad
+    miny, maxy = min(r[1] for r in rot) - pad, max(r[1] for r in rot) + pad
+    W, H = math.ceil(maxx - minx), math.ceil(maxy - miny)
+    place = f"translate({-minx:.1f} {-miny:.1f}) rotate({tilt} {cx:.1f} 0)"
     alt = "Signature of Jack J. Burleson"
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{alt}">
 <title>{alt}</title>
@@ -761,10 +746,8 @@ def build_signature(dark):
   @keyframes write {{ from {{ transform: scaleX(0); }} to {{ transform: scaleX(1); }} }}
   @media (prefers-reduced-motion: reduce) {{ .w1, .w2 {{ animation: none; }} }}
 </style>
-<g transform="rotate(-3.5 {W / 2} {base})">
-  <g clip-path="url(#name)"><path transform="translate({x:.1f} {base})" fill="{ink}" stroke="{ink}" stroke-width=".6" stroke-linejoin="round" d="{d}"/></g>
-  <g clip-path="url(#swash)"><path fill="{PINK}" d="{flourish}"/></g>
-</g>
+<g clip-path="url(#name)"><g transform="{place}"><path fill="{ink}" stroke="{ink}" stroke-width=".6" stroke-linejoin="round" d="{d}"/></g></g>
+<g clip-path="url(#swash)"><g transform="{place}"><path fill="{PINK}" d="{flourish}"/></g></g>
 </svg>
 '''
 
@@ -800,8 +783,6 @@ def main():
         (ASSETS / "badges" / f"{slug(tool)}.svg").write_text(build_tool_badge(cat, tool, brand))
     for label, kind, file in BUTTONS:
         (ASSETS / "buttons" / f"{file}.svg").write_text(build_button(label, kind))
-    (ASSETS / "highlights.svg").write_text(build_highlights())
-    (ASSETS / "highlights-compact.svg").write_text(build_highlights(compact=True))
     (ASSETS / "signature-dark.svg").write_text(build_signature(dark=True))
     (ASSETS / "signature-light.svg").write_text(build_signature(dark=False))
     activity = load_activity()
@@ -809,7 +790,7 @@ def main():
         stats = activity_stats(activity)
         (ASSETS / "stats.svg").write_text(build_stats(stats))
         (ASSETS / "stats-compact.svg").write_text(build_stats(stats, compact=True))
-    print("wrote the header, cards, badges, buttons, highlights, signature and stats")
+    print("wrote the header, cards, badges, buttons, signature and stats")
 
 
 if __name__ == "__main__":
