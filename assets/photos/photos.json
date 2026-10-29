@@ -1,27 +1,17 @@
 {
   "01-snow.jpg": {
-    "caption": "Fresh snow",
     "fit": "contain"
   },
   "02-dock.jpg": {
-    "caption": "Sunset on the dock",
     "focus": [
       0.5,
       0.3
     ]
   },
   "03-terminal.jpg": {
-    "caption": "Welcome. Good luck.",
-    "focus": [
-      0.5,
-      0.5
-    ]
+    "fit": "contain"
   },
   "04-hack-time.jpg": {
-    "caption": "Are you sure?",
-    "focus": [
-      0.5,
-      0.27
-    ]
+    "fit": "contain"
   }
 }

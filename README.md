@@ -128,7 +128,7 @@
 <p align="center">
   <picture>
     <source media="(max-width: 640px)" srcset="assets/gallery-compact.svg" />
-    <img src="assets/gallery.svg" width="100%" alt="Photo carousel of Jack J. Burleson, 4 photos: Fresh snow; Sunset on the dock; Welcome. Good luck.; Are you sure?" />
+    <img src="assets/gallery.svg" width="100%" alt="Photo carousel of Jack J. Burleson, 4 photos." />
   </picture>
 </p>
 

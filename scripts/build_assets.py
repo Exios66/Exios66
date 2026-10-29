@@ -764,6 +764,8 @@ def build_gallery(photos, compact=False):
         W, PAD, SH, TG, cap_size, cap_y, thumb_y = 392, 16, 270, 6, 14, 26, 44
     else:
         W, PAD, SH, TG, cap_size, cap_y, thumb_y = 792, 16, 475, 10, 16, 30, 50
+    if not any(c for _, c, _, _ in photos):   # counter only, so the row can be shorter
+        cap_y, thumb_y = cap_y - 2, thumb_y - 10
     SW = W - 2 * PAD
     tw = (SW - (n - 1) * TG) / n
     k = tw / SW
