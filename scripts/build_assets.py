@@ -148,34 +148,52 @@ def kicker(text, x, y, size=11, color=ACCENT):
     return text_path(mono(), text.upper(), size, x, y, color, tracking=size * 0.1)
 
 
-def pills(items, x, y, max_x=None):
+def pills(items, x, y, max_x=None, size=11, h=24, pad=11):
     """Filled accent-soft tag pills (the portfolio's .tag). Wraps past max_x. Returns (svg, bottom)."""
     out, cx, cy = [], x, y
     for t in items:
-        cw = width(mono(), t, 11) + 22
+        cw = width(mono(), t, size) + 2 * pad
         if max_x is not None and cx > x and cx + cw > max_x:
-            cx, cy = x, cy + 32
-        out.append(f'<rect x="{cx:.1f}" y="{cy}" width="{cw:.1f}" height="24" rx="12" fill="{ACCENT_SOFT}"/>')
-        out.append(text_path(mono(), t, 11, cx + 11, cy + 16, ACCENT))
+            cx, cy = x, cy + h + 8
+        out.append(f'<rect x="{cx:.1f}" y="{cy}" width="{cw:.1f}" height="{h}" rx="{h / 2}" fill="{ACCENT_SOFT}"/>')
+        out.append(text_path(mono(), t, size, cx + pad, cy + h / 2 + size * 0.36, ACCENT))
         cx += cw + 8
-    return "\n".join(out), cy + 24
+    return "\n".join(out), cy + h
 
 
 # --------------------------------------------------------------------- header
 M = 4  # transparent margin around every image, so neighbours sit 8px apart
 
 
-def build_header():
-    W, H, LOOP = 792, 184, 12.0
+def build_header(compact=False):
+    """Typing header. compact=True is the phone variant: smaller type, role line on two lines."""
+    LOOP = 12.0
     NAME = "JACK J. BURLESON"
-    ROLE = "MACHINE LEARNING • DATA SCIENCE • AI ENGINEERING & SAFETY"
     GREET = "It’s a pleasure to meet you here..."
-    f_name, f_role, f_greet = roboto_serif(600), mono(), mono()
-    d1, xs1, w1 = shape(f_name, NAME, 40, tracking=40 * 0.06)
-    d_role, _, wr = shape(f_role, ROLE, 11.5, tracking=11.5 * 0.14)
-    d2, xs2, w2 = shape(f_greet, GREET, 17)
-    Y1, YR, Y2 = 76 + M, 106 + M, 150 + M
-    X1, XR, X2 = M + (W - w1) / 2, M + (W - wr) / 2, M + (W - w2) / 2
+    if compact:
+        W, H = 336, 164
+        name_sz, role_sz, greet_sz = 24, 9.5, 13.5
+        roles = ["MACHINE LEARNING • DATA SCIENCE", "AI ENGINEERING & SAFETY"]
+        y1, yroles, y2 = 56, (80, 95), 134
+        cur_cfg = {1: (19, 24, 2), 2: (11, 15, 1.6)}      # cursor: (top above baseline, height, width)
+        clip1, clip2 = (36, 46), (20, 28)                  # clip: (top above baseline, height)
+        tab = 40
+    else:
+        W, H = 792, 184
+        name_sz, role_sz, greet_sz = 40, 11.5, 17
+        roles = ["MACHINE LEARNING • DATA SCIENCE • AI ENGINEERING & SAFETY"]
+        y1, yroles, y2 = 76, (106,), 150
+        cur_cfg = {1: (31, 36, 2.5), 2: (15, 21, 2)}
+        clip1, clip2 = (48, 64), (26, 40)
+        tab = 56
+    d1, xs1, w1 = shape(roboto_serif(600), NAME, name_sz, tracking=name_sz * 0.06)
+    d2, xs2, w2 = shape(mono(), GREET, greet_sz)
+    role_paths = []
+    for line, yr in zip(roles, yroles):
+        dr, _, wr = shape(mono(), line, role_sz, tracking=role_sz * 0.14)
+        role_paths.append(f'<path transform="translate({M + (W - wr) / 2:.2f} {yr + M})" fill="{ACCENT}" d="{dr}"/>')
+    Y1, Y2 = y1 + M, y2 + M
+    X1, X2 = M + (W - w1) / 2, M + (W - w2) / 2
 
     ev = []
 
@@ -215,10 +233,8 @@ def build_header():
     def clip(line):
         return lambda st, ln: f"transform: scaleX({xs[line][st[line]]:.2f});"
 
-    CUR = {1: (31, 36, 2.5), 2: (15, 21, 2)}   # (top above baseline, height, width)
-
     def cur(st, ln):
-        top, h, w = CUR[ln]
+        top, h, w = cur_cfg[ln]
         x = X[ln] + xs[ln][st[ln]] + 3
         return f"transform: translate({x:.2f}px, {Y[ln] - top:.2f}px) scale({w}, {h});"
 
@@ -227,8 +243,8 @@ def build_header():
   <desc id="d">Machine Learning, Data Science, AI Engineering &amp; Safety. It’s a pleasure to meet you here...</desc>
   <defs>
     <clipPath id="card"><rect x="{M + 0.5}" y="{M + 0.5}" width="{W - 1}" height="{H - 1}" rx="12"/></clipPath>
-    <clipPath id="c1"><rect class="r1" x="{X1:.2f}" y="{Y1 - 48}" width="1" height="64"/></clipPath>
-    <clipPath id="c2"><rect class="r2" x="{X2:.2f}" y="{Y2 - 26}" width="1" height="40"/></clipPath>
+    <clipPath id="c1"><rect class="r1" x="{X1:.2f}" y="{Y1 - clip1[0]}" width="1" height="{clip1[1]}"/></clipPath>
+    <clipPath id="c2"><rect class="r2" x="{X2:.2f}" y="{Y2 - clip2[0]}" width="1" height="{clip2[1]}"/></clipPath>
   </defs>
   <style>
     .r1, .r2 {{ transform-box: view-box; }}
@@ -249,10 +265,10 @@ def build_header():
 
   {frame(W, H, M, M)}
   <rect x="{M}" y="{M}" width="{W}" height="4" fill="{ACCENT}" clip-path="url(#card)"/>
-  <rect x="{M}" y="{M}" width="56" height="4" fill="{PINK}" clip-path="url(#card)"/>
+  <rect x="{M}" y="{M}" width="{tab}" height="4" fill="{PINK}" clip-path="url(#card)"/>
 
   <g clip-path="url(#c1)"><path transform="translate({X1:.2f} {Y1})" fill="{INK}" d="{d1}"/></g>
-  <path transform="translate({XR:.2f} {YR})" fill="{ACCENT}" d="{d_role}"/>
+  {chr(10).join("  " + r for r in role_paths).strip()}
   <g clip-path="url(#c2)"><path transform="translate({X2:.2f} {Y2})" fill="{MUTED}" d="{d2}"/></g>
 
   <g class="cur"><rect class="bar" x="0" y="0" width="1" height="1" fill="{PINK}"/></g>
@@ -358,6 +374,19 @@ def build_card(c):
     return wrap_svg(W, H, c["alt"], c["title"], "", "\n".join(out))
 
 
+def build_card_compact(c):
+    """Phone variant of a project card: kicker, title and two tags (no description)."""
+    W, H, PAD = 176, 122, 14
+    out = [kicker(c["kicker"], PAD, 26, size=8.5), arrow(W - PAD - 8, 17, PINK)]
+    lines = wrap(roboto(700), c["title"], 14, W - 2 * PAD)
+    for i, ln in enumerate(lines):
+        out.append(text_path(roboto(700), ln, 14, PAD, 52 + i * 18, INK))
+    chips_svg, bottom = pills(c["tags"][:2], PAD, H - 36, max_x=W - PAD, size=9, h=20, pad=8)
+    assert bottom == H - 36 + 20, f'{c["title"]}: compact tags wrapped'
+    out.append(chips_svg)
+    return wrap_svg(W, H, c["alt"], c["title"], "", "\n".join(out))
+
+
 # --------------------------------------------------------------------- badges
 # The university badge uses the official crest from assets/logo/ (supplied by the author) when that
 # file exists, and a plain mortarboard icon otherwise. Tool badges use brand colours only, no logos.
@@ -397,7 +426,7 @@ def _logo_data(path):
     return f"data:{mime};base64,{base64.b64encode(raw).decode()}", aspect
 
 
-def build_uw_badge(logo=None):
+def build_uw_badge(logo=None, compact=False):
     """Return (university badge SVG, total width in pixels), including margins.
 
     A truthy logo path embeds an SVG or PNG on a white cap; a falsy value
@@ -405,6 +434,8 @@ def build_uw_badge(logo=None):
     propagate rather than selecting the placeholder. Font loading errors
     and ValueError for missing text glyphs also propagate.
     """
+    if compact:
+        return _build_uw_badge_compact(logo)
     H = 68
     title = "UNIVERSITY OF WISCONSIN\u2013MADISON"
     sub = "M.S. DATA SCIENCE IN HUMAN BEHAVIOR \u00b7 MADISON, WI"
@@ -433,6 +464,36 @@ def build_uw_badge(logo=None):
            frame(W, H).replace('rx="12"', 'rx="14"'), art,
            text_path(roboto_serif(600), title, 15.5, tx, 32, INK, tracking=15.5 * 0.06),
            text_path(mono(), sub, 10.5, tx, 51, MUTED, tracking=10.5 * 0.08)]
+    alt = "University of Wisconsin\u2013Madison. M.S. Data Science in Human Behavior. Madison, WI."
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W + 2 * M}" height="{H + 2 * M}" '
+            f'viewBox="0 0 {W + 2 * M} {H + 2 * M}" role="img" aria-label="{alt}">\n<title>{alt}</title>\n'
+            f'<g transform="translate({M} {M})">\n' + "\n".join(out) + '\n</g>\n</svg>\n'), W + 2 * M
+
+
+def _build_uw_badge_compact(logo):
+    """Phone variant: narrower, university name on two lines, shorter subtitle."""
+    W, H, cap_w = 336, 72, 56
+    if logo:
+        uri, aspect = _logo_data(logo)
+        lh = 46 if aspect < 1 else 36
+        lw = min(lh * aspect, 44)
+        lh = lw / aspect
+        art = (f'<rect x="0" y="0" width="{cap_w}" height="{H}" fill="{WHITE}" clip-path="url(#plate)"/>'
+               f'<image x="{(cap_w - lw) / 2:.1f}" y="{(H - lh) / 2:.1f}" width="{lw:.1f}" height="{lh:.1f}" '
+               f'preserveAspectRatio="xMidYMid meet" href="{uri}"/>')
+    else:
+        art = (f'<rect x="0" y="0" width="{cap_w}" height="{H}" fill="{UW_RED}" clip-path="url(#plate)"/>'
+               f'<g transform="translate(-1 9) scale(.82)" fill="{WHITE}" stroke="{WHITE}" stroke-linejoin="round">'
+               f'<path d="M34 19 L54 28 L34 37 L14 28 Z" stroke-width="1"/>'
+               f'<path d="M24 33.5 V40 Q34 46 44 40 V33.5 L34 38.5 Z" stroke-width="1" opacity=".92"/>'
+               f'<path d="M54 28 V40" fill="none" stroke-width="1.6" stroke-linecap="round"/>'
+               f'<circle cx="54" cy="42" r="2" stroke="none"/></g>')
+    tx = cap_w + 16
+    out = [f'<clipPath id="plate"><rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="14"/></clipPath>',
+           frame(W, H).replace('rx="12"', 'rx="14"'), art,
+           text_path(roboto_serif(600), "UNIVERSITY OF", 10.5, tx, 24, MUTED, tracking=10.5 * 0.1),
+           text_path(roboto_serif(600), "WISCONSIN\u2013MADISON", 15, tx, 43, INK, tracking=15 * 0.05),
+           text_path(mono(), "M.S. DATA SCIENCE \u00b7 MADISON, WI", 9.5, tx, 59, MUTED, tracking=9.5 * 0.06)]
     alt = "University of Wisconsin\u2013Madison. M.S. Data Science in Human Behavior. Madison, WI."
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W + 2 * M}" height="{H + 2 * M}" '
             f'viewBox="0 0 {W + 2 * M} {H + 2 * M}" role="img" aria-label="{alt}">\n<title>{alt}</title>\n'
@@ -535,39 +596,177 @@ def activity_stats(data):
                 active_weeks=sum(1 for v in series if v), n_days=len(days), updated=data["generated"])
 
 
-def build_stats(st):
-    W, H, PAD = 792, 204, 36
-    TILE = (W - 2 * PAD) / 4
-    out = [kicker("Activity \u00b7 last 12 months", PAD, 38)]
-    upd = f"UPDATED {st['updated']}"
-    uw = width(mono(), upd, 10, 1.0)
-    out.append(text_path(mono(), upd, 10, W - PAD - uw, 38, MUTED, tracking=1.0))
-    first = ("CONTRIBUTIONS", f"{st['total']:,}", "") if st["total"] is not None else ("ACTIVE DAYS", str(st["active"]), f"of {st['n_days']}")
-    tiles = [first,
-             ("CURRENT STREAK", str(st["current"]), "days"),
-             ("LONGEST STREAK", str(st["longest"]), "days"),
-             ("ACTIVE WEEKS", str(st["active_weeks"]), f"of {len(st['series'])}")]
-    for i, (label, value, unit) in enumerate(tiles):
-        x = PAD + i * TILE + (0 if i == 0 else 20)
-        colour = PINK if i == 1 else ACCENT          # the current streak is the live number
-        out.append(text_path(roboto_serif(600), value, 40, x, 104, colour))
-        vw = width(roboto_serif(600), value, 40)
-        if unit:
-            out.append(text_path(roboto(400), unit, 14, x + vw + 8, 104, MUTED))
-        out.append(text_path(mono(), label, 10, x, 126, MUTED, tracking=1.2))
-        if i:
-            out.append(f'<line x1="{PAD + i * TILE:.1f}" y1="64" x2="{PAD + i * TILE:.1f}" y2="130" stroke="{EDGE}"/>')
-    # weekly activity bars; the latest week is pink
-    series = st["series"]
+def _bars(series, x0, baseline, total_w, max_h, gap):
     peak = max(series) or 1
-    pitch = (W - 2 * PAD) / len(series)
+    pitch = total_w / len(series)
+    out = []
     for k, v in enumerate(series):
-        h = 3 if v == 0 else 4 + 30 * v / peak
+        h = 3 if v == 0 else 4 + (max_h - 4) * v / peak
         colour = PINK if k == len(series) - 1 else (EDGE if v == 0 else ACCENT)
-        out.append(f'<rect x="{PAD + k * pitch:.1f}" y="{176 - h:.1f}" width="{pitch - 4:.1f}" height="{h:.1f}" rx="1.5" fill="{colour}"/>')
+        out.append(f'<rect x="{x0 + k * pitch:.1f}" y="{baseline - h:.1f}" width="{pitch - gap:.1f}" height="{h:.1f}" rx="1.5" fill="{colour}"/>')
+    return out
+
+
+def _stat_tiles(st):
+    first = (("CONTRIBUTIONS", f"{st['total']:,}", "") if st["total"] is not None
+             else ("ACTIVE DAYS", str(st["active"]), f"of {st['n_days']}"))
+    return [first,
+            ("CURRENT STREAK", str(st["current"]), "days"),
+            ("LONGEST STREAK", str(st["longest"]), "days"),
+            ("ACTIVE WEEKS", str(st["active_weeks"]), f"of {len(st['series'])}")]
+
+
+def build_stats(st, compact=False):
+    """Activity card. compact=True is the phone variant (2x2 tiles)."""
+    tiles = _stat_tiles(st)
+    series = st["series"]
     alt = (f"Activity over the last 12 months: {tiles[0][1]} {tiles[0][0].lower()}, current streak {st['current']} days, "
            f"longest streak {st['longest']} days, active in {st['active_weeks']} of {len(series)} weeks. Updated {st['updated']}.")
+    upd = f"UPDATED {st['updated']}"
+    out = []
+    if compact:
+        W, H, PAD = 336, 252, 16
+        out.append(kicker("Activity \u00b7 12 months", PAD, 28, size=9))
+        uw = width(mono(), upd, 9, 0.9)
+        out.append(text_path(mono(), upd, 9, W - PAD - uw, 28, MUTED, tracking=0.9))
+        tw = (W - 2 * PAD) / 2
+        for i, (label, value, unit) in enumerate(tiles):
+            col, row = i % 2, i // 2
+            x = PAD + col * tw + (14 if col else 0)
+            y = 82 + row * 66
+            out.append(text_path(roboto_serif(600), value, 32, x, y, PINK if i == 1 else ACCENT))
+            vw = width(roboto_serif(600), value, 32)
+            if unit:
+                out.append(text_path(roboto(400), unit, 12, x + vw + 6, y, MUTED))
+            out.append(text_path(mono(), label, 9, x, y + 18, MUTED, tracking=1.0))
+        out.append(f'<line x1="{PAD + tw:.1f}" y1="52" x2="{PAD + tw:.1f}" y2="170" stroke="{EDGE}"/>')
+        out.append(f'<line x1="{PAD}" y1="108" x2="{W - PAD}" y2="108" stroke="{EDGE}"/>')
+        out += _bars(series, PAD, 226, W - 2 * PAD, 34, 1.6)
+    else:
+        W, H, PAD = 792, 204, 36
+        TILE = (W - 2 * PAD) / 4
+        out.append(kicker("Activity \u00b7 last 12 months", PAD, 38))
+        uw = width(mono(), upd, 10, 1.0)
+        out.append(text_path(mono(), upd, 10, W - PAD - uw, 38, MUTED, tracking=1.0))
+        for i, (label, value, unit) in enumerate(tiles):
+            x = PAD + i * TILE + (0 if i == 0 else 20)
+            out.append(text_path(roboto_serif(600), value, 40, x, 104, PINK if i == 1 else ACCENT))
+            vw = width(roboto_serif(600), value, 40)
+            if unit:
+                out.append(text_path(roboto(400), unit, 14, x + vw + 8, 104, MUTED))
+            out.append(text_path(mono(), label, 10, x, 126, MUTED, tracking=1.2))
+            if i:
+                out.append(f'<line x1="{PAD + i * TILE:.1f}" y1="64" x2="{PAD + i * TILE:.1f}" y2="130" stroke="{EDGE}"/>')
+        out += _bars(series, PAD, 176, W - 2 * PAD, 34, 4)
     return wrap_svg(W, H, alt, "Activity stats", "", "\n".join(out))
+
+
+# ------------------------------------------------------------------ highlights strip
+# Figures come from each project's own README / portfolio page.
+HIGHLIGHTS = [
+    ("3,302", ["DOCUMENTS IN THE", "DATASET I BUILT"]),
+    ("23/23", ["PAPER FEATURES", "BUILT AND TESTED"]),
+    ("3.8\u00d7", ["FASTER ON 4 WORKERS,", "WORD COUNT"]),
+    ("241", ["RESPONDENTS: 7 ML", "MODELS VS 4 LLMS"]),
+]
+
+
+def build_highlights(compact=False):
+    """Four headline numbers. compact=True is the phone variant (2x2)."""
+    alt = ("Highlights: " + "; ".join(f"{v} {' '.join(l).lower()}" for v, l in HIGHLIGHTS) + ".")
+    out = []
+    if compact:
+        W, H, PAD = 336, 214, 16
+        out.append(kicker("Highlights", PAD, 28, size=9))
+        tw = (W - 2 * PAD) / 2
+        for i, (value, lab) in enumerate(HIGHLIGHTS):
+            col, row = i % 2, i // 2
+            x = PAD + col * tw + (14 if col else 0)
+            y = 80 + row * 74
+            out.append(text_path(roboto_serif(600), value, 30, x, y, ACCENT))
+            for j, ln in enumerate(lab):
+                out.append(text_path(mono(), ln, 8.5, x, y + 16 + j * 12, MUTED, tracking=0.85))
+        out.append(f'<line x1="{PAD + tw:.1f}" y1="48" x2="{PAD + tw:.1f}" y2="{H - 18}" stroke="{EDGE}"/>')
+        out.append(f'<line x1="{PAD}" y1="121" x2="{W - PAD}" y2="121" stroke="{EDGE}"/>')
+    else:
+        W, H, PAD = 792, 150, 36
+        out.append(kicker("Highlights", PAD, 38))
+        tw = (W - 2 * PAD) / 4
+        for i, (value, lab) in enumerate(HIGHLIGHTS):
+            x = PAD + i * tw + (0 if i == 0 else 20)
+            out.append(text_path(roboto_serif(600), value, 40, x, 92, ACCENT))
+            for j, ln in enumerate(lab):
+                out.append(text_path(mono(), ln, 9.5, x, 112 + j * 14, MUTED, tracking=0.95))
+            if i:
+                out.append(f'<line x1="{PAD + i * tw:.1f}" y1="60" x2="{PAD + i * tw:.1f}" y2="{H - 20}" stroke="{EDGE}"/>')
+    return wrap_svg(W, H, alt, "Highlights", "", "\n".join(out))
+
+
+# ------------------------------------------------------------------ link buttons
+# (label, kind, file): "link" ends in a pink arrow, "demo" starts with a pink play triangle.
+BUTTONS = [
+    ("Portfolio", "link", "portfolio"), ("R\u00e9sum\u00e9 (PDF)", "link", "resume"),
+    ("LinkedIn", "link", "linkedin"), ("Email", "link", "email"),
+    ("Hugging Face", "link", "hugging-face"), ("Instagram", "link", "instagram"),
+    ("mailroom-dataset", "link", "mailroom-dataset"),
+    ("Wave Laboratory", "demo", "demo-wave-laboratory"), ("Langton\u2019s Ant", "demo", "demo-langtons-ant"),
+    ("AeroGlobe", "demo", "demo-aeroglobe"), ("The Mandalay Bay", "demo", "demo-mandalay-bay"),
+    ("Mandalay Pixel RPG", "demo", "demo-mandalay-rpg"),
+]
+
+
+def build_button(label, kind):
+    H, PAD = 38, 18
+    tw = width(roboto(500), label, 14)
+    lead = 20 if kind == "demo" else 0
+    trail = 20 if kind == "link" else 0
+    W = PAD + lead + tw + trail + PAD
+    out = [f'<rect x="0.5" y="0.5" width="{W - 1:.1f}" height="{H - 1}" rx="{H / 2}" fill="{BG}" stroke="{ACCENT}" stroke-opacity=".6"/>']
+    if kind == "demo":
+        out.append(f'<path d="M{PAD} {H / 2 - 5} L{PAD + 9} {H / 2} L{PAD} {H / 2 + 5} Z" fill="{PINK}"/>')
+    out.append(text_path(roboto(500), label, 14, PAD + lead, H / 2 + 5, INK))
+    if kind == "link":
+        out.append(arrow(PAD + lead + tw + 9, H / 2 - 5, PINK))
+    alt = label + (" (live demo)" if kind == "demo" else "")
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W + 2 * M:.0f}" height="{H + 2 * M}" '
+            f'viewBox="0 0 {W + 2 * M:.1f} {H + 2 * M}" role="img" aria-label="{alt}">\n<title>{alt}</title>\n'
+            f'<g transform="translate({M} {M})">\n' + "\n".join(out) + '\n</g>\n</svg>\n')
+
+
+# ------------------------------------------------------------------ signature
+def build_signature(dark):
+    """Hand-signed look: script outlines, a slight slant, a tapered pink flourish, written once on load."""
+    ink = INK if dark else "#1B2428"
+    fc = face("mr-de-haviland-latin-400-normal.woff2")
+    d, _, w = shape(fc, "Jack J. Burleson", 84)
+    W, H = 420, 170
+    x = (W - w) / 2
+    base = 100
+    sw = 230                                    # flourish length
+    fx = (W - sw) / 2 + 22
+    fy = 128
+    flourish = (f"M{fx:.1f} {fy + 6} C{fx + 60:.1f} {fy - 8} {fx + 150:.1f} {fy - 16} {fx + sw:.1f} {fy - 6} "
+                f"C{fx + 150:.1f} {fy - 10} {fx + 70:.1f} {fy - 2} {fx:.1f} {fy + 6} Z")
+    alt = "Signature of Jack J. Burleson"
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{alt}">
+<title>{alt}</title>
+<defs>
+  <clipPath id="name"><rect class="w1" x="0" y="0" width="{W}" height="{H}"/></clipPath>
+  <clipPath id="swash"><rect class="w2" x="0" y="0" width="{W}" height="{H}"/></clipPath>
+</defs>
+<style>
+  .w1, .w2 {{ transform-box: view-box; transform-origin: 0 0; }}
+  .w1 {{ animation: write 2.6s cubic-bezier(.55,.05,.3,1) .4s both; }}
+  .w2 {{ animation: write 1.1s cubic-bezier(.4,0,.2,1) 2.7s both; }}
+  @keyframes write {{ from {{ transform: scaleX(0); }} to {{ transform: scaleX(1); }} }}
+  @media (prefers-reduced-motion: reduce) {{ .w1, .w2 {{ animation: none; }} }}
+</style>
+<g transform="rotate(-3.5 {W / 2} {base})">
+  <g clip-path="url(#name)"><path transform="translate({x:.1f} {base})" fill="{ink}" stroke="{ink}" stroke-width=".6" stroke-linejoin="round" d="{d}"/></g>
+  <g clip-path="url(#swash)"><path fill="{PINK}" d="{flourish}"/></g>
+</g>
+</svg>
+'''
 
 
 def main():
@@ -581,25 +780,36 @@ def main():
     failures; files already written are not rolled back.
     """
     ASSETS.mkdir(exist_ok=True)
-    (ASSETS / "cards").mkdir(exist_ok=True)
+    for sub in ("cards", "badges", "buttons"):
+        (ASSETS / sub).mkdir(exist_ok=True)
     (ASSETS / "header.svg").write_text(build_header())
+    (ASSETS / "header-compact.svg").write_text(build_header(compact=True))
     (ASSETS / "cards" / FEATURED["file"]).write_text(build_featured(FEATURED))
     (ASSETS / "cards" / FEATURED["compact"]).write_text(build_featured(FEATURED, compact=True))
     for p in PROJECTS:
         (ASSETS / "cards" / p["file"]).write_text(build_card(p))
-    (ASSETS / "badges").mkdir(exist_ok=True)
+        (ASSETS / "cards" / p["file"].replace(".svg", "-compact.svg")).write_text(build_card_compact(p))
     logo = next((q for q in (ASSETS / "logo" / "uw-madison.svg", ASSETS / "logo" / "uw-madison.png") if q.exists()), None)
     if len(sys.argv) > 1:   # optional: python3 scripts/build_assets.py path/to/logo.svg|png
         logo = sys.argv[1]
     svg, badge_w = build_uw_badge(logo)
     (ASSETS / "badges" / "uw-madison.svg").write_text(svg)
+    (ASSETS / "badges" / "uw-madison-compact.svg").write_text(build_uw_badge(logo, compact=True)[0])
     print("UW badge:", "official logo" if logo else "mortarboard placeholder", f"(width {badge_w})")
     for cat, tool, brand in TOOL_BADGES:
         (ASSETS / "badges" / f"{slug(tool)}.svg").write_text(build_tool_badge(cat, tool, brand))
+    for label, kind, file in BUTTONS:
+        (ASSETS / "buttons" / f"{file}.svg").write_text(build_button(label, kind))
+    (ASSETS / "highlights.svg").write_text(build_highlights())
+    (ASSETS / "highlights-compact.svg").write_text(build_highlights(compact=True))
+    (ASSETS / "signature-dark.svg").write_text(build_signature(dark=True))
+    (ASSETS / "signature-light.svg").write_text(build_signature(dark=False))
     activity = load_activity()
     if activity:
-        (ASSETS / "stats.svg").write_text(build_stats(activity_stats(activity)))
-    print("wrote header, ", 2 + len(PROJECTS), "cards and", 1 + len(TOOL_BADGES), "badges")
+        stats = activity_stats(activity)
+        (ASSETS / "stats.svg").write_text(build_stats(stats))
+        (ASSETS / "stats-compact.svg").write_text(build_stats(stats, compact=True))
+    print("wrote the header, cards, badges, buttons, highlights, signature and stats")
 
 
 if __name__ == "__main__":
