@@ -55,7 +55,6 @@
   <sub><b>Try it in the browser</b></sub><br />
   <a href="https://exios66.github.io/wave-laboratory/"><img src="assets/buttons/demo-wave-laboratory.svg" alt="Wave Laboratory (live demo)" /></a>
   <a href="https://exios66.github.io/langtons-ant/"><img src="assets/buttons/demo-langtons-ant.svg" alt="Langton’s Ant (live demo)" /></a>
-  <a href="https://exios66.github.io/aeroglobe/"><img src="assets/buttons/demo-aeroglobe.svg" alt="AeroGlobe (live demo)" /></a>
   <a href="https://exios66.github.io/degen-llms/"><img src="assets/buttons/demo-mandalay-bay.svg" alt="The Mandalay Bay (live demo)" /></a>
   <a href="https://exios66.github.io/degen-llms/rpg/"><img src="assets/buttons/demo-mandalay-rpg.svg" alt="Mandalay Pixel RPG (live demo)" /></a>
 </p>
@@ -68,7 +67,7 @@
     <a href="https://github.com/Exios66/RVL-CDIP-Classifier">RVL-CDIP-Classifier</a> ·
     <a href="https://github.com/Exios66/aeroglobe">AeroGlobe</a> ·
     <a href="https://github.com/Exios66/truth-deception-architecture">Truth &amp; Deception study</a> ·
-    <a href="https://github.com/Exios66/degen-llms">The Mandalay Bay</a> ·
+    <a href="https://exios66.github.io/degen-llms/">The Mandalay Bay</a> ·
     <a href="https://github.com/Exios66/langtons-ant">Langton’s Ant</a>
     <br />
     <a href="https://exios66.github.io/resume/projects/">All projects with case studies →</a>

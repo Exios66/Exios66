@@ -684,7 +684,7 @@ BUTTONS = [
     ("LinkedIn", "link", "linkedin"), ("Email", "link", "email"),
     ("Hugging Face", "link", "hugging-face"), ("Instagram", "link", "instagram"),
     ("Wave Laboratory", "demo", "demo-wave-laboratory"), ("Langton\u2019s Ant", "demo", "demo-langtons-ant"),
-    ("AeroGlobe", "demo", "demo-aeroglobe"), ("The Mandalay Bay", "demo", "demo-mandalay-bay"),
+    ("The Mandalay Bay", "demo", "demo-mandalay-bay"),
     ("Mandalay Pixel RPG", "demo", "demo-mandalay-rpg"),
 ]
 
