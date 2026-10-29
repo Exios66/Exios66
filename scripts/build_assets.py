@@ -97,6 +97,22 @@ def shape(fc, text, size, tracking=0.0, outline=True):
     return "".join(d), xs, x - tracking
 
 
+def ink_bounds(fc, text, size):
+    """Return (xmin, ymin, xmax, ymax) of the glyph outlines, y pointing down from the baseline."""
+    from fontTools.pens.boundsPen import BoundsPen
+    s = size / fc.upm
+    buf = hb.Buffer()
+    buf.add_str(text)
+    buf.guess_segment_properties()
+    hb.shape(fc.hb, buf, {"liga": False, "calt": False, "clig": False})
+    bp, x = BoundsPen(fc.glyphs), 0.0
+    for info, pos in zip(buf.glyph_infos, buf.glyph_positions):
+        tp = TransformPen(bp, (s, 0, 0, -s, x + pos.x_offset * s, -pos.y_offset * s))
+        fc.glyphs[fc.order[info.codepoint]].draw(tp)
+        x += pos.x_advance * s
+    return bp.bounds
+
+
 def width(fc, text, size, tracking=0.0):
     return shape(fc, text, size, tracking, outline=False)[2]
 
@@ -693,18 +709,29 @@ def build_button(label, kind):
 
 # ------------------------------------------------------------------ signature
 def build_signature(dark):
-    """Hand-signed look: script outlines, a slight slant, a tapered pink flourish, written once on load."""
+    """Hand-signed look: script outlines, a slight slant, a tapered pink flourish, written once on load.
+
+    The canvas is sized from the measured outline of the ink (after the tilt), so no stroke can be clipped.
+    """
+    import math
     ink = INK if dark else "#1B2428"
     fc = face("mr-de-haviland-latin-400-normal.woff2")
-    d, _, w = shape(fc, "Jack J. Burleson", 84)
-    W, H = 420, 170
-    x = (W - w) / 2
-    base = 100
-    sw = 230                                    # flourish length
-    fx = (W - sw) / 2 + 22
-    fy = 128
-    flourish = (f"M{fx:.1f} {fy + 6} C{fx + 60:.1f} {fy - 8} {fx + 150:.1f} {fy - 16} {fx + sw:.1f} {fy - 6} "
-                f"C{fx + 150:.1f} {fy - 10} {fx + 70:.1f} {fy - 2} {fx:.1f} {fy + 6} Z")
+    text, size, tilt, pad = "Jack J. Burleson", 84, -3.5, 18
+    d, _, _ = shape(fc, text, size)
+    x0, y0, x1, y1 = ink_bounds(fc, text, size)         # name drawn with its origin at (0, 0)
+    iw = x1 - x0
+    sw = iw * 0.66                                      # flourish length
+    fx, fy = x0 + iw * 0.24, y1 * 0.0 + 30              # flourish start, below the baseline
+    flourish = (f"M{fx:.1f} {fy + 6:.1f} C{fx + sw * .26:.1f} {fy - 8:.1f} {fx + sw * .65:.1f} {fy - 16:.1f} {fx + sw:.1f} {fy - 6:.1f} "
+                f"C{fx + sw * .65:.1f} {fy - 10:.1f} {fx + sw * .3:.1f} {fy - 2:.1f} {fx:.1f} {fy + 6:.1f} Z")
+    # bounds of everything after the tilt (rotation about the middle of the name, on the baseline)
+    cx, a = (x0 + x1) / 2, math.radians(tilt)
+    pts = [(x0, y0), (x1, y0), (x0, y1), (x1, y1), (fx, fy - 16), (fx, fy + 8), (fx + sw, fy - 16), (fx + sw, fy + 8)]
+    rot = [(cx + (px - cx) * math.cos(a) - py * math.sin(a), (px - cx) * math.sin(a) + py * math.cos(a)) for px, py in pts]
+    minx, maxx = min(r[0] for r in rot) - pad, max(r[0] for r in rot) + pad
+    miny, maxy = min(r[1] for r in rot) - pad, max(r[1] for r in rot) + pad
+    W, H = math.ceil(maxx - minx), math.ceil(maxy - miny)
+    place = f"translate({-minx:.1f} {-miny:.1f}) rotate({tilt} {cx:.1f} 0)"
     alt = "Signature of Jack J. Burleson"
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{alt}">
 <title>{alt}</title>
@@ -719,10 +746,8 @@ def build_signature(dark):
   @keyframes write {{ from {{ transform: scaleX(0); }} to {{ transform: scaleX(1); }} }}
   @media (prefers-reduced-motion: reduce) {{ .w1, .w2 {{ animation: none; }} }}
 </style>
-<g transform="rotate(-3.5 {W / 2} {base})">
-  <g clip-path="url(#name)"><path transform="translate({x:.1f} {base})" fill="{ink}" stroke="{ink}" stroke-width=".6" stroke-linejoin="round" d="{d}"/></g>
-  <g clip-path="url(#swash)"><path fill="{PINK}" d="{flourish}"/></g>
-</g>
+<g clip-path="url(#name)"><g transform="{place}"><path fill="{ink}" stroke="{ink}" stroke-width=".6" stroke-linejoin="round" d="{d}"/></g></g>
+<g clip-path="url(#swash)"><g transform="{place}"><path fill="{PINK}" d="{flourish}"/></g></g>
 </svg>
 '''
 
