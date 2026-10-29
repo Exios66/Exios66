@@ -126,7 +126,10 @@
 </div>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a0d994ed-46e0-4185-886e-5568c9561843" width="360" alt="Jack J. Burleson" />
+  <picture>
+    <source media="(max-width: 640px)" srcset="assets/gallery-compact.svg" />
+    <img src="assets/gallery.svg" width="100%" alt="Photo carousel of Jack J. Burleson, 4 photos: Fresh snow; Sunset on the dock; Welcome. Good luck.; Are you sure?" />
+  </picture>
 </p>
 
 <p align="center">
