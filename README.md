@@ -158,7 +158,10 @@ _Don't hesitate to reach out, I would always love to connect with likeminded ind
 
 *As always, wishing you godspeed my friend...*
 
-<img alt="Signature of Jack J. Burleson" src="assets/signature-dark.svg#gh-dark-mode-only" />
-<img alt="Signature of Jack J. Burleson" src="assets/signature-light.svg#gh-light-mode-only" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/signature-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/signature-light.svg" />
+  <img alt="Signature of Jack J. Burleson" src="assets/signature-dark.svg" width="471" />
+</picture>
 
 </div>
